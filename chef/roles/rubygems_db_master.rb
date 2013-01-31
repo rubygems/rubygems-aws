@@ -11,7 +11,7 @@ default_attributes(
     "version" => "9.2",
     "ssl" => false,
     "pg_hba" => [
-      "host rubygems_staging rubygems 127.0.0.1/32 password"
+      "host rubygems_production rubygems 127.0.0.1/32 password"
     ]
   }
 )
