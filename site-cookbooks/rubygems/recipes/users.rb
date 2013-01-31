@@ -5,7 +5,7 @@
 
 include_recipe "user"
 
-gem_package "ruby-shadow"
+# Omnibus packages include ruby-shadow
 
 node["users"].each do |user|
 
