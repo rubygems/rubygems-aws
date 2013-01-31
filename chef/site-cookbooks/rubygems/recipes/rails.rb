@@ -55,22 +55,6 @@ shared_dirs.each do |dir|
   end
 end
 
-# setup sudo access for foreman
-sudo_cmd = <<-SUDO
-
-# start application: #{app_env}
-Cmnd_Alias #{sudo_name} = #{bundle_cmd} exec foreman export upstart /etc/init *, /sbin/start #{app_env}, /sbin/stop #{app_env}, /sbin/restart #{app_env}
-deploy ALL=(ALL) NOPASSWD: #{sudo_name}
-# end application: #{app_env}
-
-SUDO
-
-bash "setup sudo access for foreman" do
-  code "echo '#{sudo_cmd}' >> /etc/sudoers"
-  not_if "grep 'start application: #{app_env}' /etc/sudoers"
-end
-
-
 # logrotate for application
 template "/etc/logrotate.d/#{app_env}" do
   source "logrotate-application.erb"
