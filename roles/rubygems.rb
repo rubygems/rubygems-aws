@@ -1,4 +1,4 @@
-name "ubygems"
+name "rubygems"
 description "The role with rails application recipes for rubygems"
 run_list(
   "recipe[git]",
