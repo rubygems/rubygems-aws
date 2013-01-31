@@ -1,7 +1,3 @@
 {
-  "run_list": ["role[rubygems_db_master]"],
-  // sudoers
-  "sudo": {
-    "add_vagrant" : true
-  }
+  "run_list": ["role[rubygems_db_master]", "role[vagrant]"]
 }
