@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  if !File.directory?(File.expand_path("../cookbooks", __FILE__))
+  if !File.directory?(File.expand_path("../chef/cookbooks", __FILE__))
     puts "Run `librarian-chef install` first to bring down the cookbooks."
     exit 1
   end
@@ -12,10 +12,10 @@ Vagrant::Config.run do |config|
     app.vm.box = "opscode-ubuntu-12.04"
     app.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
     app.vm.provision :chef_solo do |chef|
-      chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
-      chef.roles_path = "roles"
+      chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
+      chef.roles_path = "chef/roles"
       chef.add_role("rubygems")
-      jsonfile = JSON.parse(IO.read('nodes/app.rubygems.org.json'))
+      jsonfile = JSON.parse(IO.read('chef/nodes/app.rubygems.org.json'))
       vagrant_sudo = {
         "authorization" => {
           "sudo" => {
