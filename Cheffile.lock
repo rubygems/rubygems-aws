@@ -1,0 +1,146 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (1.8.4)
+    bash-completion (0.1.0)
+    build-essential (1.3.2)
+    chef_gem (0.0.5)
+    chef_handler (1.1.4)
+    curl (1.1.0)
+    dmg (1.1.0)
+    git (2.1.4)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (<= 0.16.2)
+      windows (>= 0.0.0)
+      yum (>= 0.0.0)
+    grc (1.0.0)
+    hostname (0.0.3)
+    htop (0.1.0)
+    iftop (0.0.1)
+    imagemagick (0.2.2)
+    logrotate (1.1.0)
+    logwatch (1.0.2)
+      perl (>= 0.0.0)
+    newrelic-sysmond (1.2.1)
+    ntp (1.3.2)
+    openssh (1.1.4)
+    perl (1.1.0)
+    postfix (2.1.4)
+    resolver (1.1.0)
+    rsync (0.8.0)
+    runit (0.16.2)
+    screen (0.8.0)
+      build-essential (>= 0.0.0)
+      git (>= 0.0.0)
+    sudo (2.0.4)
+    sysstat (1.2.0)
+    windows (1.8.2)
+      chef_handler (>= 0.0.0)
+    xml (1.1.2)
+      build-essential (>= 0.0.0)
+    xslt (0.0.1)
+    yum (2.1.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-rvm
+  ref: master
+  sha: 517723d7569472a8afbe8588af7122fc0df5583a
+  specs:
+    rvm (0.9.1)
+      chef_gem (>= 0.0.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-user
+  ref: master
+  sha: 1b52f8d41c0a320d29fa5e695393bef583e87ca8
+  specs:
+    user (0.3.1)
+
+GIT
+  remote: https://github.com/phlipper/chef-denyhosts
+  ref: master
+  sha: cead32d2dc8cad24a261b6abf42ffb30a797704c
+  specs:
+    denyhosts (0.1.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-monit
+  ref: master
+  sha: e7fbb501346c0b6ea6af8a743648c21610c32796
+  specs:
+    monit (1.1.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-nginx
+  ref: master
+  sha: 21632faf738b892319d045c261fb45fb2d082d7f
+  specs:
+    nginx (0.3.0)
+      apt (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-nodejs
+  ref: master
+  sha: 15254a934d1f84ef73004be0fdd41943f6b3613f
+  specs:
+    nodejs (1.4.0)
+      apt (>= 1.4.4)
+
+GIT
+  remote: https://github.com/phlipper/chef-postgresql
+  ref: master
+  sha: 0794e0ce26ef449a160a0d58f2a2f72be56edc95
+  specs:
+    postgresql (0.7.0)
+      apt (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-redis
+  ref: master
+  sha: 754968132d6a3e1aa5c0cb7724d7df5e4390e6ba
+  specs:
+    redis (0.4.0)
+      apt (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/iptables
+  ref: master
+  sha: 72d5e7f919cce4df43ea90173c381e70e74f3aeb
+  specs:
+    iptables (0.11.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  bash-completion (>= 0)
+  build-essential (>= 0)
+  curl (>= 0)
+  denyhosts (>= 0)
+  git (>= 0)
+  grc (>= 0)
+  hostname (>= 0)
+  htop (>= 0)
+  iftop (>= 0)
+  imagemagick (>= 0)
+  iptables (>= 0)
+  logrotate (>= 0)
+  logwatch (>= 0)
+  monit (>= 0)
+  newrelic-sysmond (>= 0)
+  nginx (>= 0)
+  nodejs (>= 0)
+  ntp (>= 0)
+  openssh (>= 0)
+  postfix (>= 0)
+  postgresql (>= 0)
+  redis (>= 0)
+  resolver (>= 0)
+  rsync (>= 0)
+  rvm (>= 0)
+  screen (>= 0)
+  sudo (>= 0)
+  sysstat (>= 0)
+  user (>= 0)
+  xml (>= 0)
+  xslt (>= 0)
+

@@ -1,0 +1,74 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook "apt"
+
+cookbook "bash-completion"
+
+cookbook "build-essential"
+
+cookbook "curl"
+
+cookbook "denyhosts",
+  git: "https://github.com/phlipper/chef-denyhosts"
+
+cookbook "git"
+
+cookbook "grc"
+
+cookbook "hostname"
+
+cookbook "htop"
+
+cookbook "imagemagick"
+
+cookbook "iftop"
+
+cookbook "iptables",
+  git: "https://github.com/phlipper/iptables"
+
+cookbook "logrotate"
+
+cookbook "logwatch"
+
+cookbook "monit",
+  git: "https://github.com/phlipper/chef-monit"
+
+cookbook "newrelic-sysmond"
+
+cookbook "nginx",
+  git: "https://github.com/phlipper/chef-nginx"
+
+cookbook "nodejs",
+  git: "https://github.com/phlipper/chef-nodejs"
+
+cookbook "ntp"
+
+cookbook "openssh"
+
+cookbook "postfix"
+
+cookbook "postgresql",
+  git: "https://github.com/phlipper/chef-postgresql"
+
+cookbook "redis",
+  git: "https://github.com/phlipper/chef-redis"
+
+cookbook "resolver"
+
+cookbook "rsync"
+
+cookbook "rvm",
+  git: "https://github.com/fnichol/chef-rvm"
+
+cookbook "screen"
+
+cookbook "sudo"
+
+cookbook "sysstat"
+
+cookbook "user",
+  git: "https://github.com/fnichol/chef-user"
+
+cookbook "xml"
+
+cookbook "xslt"
