@@ -22,7 +22,7 @@ server {
 
   <% if @use_ssl && @force_ssl %>
     # redirect all requests to SSL
-    rewrite ^(.*) https://$server_name$1 permanent;
+    rewrite ^(.*) https://$host$1 permanent;
   <% else %>
     # include application specific configuration
     include <%= @nginx_dir %>/applications/<%= "#{@name}-#{@rails_env}" %>.conf;
