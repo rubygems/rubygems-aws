@@ -8,7 +8,7 @@ ssh_options[:forward_agent] = true
 
 namespace :bootstrap do
   desc "bootstrap the server for chef"
-  task :default, :roles => [:app, :lb] do
+  task :default, :roles => [:app, :db, :lb] do
     find_servers_for_task(current_task).each do |current_server|
       system("knife bootstrap -d chef-solo -x #{user} --sudo #{current_server}")
     end
