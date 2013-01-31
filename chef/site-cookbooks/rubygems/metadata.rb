@@ -9,3 +9,5 @@ recipe "rubygems", "Default recipes for application deployment nodes"
 recipe "rubygems::users", "User setup and configuration"
 
 depends "user"
+depends "application"
+depends "application_ruby"
