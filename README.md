@@ -9,7 +9,6 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
     $ bundle install
     $ librarian-chef install
     $ vagrant up
-    $ cap bootstrap
     $ cap chef
 
 ## Hacking on EC2
