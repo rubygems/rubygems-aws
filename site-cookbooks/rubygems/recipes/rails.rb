@@ -7,7 +7,7 @@ rails_root        = node["application"]["rails_root"]
 rails_env         = node["application"]["rails_env"]
 app_env           = "#{node["application"]["name"]}-#{node["application"]["rails_env"]}"
 sudo_name         = app_env.tr("-", "_").upcase
-bundle_cmd        = "#{node["rvm"]["root_path"]}/bin/rvm default exec bundle"
+bundle_cmd        = "bundle"
 company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
 

@@ -61,9 +61,6 @@ cookbook "resolver"
 
 cookbook "rsync"
 
-cookbook "rvm",
-  git: "https://github.com/fnichol/chef-rvm"
-
 cookbook "screen"
 
 cookbook "sudo"
