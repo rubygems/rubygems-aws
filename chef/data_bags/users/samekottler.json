@@ -1,0 +1,10 @@
+{
+    "id": "samkottler",
+    "username": "samkottler",
+    "comment": "Sam Kottler",
+    "password": "$1$0rHKd1au$qNQ/3uZ1ATDDnrG9JMLG3.",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuZUm6qBJDRKWzrZGx3hiWlVUtmyWvlQGbmI/GyMGqTzzABIb3n8RjpCEBwiBu01wu6ECfyPJ2qGW87G+DVpb1Z5orxQWRPruEg3aw5lXxiHA6dAmd6qWVZKBbQYhXheeepD7QrNwWc/MpVzjqeNitLD0TEI56AJTjL5dIFZHYh5ZHYPYoSVIvH53aub3+vGbzaD/eQamYxuBvecb5A2uHwld//KVA77mKFK68gX92ESd77fpcjwY6cEKQpoobBD4mHpXYfxn8+1OoOkuNo0awkhec9hXQJHRpcIHko+BOGac0d1ZECZIPhAwu7U9KpOCutmJ+YhY1He+++OMXydjxQ== sam.kottler@mbp"
+    ]
+}
