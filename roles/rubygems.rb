@@ -7,7 +7,6 @@ run_list(
   "recipe[postgresql::libpq]",
   "recipe[rubygems::environment_variables]",
   "recipe[rubygems::monit]",
-  "recipe[rubygems::rvm]",
   "recipe[rubygems::rails]",
   "recipe[rubygems::rails_nginx]",
   "recipe[rubygems::rails_postgresql]"

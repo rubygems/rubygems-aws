@@ -129,24 +129,6 @@
     "nameservers": ["8.8.8.8", "8.8.4.4"]
   },
 
-  // rvm ruby
-  "rvm": {
-    "default_ruby": "ruby-1.9.3",
-    "rubies": ["ruby-1.9.3"],
-    "group_users": ["deploy", "phlipper"],
-    "global_gems": [
-      { "name": "rvm" },
-      { "name": "bundler" }
-    ],
-    "rvmrc": {
-      "rvm_make_flags": "-j3",
-      "rvm_configure_env": "CFLAGS='-O3 -pipe -fomit-frame-pointer'",
-      "rvm_pretty_print_flag": "1",
-      "rvm_trust_rvmrcs_flag": "1",
-      "rvm_project_rvmrc": "1"
-    }
-  },
-
   // system users
   "users": [
     {
