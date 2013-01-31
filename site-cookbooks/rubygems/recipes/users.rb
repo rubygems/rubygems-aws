@@ -5,7 +5,6 @@
 
 include_recipe "user"
 
-package "libshadow-ruby1.8"
 gem_package "ruby-shadow"
 
 node["users"].each do |user|
