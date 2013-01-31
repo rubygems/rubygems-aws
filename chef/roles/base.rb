@@ -13,11 +13,6 @@ run_list(
 )
 
 default_attributes(
-  "authorization" => {
-    "sudo" => {
-      "users" => ["phlipper", "samkottler", "dwradcliffe"]
-    }
-  },
   "denyhosts" => {
     "admin_email" => "github@phlippers.net",
     "allowed_hosts" => []
