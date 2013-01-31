@@ -1,0 +1,58 @@
+{
+  "run_list": ["role[balancer]"],
+  
+  // sudo users and groups
+  "authorization": {
+    "sudo": {
+      "users": ["phlipper", "samkottler", "dwradcliffe"]
+    }
+  },
+
+  // ntp timekeeping
+  "ntp": {
+    "is_server": false,
+    "servers": [
+      "0.pool.ntp.org",
+      "1.pool.ntp.org",
+      "2.pool.ntp.org",
+      "3.pool.ntp.org"
+    ]
+  },
+
+  // openssh server
+  "openssh": {
+    "server": {
+      "password_authentication": "no",
+      "permit_root_login": "no",
+      "subsystem": "sftp internal-sftp"
+    }
+  },
+
+  // system users
+  "users": [
+    {
+      "username": "phlipper",
+      "comment":  "Phil Cohen",
+      "password": "$1$1pcXt/Tf$BiibTQY9dcYvlKlYuFp5r0",
+      "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBXB0EwpWiZWrshvzFmTKs/L6FjMuJ9WnSfoeBDoCuZjgOnEeq2E8948s2q1BE2VU9VwlCVOPrpv4Nf3qzXG52k6LUHkgq1DIpKjXJenmz95HxfqHAlNIWXSX90ywPiJZr42CM+SFxtmITj81rpn9o8YxUCnxqD4Zww/2tkDI3vC"
+      ]
+    },
+    {
+      "username": "samkottler",
+      "comment": "Sam Kottler",
+      "password": "$1$0rHKd1au$qNQ/3uZ1ATDDnrG9JMLG3.",
+      "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuZUm6qBJDRKWzrZGx3hiWlVUtmyWvlQGbmI/GyMGqTzzABIb3n8RjpCEBwiBu01wu6ECfyPJ2qGW87G+DVpb1Z5orxQWRPruEg3aw5lXxiHA6dAmd6qWVZKBbQYhXheeepD7QrNwWc/MpVzjqeNitLD0TEI56AJTjL5dIFZHYh5ZHY"
+      ]
+    },
+    {
+      "username": "dwradcliffe",
+      "comment":  "David Radcliffe",
+      "password": "$1$zUPbs1zR$Etel98kFpz1tsWUZouRAe1",
+      "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTMHSrFTZyMCs67A92dLIYdFcU6EvMRadH0yk9k1lcEPwqf6NMaYS0Fjqqo7gNWga+8gIO5mTS14lgcJwrfVJ07RjvqMa2bRHwD6x6+xqL9gSxaXulbvvVCm0r64KQ+8bl4/WR7CKi3O+C1c9BlZ1u2WGM7zvV42fmRcCmFBHV9V"
+      ]
+    }
+  ]
+}
