@@ -9,5 +9,4 @@ run_list(
   "recipe[rubygems::monit]",
   "recipe[rubygems::rails]",
   "recipe[rubygems::rails_nginx]",
-  "recipe[rubygems::rails_postgresql]"
 )

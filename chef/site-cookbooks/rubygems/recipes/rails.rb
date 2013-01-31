@@ -10,8 +10,11 @@ sudo_name         = app_env.tr("-", "_").upcase
 bundle_cmd        = "bundle"
 company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
+db_name                   = app_env.tr("-", "_")
+rails_postgresql_user     = node["application"]["name"]
+rails_postgresql_password = Digest::MD5.hexdigest(app_env.reverse).reverse.tr("A-Za-z", "N-ZA-Mn-za-m")
 
-# application directory
+# # application directory
 directory "/applications" do
   owner  "deploy"
   group  "deploy"
@@ -25,33 +28,45 @@ directory "/applications/#{node["application"]["name"]}" do
   action :create
 end
 
-# rails root
-directory rails_root do
-  owner  "deploy"
-  group  "deploy"
-  action :create
-  recursive true
+# create a DB user
+pg_user rails_postgresql_user do
+  privileges superuser: false, createdb: false, login: true
+  password rails_postgresql_password
 end
 
-# capistrano setup
-%w[shared releases].each do |dir|
-  directory "#{rails_root}/#{dir}" do
-    owner  "deploy"
-    group  "deploy"
-    action :create
+# create a database
+pg_database db_name do
+  owner rails_postgresql_user
+  encoding "utf8"
+  template "template0"
+  locale "en_US.UTF8"
+end
+
+application "rubygems" do
+  path node["application"]["rails_root"]
+  repository node["application"]["repository"]
+  owner "deploy"
+  group "deploy"
+  packages %w{libpq-dev}
+
+  r = rails do
+    gems %w{bundler}
+    bundle_command "/usr/local/bin/bundle"
+    database_template "database.yml.erb"
+    database do
+      adapter "postgresql"
+      database db_name
+      username rails_postgresql_user
+      password rails_postgresql_password
+      host "localhost"
+    end
   end
-end
+  r.cookbook_name = "rubygems"
 
-# standard shared locations
-shared_dirs = %w[
-  assets attachments backup cache config log pids sockets system tmp
-]
-shared_dirs.each do |dir|
-  directory "#{rails_root}/shared/#{dir}" do
-    owner  "deploy"
-    group  "deploy"
-    action :create
-    recursive true
+  unicorn do
+    port "3000"
+    bundler true
+    bundle_command "/usr/local/bin/bundle"
   end
 end
 
