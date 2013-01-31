@@ -31,34 +31,9 @@ cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_cert"]}"
   notifies :reload, "service[nginx]", :immediately
 end
 
-
-# application-specific configuration
-directory "#{node["nginx"]["dir"]}/applications" do
-  owner "root"
-  group "root"
-  mode  "0644"
-  action :create
-end
-
-template "#{node["nginx"]["dir"]}/applications/#{app_env}.conf" do
-  source "nginx_application.conf.erb"
-  owner  "root"
-  group  "root"
-  mode   "0644"
-  action :create
-  variables(
-    name:       node["application"]["name"],
-    rails_env:  node["application"]["rails_env"],
-    rails_root: node["application"]["rails_root"],
-    app_server: node["application"]["app_server"],
-    log_dir:    node["nginx"]["log_dir"]
-  )
-  notifies :reload, "service[nginx]", :immediately
-end
-
 # vhost configuration
-template "#{node["nginx"]["dir"]}/sites-available/#{app_env}.conf" do
-  source "nginx_vhost.conf.erb"
+template "#{node["nginx"]["dir"]}/sites-available/#{app_env}-balancer.conf" do
+  source "nginx_balancer.conf.erb"
   owner  "root"
   group  "root"
   mode   "0644"
@@ -79,7 +54,7 @@ template "#{node["nginx"]["dir"]}/sites-available/#{app_env}.conf" do
 end
 
 # symlink to sites-enabled
-link "#{node["nginx"]["dir"]}/sites-enabled/#{app_env}.conf" do
-  to "#{node["nginx"]["dir"]}/sites-available/#{app_env}.conf"
+link "#{node["nginx"]["dir"]}/sites-enabled/#{app_env}-balancer.conf" do
+  to "#{node["nginx"]["dir"]}/sites-available/#{app_env}-balancer.conf"
   notifies :reload, "service[nginx]", :immediately
 end

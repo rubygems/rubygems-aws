@@ -10,6 +10,3 @@ run_list(
   "recipe[rubygems::rails]",
   "recipe[rubygems::rails_nginx]"
 )
-default_attributes({"application" => { "server_pool" => [ "127.0.0.1" ],
-                       "listen_port" => 3000
-                     }})

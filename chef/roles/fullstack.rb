@@ -5,5 +5,6 @@ run_list(
   "recipe[memcached]",
   "recipe[redis::server]",
   "recipe[postgresql::server]",
-  "role[rubygems]"
+  "role[rubygems]",
+  "role[balancer]"
 )

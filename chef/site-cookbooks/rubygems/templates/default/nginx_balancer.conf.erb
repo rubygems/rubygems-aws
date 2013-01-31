@@ -7,8 +7,8 @@ upstream rails_<%= @app_server["name"] %> {
 
   # for UNIX domain socket setups:
   # serverr unix:<%= @rails_root %>/shared/tmp/sockets/<%= @app_server["name"] %>.sock fail_timeout=0;
-  <% node["application"]["server_pool"].each do |upstream_ip| %>
-  server <%= upstream_ip %>:<%= node["application"]["listen_port"] -%> fail_timeout=0;
+  <% node["application"]["application_servers"].each do |upstream_ip| %>
+  server <%= upstream_ip %>:<%= node["application"]["internal_port"] -%> fail_timeout=0;
   <% end %>
 }
 
@@ -24,8 +24,10 @@ server {
     # redirect all requests to SSL
     rewrite ^(.*) https://$host$1 permanent;
   <% else %>
-    # include application specific configuration
-    include <%= @nginx_dir %>/applications/<%= "#{@name}-#{@rails_env}" %>.conf;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    location / {
+      proxy_pass http://rails_<%= @app_server["name"] %>;
+    }
   <% end %>
 }
 
@@ -46,10 +48,12 @@ server {
   ssl_prefer_server_ciphers   on;
   keepalive_timeout           65;
 
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
   proxy_set_header X-Forwarded-Proto https;
   proxy_set_header Content-Length $content_length;
 
-  # include application specific configuration
-  include <%= @nginx_dir %>/applications/<%= "#{@name}-#{@rails_env}" %>.conf;
+  location / {
+    proxy_pass http://rails_<%= @app_server["name"] %>;
+  }
 }
 <% end %>

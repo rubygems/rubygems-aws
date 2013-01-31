@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
 
     # Use more RAM to assist with setting up lots of infra
     app.vm.customize ["modifyvm", :id, "--memory", "768"]
-    
+
     app.vm.network :hostonly, "33.33.33.10"
   end
 end
