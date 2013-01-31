@@ -10,6 +10,5 @@ run_list(
   "recipe[rubygems::rvm]",
   "recipe[rubygems::rails]",
   "recipe[rubygems::rails_nginx]",
-  "recipe[rubygems::rails_postgresql]",
-  "recipe[rubygems::app_config]"
+  "recipe[rubygems::rails_postgresql]"
 )
