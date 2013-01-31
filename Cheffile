@@ -30,6 +30,8 @@ cookbook "logrotate"
 
 cookbook "logwatch"
 
+cookbook "memcached"
+
 cookbook "monit",
   git: "https://github.com/phlipper/chef-monit"
 
