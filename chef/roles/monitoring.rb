@@ -4,7 +4,7 @@ run_list(
   "recipe[htop]",
   "recipe[iftop]",
   "recipe[monit]",
-  # "recipe[newrelic-sysmond]",
+  "recipe[newrelic-sysmond]",
   "recipe[munin]"
 )
 
