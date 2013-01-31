@@ -48,6 +48,7 @@ application "rubygems" do
   owner "deploy"
   group "deploy"
   packages %w{libpq-dev}
+  migrate true
 
   r = rails do
     gems %w{bundler}
