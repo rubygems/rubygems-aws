@@ -7,9 +7,7 @@ upstream rails_<%= @app_server["name"] %> {
 
   # for UNIX domain socket setups:
   # serverr unix:<%= @rails_root %>/shared/tmp/sockets/<%= @app_server["name"] %>.sock fail_timeout=0;
-  <% (0...node["application"]["app_server"]["concurrency"].to_i).each do |num| %>
-  server 127.0.0.1:<%= num + 3000 %> fail_timeout=0;
-  <% end %>
+  server 127.0.0.1:3000 fail_timeout=0;
 }
 
 # HTTP
