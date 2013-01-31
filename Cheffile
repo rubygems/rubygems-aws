@@ -33,6 +33,8 @@ cookbook "logwatch"
 cookbook "monit",
   git: "https://github.com/phlipper/chef-monit"
 
+cookbook "munin"
+
 cookbook "newrelic-sysmond"
 
 cookbook "nginx",
