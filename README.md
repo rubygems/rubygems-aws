@@ -1,8 +1,8 @@
 # Rubygems AWS Infrastructure Configuration
 
-Chef cookbook and bootstrap scripts to configure and manage Rubygems.org AWS infrastructure
+Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS infrastructure
 
-**Note: This cookbook requires Ruby 1.9.x.**
+**Note: This repository requires Ruby 1.9.x.**
 
 ## Hacking in Vagrant
 
@@ -26,14 +26,14 @@ Chef cookbook and bootstrap scripts to configure and manage Rubygems.org AWS inf
       You can generate an encrypted password using 'mkpasswd -m sha-512'
     * Add a newrelic license to ["new\_relic"]["license\_key"]
       Alternately remove "recipe[newrelic-sysmond]" from roles/monitoring.rb
-    
+
     $ bundle install
     $ librarian-chef install --path=chef/cookbooks
     $ ec2-run-instances ami-b89842d1
     # Get hostname from ec2-describe-instances
     $ knife solo prepare ubuntu@ec2-*.amazonaws.com
     $ knife solo cook ubuntu@ec2-*.amazonaws.com chef/nodes/app.rubygems.org.json
-      
+
 ## AMI's
 
 All AMI's use instance root storage and are 64 bit.
@@ -55,6 +55,22 @@ leverages bootstrap). It is WIP.
 
 Use it with `-d chef-full-solo` passed to `knife bootstrap` or
 `knife ec2 server create`.
+
+## Knife configuration
+
+If you wish to modify the knife configuration, e.g. AWS options for
+`knife ec2` or Chef Server URL/keys, put them in
+`.chef/knife.local.rb` and it will be loaded automatically.
+
+    # Chef Server example
+    node_name                "your-user-name"
+    client_key               "/Users/your-user-name/.chef/your-usern-name.pem"
+    validation_client_name   "your-organization-name-validator"
+    validation_key           "/Users/jtimberman/.chef/your-organization-name-validator.pem"
+    chef_server_url          "https://api.opscode.com/organizations/your-organization-name"
+    # EC2 example (add the env variables)
+    knife[:aws_access_key_id]      = ENV['AWS_ACCESS_KEY_ID']
+    knife[:aws_secret_access_key]  = ENV['AWS_SECRET_ACCESS_KEY']
 
 ## Private keys
 
