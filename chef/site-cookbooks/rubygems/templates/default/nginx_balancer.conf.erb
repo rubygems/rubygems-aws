@@ -25,6 +25,8 @@ server {
     rewrite ^(.*) https://$host$1 permanent;
   <% else %>
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+    proxy_redirect off;
     location / {
       proxy_pass http://rails_<%= @app_server["name"] %>;
     }
@@ -51,6 +53,8 @@ server {
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
   proxy_set_header X-Forwarded-Proto https;
   proxy_set_header Content-Length $content_length;
+  proxy_set_header Host $host;
+  proxy_redirect off;
 
   location / {
     proxy_pass http://rails_<%= @app_server["name"] %>;

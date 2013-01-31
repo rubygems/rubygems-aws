@@ -54,7 +54,7 @@ server {
   location @<%= @app_server["name"] %> {
     # pass the Host: header from the client right along so redirects
     # can be set properly within the Rack application
-    proxy_set_header Host $http_host;
+    proxy_set_header Host $host;
 
     # we don't want nginx trying to do something clever with
     # redirects, we set the Host: header above already.
