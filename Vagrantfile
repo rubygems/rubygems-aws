@@ -11,23 +11,10 @@ Vagrant::Config.run do |config|
     app.vm.host_name = "rubygems-org-app"
     app.vm.box = "opscode-ubuntu-12.04"
     app.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
-    app.vm.provision :chef_solo do |chef|
-      chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
-      chef.roles_path = "chef/roles"
-      chef.add_role("rubygems")
-      jsonfile = JSON.parse(IO.read('chef/nodes/app.rubygems.org.json'))
-      vagrant_sudo = {
-        "authorization" => {
-          "sudo" => {
-            "passwordless" => true,
-            "users" => ["vagrant"]
-          }
-        }
-      }
-      chef.json = jsonfile.merge!(vagrant_sudo)
-    end
 
     # Use more RAM to assist with setting up lots of infra
     app.vm.customize ["modifyvm", :id, "--memory", "768"]
+    
+    app.vm.network :hostonly, "33.33.33.10"
   end
 end

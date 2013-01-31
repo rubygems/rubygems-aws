@@ -2,3 +2,4 @@
 chef/cookbooks
 tmp
 .chef/knife.local.rb
+chef.tar.gz
