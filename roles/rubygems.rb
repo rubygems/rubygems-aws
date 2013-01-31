@@ -1,5 +1,5 @@
-name "clickserve"
-description "The role with rails application recipes for ClickServe"
+name "ubygems"
+description "The role with rails application recipes for rubygems"
 run_list(
   "recipe[git]",
   "recipe[nginx::server]",
