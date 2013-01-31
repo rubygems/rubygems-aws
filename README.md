@@ -22,3 +22,10 @@ All AMI's use instance root storage and are 64 bit.
     "us-west-1": "ami-a1c59de4"
     "us-west-2": "ami-f6ec60c6"
 
+## Knife bootstrap template
+
+There's a bootstrap template for knife bootstrap or knife ec2 (which
+leverages bootstrap). It is WIP.
+
+Use it with `-d chef-full-solo` passed to `knife bootstrap` or
+`knife ec2 server create`.
