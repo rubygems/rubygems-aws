@@ -1,0 +1,10 @@
+{
+  "run_list": ["role[rubygems_db_master]"],
+  // sudoers
+  "authorization": {
+    "sudo": {
+      "users": ["vagrant"],
+      "passwordless": true
+    }
+  }
+}
