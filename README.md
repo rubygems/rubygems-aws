@@ -35,6 +35,7 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
     # Get hostname from ec2-describe-instances
     $ export RUBYGEMS_EC2_APP=ec2-*.amazonaws.com
     $ export RUBYGEMS_EC2_LB1=ec2-*.amazonaws.com
+    $ export RUBYGEMS_EC2_DB1=ec2-*.amazonaws.com
     $ cap ec2 bootstrap
     $ cap ec2 chef
 

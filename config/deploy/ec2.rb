@@ -1,4 +1,6 @@
-server ENV["RUBYGEMS_EC2_APP"], :app, :web, :db
+server ENV["RUBYGEMS_EC2_APP"], :app, :web
+server ENV["RUBYGEMS_EC2_DB1"], :db
+# server ENV["RUBYGEMS_EC2_DB2"], :db
 server ENV["RUBYGEMS_EC2_LB1"], :lb
 # server ENV["RUBYGEMS_EC2_LB2"], :lb
 set :user, 'ubuntu'
