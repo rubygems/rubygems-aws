@@ -14,13 +14,15 @@ Chef cookbook and bootstrap scripts to configure and manage Rubygems.org AWS inf
 
 All AMI's use instance root storage and are 64 bit.
 
-    "ap-northeast-1": "ami-be3283bf"
-    "ap-southeast-1": "ami-6a6f2838"
-    "eu-west-1": "ami-fbc6fe8f"
-    "sa-east-1": "ami-50b56b4d"
-    "us-east-1": "ami-8fac75e6"
-    "us-west-1": "ami-a1c59de4"
-    "us-west-2": "ami-f6ec60c6"
+* "ap-northeast-1": "ami-70a91271"
+* "ap-southeast-1": "ami-15226047"
+* "eu-west-1": "ami-3a0f034e"
+* "sa-east-1": "ami-6beb3376"
+* "us-east-1": "ami-d726abbe"
+* "us-west-1": "ami-827252c7"
+* "ap-southeast-2": "ami-7f7ee945"
+* "us-west-2": "ami-ca2ca4fa"
+
 
 ## Knife bootstrap template
 
