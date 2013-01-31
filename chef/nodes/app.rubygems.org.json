@@ -18,9 +18,7 @@
       "concurrency": 4
     }
   },
-  "sudo": {
-    "add_vagrant" : true
-   },
+
   "environment_variables": {
     // Rails application settings
     "RAILS_ENV":  "production",
