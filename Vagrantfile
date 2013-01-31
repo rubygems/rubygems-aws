@@ -10,6 +10,7 @@ Vagrant::Config.run do |config|
       chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
       chef.roles_path = "roles"
       chef.add_role("rubygems")
+      chef.json = JSON.parse(IO.read('nodes/app.rubygems.org.json'))
     end
 
     # Use more RAM to assist with setting up lots of infra
