@@ -30,8 +30,8 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 
     $ bundle install
     $ librarian-chef install
-    $ ec2-run-instances ami-b89842d1
-    # Get hostname from ec2-describe-instances
+    $ cap aws:boot
+    # Get hostname(s) from instances.list
     $ export RUBYGEMS_EC2_APP=ec2-*.amazonaws.com
     $ export RUBYGEMS_EC2_LB1=ec2-*.amazonaws.com
     $ export RUBYGEMS_EC2_DB1=ec2-*.amazonaws.com
