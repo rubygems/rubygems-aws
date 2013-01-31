@@ -1,6 +1,6 @@
 {
   // run list
-  "run_list": ["role[almost_fullstack]"],
+  "run_list": ["role[almost_fullstack]", "role[vagrant]"],
 
   // rubygems Rails application attributes
   "application": {
@@ -48,12 +48,6 @@
     "listen": "127.0.0.1"
   },
 
-
-  // new relic rpm
-  "new_relic": {
-    "license_key": "" // your key for server monitoring here
-  },
-
   // postgresql
   "postgresql": {
     "version": "9.2",
@@ -61,8 +55,5 @@
     "pg_hba": [
       "host rubygems_staging rubygems 127.0.0.1/32 password"
     ]
-  },
-  "sudo": {
-    "add_vagrant" : true
-   }
+  }
 }
