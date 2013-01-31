@@ -3,6 +3,12 @@ GEM
   specs:
     archive-tar-minitar (0.5.2)
     bunny (0.7.9)
+    capistrano (2.14.1)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     chef (10.18.2)
       bunny (>= 0.6.0, < 0.8.0)
       erubis
@@ -42,6 +48,10 @@ GEM
     mixlib-log (1.4.1)
     mixlib-shellout (1.1.0)
     moneta (0.6.0)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
     net-ssh (2.2.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
@@ -71,4 +81,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano (~> 2.14.1)
   knife-solo (~> 0.0.14)
