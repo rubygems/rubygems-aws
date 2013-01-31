@@ -11,5 +11,8 @@ Vagrant::Config.run do |config|
       chef.roles_path = "roles"
       chef.add_role("rubygems")
     end
+
+    # Use more RAM, 1 GB by default
+    app.vm.customize ["modifyvm", :id, "--memory", "768"]
   end
 end
