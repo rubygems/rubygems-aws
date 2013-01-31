@@ -18,13 +18,6 @@
     }
   },
 
-  // sudo users and groups
-  "authorization": {
-    "sudo": {
-      "users": ["phlipper", "samkottler", "dwradcliffe"]
-    }
-  },
-
   "environment_variables": {
     // Rails application settings
     "RAILS_ENV":  "staging",
@@ -43,26 +36,8 @@
     // "RUBY_FREE_MIN": 500000
   },
 
-  // denyhosts security
-  "denyhosts": {
-    "admin_email": "github@phlippers.net",
-    "allowed_hosts": [
-      // your IP here :)
-    ]
-  },
-
   // Hostname
   "set_fqdn": "rubygems.phlippers.net",
-
-  // firewall rules
-  "iptables": {
-    "install_rules": false
-  },
-
-  // logwatch notifications
-  "logwatch": {
-    "mailto": "github@phlippers.net"
-  },
 
   // memcached
   "memcached": {
@@ -72,46 +47,10 @@
     "listen": "127.0.0.1"
   },
 
-  // monit monitors
-  "monit": {
-    "monitors": [
-      "cron", "filesystem", "ntp", "postfix", "postgresql", "redis", "nginx", "memcached"
-    ]
-  },
 
   // new relic rpm
   "new_relic": {
     "license_key": "" // your key for server monitoring here
-  },
-
-  // ntp timekeeping
-  "ntp": {
-    "is_server": false,
-    "servers": [
-      "0.pool.ntp.org",
-      "1.pool.ntp.org",
-      "2.pool.ntp.org",
-      "3.pool.ntp.org"
-    ]
-  },
-
-  // openssh server
-  "openssh": {
-    "server": {
-      "password_authentication": "no",
-      "permit_root_login": "no",
-      "subsystem": "sftp internal-sftp"
-    }
-  },
-
-  // system mailer
-  "postfix": {
-    "aliases": {
-      "root": "github@phlippers.net"
-    }
-    // "virtual_domains": {
-    //   "@rubygems.org": "root"
-    // }
   },
 
   // postgresql
@@ -121,12 +60,6 @@
     "pg_hba": [
       "host rubygems_staging rubygems 127.0.0.1/32 password"
     ]
-  },
-
-  // dns resolver
-  "resolver": {
-    "search": "rubygem.org",
-    "nameservers": ["8.8.8.8", "8.8.4.4"]
   },
 
   // system users
