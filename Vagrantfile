@@ -2,6 +2,11 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
+  if !File.directory?(File.expand_path("../cookbooks", __FILE__))
+    puts "Run `librarian-chef install` first to bring down the cookbooks."
+    exit 1
+  end
+
   config.vm.define :app do |app|
     app.vm.host_name = "rubygems-org-app"
     app.vm.box = "opscode-ubuntu-12.04"
