@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
   config.vm.define :app do |app|
-    app.vm.host_name = "rubygems_org-app"
+    app.vm.host_name = "rubygems-org-app"
     app.vm.box = "precise64"
     app.vm.box_url = "http://files.vagrantup.com/precise64.box"
     app.vm.provision :chef_solo do |chef|
