@@ -11,3 +11,51 @@ run_list(
   "role[monitoring]",
   "role[mailer]"
 )
+
+default_attributes(
+  "authorization" => {
+    "sudo" => {
+      "users" => ["phlipper", "samkottler", "dwradcliffe"]
+    }
+  },
+  "denyhosts" => {
+    "admin_email" => "github@phlippers.net",
+    "allowed_hosts" => []
+  },
+  "iptables" => {
+    "install_rules" => false
+  },
+  "logwatch" => {
+    "mailto" => "github@phlippers.net"
+  },
+  "monit" => {
+    "monitors" => [
+      "cron", "filesystem", "ntp", "postfix", "postgresql", "redis", "nginx", "memcached"
+    ]
+  },
+  "ntp" => {
+    "is_server" => false,
+    "servers" => [
+      "0.pool.ntp.org",
+      "1.pool.ntp.org",
+      "2.pool.ntp.org",
+      "3.pool.ntp.org"
+    ]
+  },
+  "openssh" => {
+    "server" => {
+      "password_authentication" => "no",
+      "permit_root_login" => "no",
+      "subsystem" => "sftp internal-sftp"
+    }
+  },
+  "postfix" => {
+    "aliases" => {
+      "root" => "github@phlippers.net"
+    }
+  },
+  "resolver" => {
+    "search" => "rubygem.org",
+    "nameservers" => ["8.8.8.8", "8.8.4.4"]
+  }
+)
