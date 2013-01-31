@@ -7,8 +7,10 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 ## Hacking in Vagrant
 
     $ bundle install
-    $ librarian-chef install --path=chef/cookbooks
+    $ librarian-chef install
     $ vagrant up
+    $ cap bootstrap
+    $ cap chef
 
 ## Hacking on EC2
 
@@ -28,11 +30,12 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
       Alternately remove "recipe[newrelic-sysmond]" from roles/monitoring.rb
 
     $ bundle install
-    $ librarian-chef install --path=chef/cookbooks
+    $ librarian-chef install
     $ ec2-run-instances ami-b89842d1
     # Get hostname from ec2-describe-instances
-    $ knife solo prepare ubuntu@ec2-*.amazonaws.com
-    $ knife solo cook ubuntu@ec2-*.amazonaws.com chef/nodes/app.rubygems.org.json
+    $ export RUBYGEMS_EC2=ec2-*.amazonaws.com
+    $ cap ec2 bootstrap
+    $ cap ec2 chef
 
 ## AMI's
 
