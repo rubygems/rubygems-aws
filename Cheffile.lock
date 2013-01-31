@@ -2,7 +2,7 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apache2 (1.4.2)
-    apt (1.8.4)
+    apt (1.7.0)
     bash-completion (0.1.0)
     build-essential (1.3.2)
     chef_handler (1.1.4)
@@ -109,7 +109,7 @@ GIT
     iptables (0.11.0)
 
 DEPENDENCIES
-  apt (>= 0)
+  apt (= 1.7.0)
   bash-completion (>= 0)
   build-essential (>= 0)
   curl (>= 0)
