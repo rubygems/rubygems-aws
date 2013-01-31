@@ -5,6 +5,7 @@
   // rubygems Rails application attributes
   "application": {
     "name": "rubygems",
+    "repository": "https://github.com/rubygems/rubygems.org.git",
     "rails_env": "staging",
     "rails_root": "/applications/rubygems/staging",
     "server_names": ["rubygems.phlippers.net"],

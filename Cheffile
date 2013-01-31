@@ -1,5 +1,9 @@
 site "http://community.opscode.com/api/v1"
 
+cookbook "application"
+
+cookbook "application_ruby"
+
 cookbook "apt", "1.7.0"
 
 cookbook "bash-completion"
