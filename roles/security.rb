@@ -6,5 +6,5 @@ run_list(
   "recipe[denyhosts]",
   "recipe[iptables]",
   "recipe[rubygems::ip_security]",
-  "recipe[rubygems::iptables]",
+  "recipe[rubygems::iptables]"
 )
