@@ -7,9 +7,7 @@ upstream rails_<%= @app_server["name"] %> {
 
   # for UNIX domain socket setups:
   # serverr unix:<%= @rails_root %>/shared/tmp/sockets/<%= @app_server["name"] %>.sock fail_timeout=0;
-  <% (0...node["application"]["app_server"]["concurrency"].to_i).each do |num| %>
-  server 127.0.0.1:<%= num + 3000 %> fail_timeout=0;
-  <% end %>
+  server 127.0.0.1:3000 fail_timeout=0;
 }
 
 # HTTP
@@ -22,7 +20,7 @@ server {
 
   <% if @use_ssl && @force_ssl %>
     # redirect all requests to SSL
-    rewrite ^(.*) https://$server_name$1 permanent;
+    rewrite ^(.*) https://$host$1 permanent;
   <% else %>
     # include application specific configuration
     include <%= @nginx_dir %>/applications/<%= "#{@name}-#{@rails_env}" %>.conf;
