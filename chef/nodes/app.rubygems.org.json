@@ -6,9 +6,9 @@
   "application": {
     "name": "rubygems",
     "repository": "https://github.com/rubygems/rubygems.org.git",
-    "rails_env": "staging",
-    "rails_root": "/applications/rubygems/staging",
-    "server_names": ["rubygems.phlippers.net"],
+    "rails_env": "production",
+    "rails_root": "/applications/rubygems/production",
+    "server_names": ["app01.rubygems.org"],
     "use_ssl": true,
     "force_ssl": true,
     "ssl_key": "dev.rubygems.org.key",
@@ -21,8 +21,8 @@
 
   "environment_variables": {
     // Rails application settings
-    "RAILS_ENV":  "staging",
-    "RACK_ENV":   "staging",
+    "RAILS_ENV":  "production",
+    "RACK_ENV":   "production",
     "REDIS_URL":  "redis://localhost:6379/0",
 
     // OpenSSH server timeout
@@ -38,7 +38,7 @@
   },
 
   // Hostname
-  "set_fqdn": "rubygems.phlippers.net",
+  "set_fqdn": "app01.rubygems.org",
 
   // memcached
   "memcached": {
@@ -59,7 +59,7 @@
     "version": "9.2",
     "ssl": false,
     "pg_hba": [
-      "host rubygems_staging rubygems 127.0.0.1/32 password"
+      "host rubygems_production rubygems 127.0.0.1/32 password"
     ]
   },
 
