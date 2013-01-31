@@ -2,7 +2,15 @@
 
 Chef cookbook and bootstrap scripts to configure and manage Rubygems.org AWS infrastructure
 
-# AMI's
+**Note: This cookbook requires Ruby 1.9.x.**
+
+## Hacking
+
+    $ bundle install
+    $ librarian-chef install
+    $ vagrant up
+
+## AMI's
 
 All AMI's use instance root storage and are 64 bit.
 
@@ -13,3 +21,4 @@ All AMI's use instance root storage and are 64 bit.
 "us-east-1": "ami-8fac75e6"
 "us-west-1": "ami-a1c59de4"
 "us-west-2": "ami-f6ec60c6"
+
