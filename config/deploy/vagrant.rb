@@ -1,5 +1,5 @@
-server "33.0.3.3", :app, :web, :db
-set :server_ip, "33.0.3.3"
+server "33.33.33.10", :app, :web, :db
+set :server_ip, "33.33.33.10"
 set :user, 'vagrant'
 set :id_file, "#{ENV['HOME']}/.vagrant.d/insecure_private_key"
 ssh_options[:keys] = [id_file]

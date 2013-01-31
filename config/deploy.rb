@@ -31,7 +31,7 @@ namespace :chef do
     run("tar xzf 'chef.tar.gz' -C /home/#{user}/chef")
     sudo("/bin/bash -c 'cd /home/#{user}/chef && #{chef_binary} -c solo.rb -j nodes/#{node_name}.json'")
     run("rm -rf /home/#{user}/chef.tar.gz")
-    run("rm -rf /home/#{user}/chef")
+    sudo("rm -rf /home/#{user}/chef")
   end
 end
 

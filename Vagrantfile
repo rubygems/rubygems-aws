@@ -7,8 +7,6 @@ Vagrant::Config.run do |config|
     exit 1
   end
 
-  config.vm.network :hostonly, "33.0.3.3"
-
   config.vm.define :app do |app|
     app.vm.host_name = "rubygems-org-app"
     app.vm.box = "opscode-ubuntu-12.04"
@@ -16,5 +14,7 @@ Vagrant::Config.run do |config|
 
     # Use more RAM to assist with setting up lots of infra
     app.vm.customize ["modifyvm", :id, "--memory", "768"]
+    
+    app.vm.network :hostonly, "33.33.33.10"
   end
 end
