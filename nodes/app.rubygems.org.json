@@ -21,7 +21,7 @@
   // sudo users and groups
   "authorization": {
     "sudo": {
-      "users": ["phlipper", "samkottler"]
+      "users": ["phlipper", "samkottler", "dwradcliffe"]
     }
   },
 
