@@ -4,12 +4,36 @@ Chef cookbook and bootstrap scripts to configure and manage Rubygems.org AWS inf
 
 **Note: This cookbook requires Ruby 1.9.x.**
 
-## Hacking
+## Hacking in Vagrant
 
     $ bundle install
     $ librarian-chef install
     $ vagrant up
 
+## Hacking on EC2
+
+    Edit nodes/app.rubygems.org.json
+    * Add your username to ["authorization"]["sudo"]["users"]
+    * Add your user to the "users" hash
+      {
+        "username": "ruby",
+        "comment":  "Rubygems AWS",
+        "password": "generated_password",
+        "ssh_keys": [
+          "your ssh key"
+        ]
+      }
+      You can generate an encrypted password using 'mkpasswd -m sha-512'
+    * Add a newrelic license to ["new\_relic"]["license\_key"]
+      Alternately remove "recipe[newrelic-sysmond]" from roles/monitoring.rb
+    
+    $ bundle install
+    $ librarian-chef install
+    $ ec2-run-instance ami-b89842d1
+    # Get hostname from ec2-describe-instances
+    $ knife solo prepare ubuntu@ec2-*.amazonaws.com
+    $ knife solo cook ubuntu@ec2-*.amazonaws.com nodes/app.rubygems.org.json
+      
 ## AMI's
 
 All AMI's use instance root storage and are 64 bit.
