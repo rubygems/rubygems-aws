@@ -55,3 +55,7 @@ leverages bootstrap). It is WIP.
 
 Use it with `-d chef-full-solo` passed to `knife bootstrap` or
 `knife ec2 server create`.
+
+## Private keys
+
+Any private keys you see in this repo are "trash keys" that are not used in production, they are for *testing only*.
