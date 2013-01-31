@@ -24,6 +24,7 @@ Vagrant::Config.run do |config|
           }
         }
       }
+      app.vm.forward_port 80, 8888
       chef.json = jsonfile.merge!(vagrant_sudo)
     end
 

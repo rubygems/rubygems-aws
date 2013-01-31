@@ -81,5 +81,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano (~> 2.14.1)
+  capistrano
   knife-solo (~> 0.0.14)
