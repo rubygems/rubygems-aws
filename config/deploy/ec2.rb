@@ -1,5 +1,6 @@
-server ENV["RUBYGEMS_EC2"], :app, :web, :db
-set :server_ip, ENV["RUBYGEMS_EC2"]
+server ENV["RUBYGEMS_EC2_APP"], :app, :web, :db
+server ENV["RUBYGEMS_EC2_LB1"], :lb
+# server ENV["RUBYGEMS_EC2_LB2"], :lb
 set :user, 'ubuntu'
 set :id_file, "#{ENV['HOME']}/.ssh/aws/rubygems.pem"
 ssh_options[:keys] = [id_file]
