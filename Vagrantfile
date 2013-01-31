@@ -4,8 +4,8 @@
 Vagrant::Config.run do |config|
   config.vm.define :app do |app|
     app.vm.host_name = "rubygems-org-app"
-    app.vm.box = "precise64"
-    app.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    app.vm.box = "opscode-ubuntu-12.04"
+    app.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
     app.vm.provision :chef_solo do |chef|
       chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
       chef.roles_path = "roles"
