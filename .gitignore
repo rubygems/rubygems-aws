@@ -1,3 +1,4 @@
 .vagrant
 chef/cookbooks
 tmp
+.chef/knife.local.rb
