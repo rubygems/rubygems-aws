@@ -1,0 +1,9 @@
+check process memcached with pidfile /var/run/memcached.pid
+  start program = "/usr/sbin/service memcached start"
+  stop program  = "/usr/sbin/service memcached stop"
+  group memcache
+  if failed port <%= node["memcached"]["port"] %> protocol memcache then restart
+  if 3 restarts within 5 cycles then timeout
+  if cpu is greater than 40% for 2 cycles then alert
+  if cpu > 60% for 5 cycles then restart
+  if 10 restarts within 10 cycles then timeout

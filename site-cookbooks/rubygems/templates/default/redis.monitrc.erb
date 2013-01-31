@@ -1,0 +1,5 @@
+check process redis with pidfile <%= node["redis"]["pidfile"] %>
+  start program = "/usr/sbin/service redis start"
+  stop program = "/usr/sbin/service redis stop"
+  if failed host 127.0.0.1 port <%= node["redis"]["port"] %> then restart
+  if 5 restarts within 5 cycles then timeout

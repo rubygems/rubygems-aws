@@ -1,0 +1,19 @@
+# drop broadcast (do not log)
+-A INPUT  -i eth0 -d 255.255.255.255 -j DROP
+-A INPUT  -i eth0 -d 192.168.255.255 -j DROP
+-A INPUT  -i eth0 -d 192.168.1.255   -j DROP
+# -A INPUT             -d 10.0.0.0/8      -j DROP
+-A INPUT             -d 169.254.0.0/16  -j DROP
+
+# drop Bad Guys
+-A INPUT -m recent --rcheck --seconds 60 -m limit --limit 10/second -j LOG --log-prefix "BG "
+-A INPUT -m recent --update --seconds 60 -j DROP
+
+# drop spoofed packets (i.e. packets with local source addresses coming from outside etc.), mark as Bad Guy
+# -A INPUT  -i $int_if -s $int_ip -m recent --set -j DROP
+
+# drop silently well-known virus/port scanning attempts
+-A INPUT -i eth0 -m multiport -p tcp --dports 53,113,135,137,139,445 -j DROP
+-A INPUT -i eth0 -m multiport -p udp --dports 53,113,135,137,139,445 -j DROP
+-A INPUT -i eth0 -p udp --dport 1026 -j DROP
+-A INPUT -i eth0 -m multiport -p tcp --dports 1433,4899 -j DROP

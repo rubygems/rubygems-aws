@@ -1,0 +1,8 @@
+check filesystem rootfs path /dev/sda1
+  group server
+  if failed uid root then unmonitor
+  if failed gid disk then unmonitor
+  if space usage > 80% for 5 times within 15 cycles then alert
+  if space usage > 99% then stop
+  if inode usage > 80% then alert
+  if inode usage > 99% then stop

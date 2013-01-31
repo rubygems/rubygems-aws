@@ -1,0 +1,10 @@
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/usr/sbin/service nginx start"
+  stop program  = "/usr/sbin/service nginx stop"
+  group www-data
+  if failed url http://localhost/nginx_status
+    with timeout 10 seconds
+    then restart
+  if cpu is greater than 40% for 2 cycles then alert
+  if cpu > 60% for 5 cycles then restart
+  if 10 restarts within 10 cycles then timeout

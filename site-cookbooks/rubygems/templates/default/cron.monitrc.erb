@@ -1,0 +1,13 @@
+check process cron with pidfile /var/run/crond.pid
+  group system
+  start program = "/usr/sbin/service cron start"
+  stop  program = "/usr/sbin/service cron stop"
+  if 5 restarts within 5 cycles then timeout
+  depends on cron_rc
+
+check file cron_rc with path /etc/init.d/cron
+  group system
+  if failed checksum then unmonitor
+  if failed permission 755 then unmonitor
+  if failed uid root then unmonitor
+  if failed gid root then unmonitor

@@ -1,0 +1,12 @@
+<%= @rails_root %>/shared/log/*.log {
+  daily
+  missingok
+  rotate 30
+  compress
+  delaycompress
+  sharedscripts
+  dateext
+  postrotate
+    /sbin/restart <%= @service_name %>
+  endscript
+}

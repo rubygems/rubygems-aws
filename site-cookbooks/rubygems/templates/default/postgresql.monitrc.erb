@@ -1,0 +1,22 @@
+check process postgresql with pidfile /var/run/postgresql/<%= node["postgresql"]["version"] %>-main.pid
+  group postgresql
+  start program = "/usr/sbin/service postgresql start"
+  stop program = "/usr/sbin/service postgresql stop"
+  if failed host 127.0.0.1 port 5432 then restart
+  if 5 restarts within 5 cycles then timeout
+  depends on postgresql_bin
+  depends on postgresql_rc
+
+check file postgresql_bin with path /usr/lib/postgresql/<%= node["postgresql"]["version"] %>/bin/postgres
+  group postgresql
+  if failed checksum then unmonitor
+  if failed permission 755 then unmonitor
+  if failed uid root then unmonitor
+  if failed gid root then unmonitor
+
+check file postgresql_rc with path /etc/init.d/postgresql
+  group postgresql
+  if failed checksum then unmonitor
+  if failed permission 755 then unmonitor
+  if failed uid root then unmonitor
+  if failed gid root then unmonitor

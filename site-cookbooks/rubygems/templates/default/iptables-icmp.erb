@@ -1,0 +1,12 @@
+# Allow ping
+# -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+
+# Don't Allow ping
+-A INPUT -p icmp -m icmp --icmp-type 8 -j REJECT
+
+# filter ICMP netmask requests
+-A INPUT -p icmp --icmp-type address-mask-request -j DROP
+
+# filter ICMP timestamp requests using the commands
+-A INPUT -p icmp --icmp-type timestamp-request -j DROP
+-A OUTPUT -p icmp --icmp-type timestamp-reply -j DROP

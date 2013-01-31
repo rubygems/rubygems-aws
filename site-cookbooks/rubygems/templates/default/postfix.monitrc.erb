@@ -1,0 +1,18 @@
+check process postfix with pidfile /var/spool/postfix/pid/master.pid
+  group mail
+  start program = "/usr/sbin/service postfix start"
+  stop  program = "/usr/sbin/service postfix stop"
+  if failed port 25 protocol smtp then restart
+  if cpu is greater than 30% for 2 cycles then alert
+  if cpu > 80% for 5 cycles then restart
+  if children > 25 then restart
+  if loadavg(5min) greater than 3 for 3 cycles then alert
+  if 5 restarts within 5 cycles then timeout
+  depends on postfix_rc
+
+check file postfix_rc with path /etc/init.d/postfix
+  group mail
+  if failed checksum then unmonitor
+  if failed permission 755 then unmonitor
+  if failed uid root then unmonitor
+  if failed gid root then unmonitor

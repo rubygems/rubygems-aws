@@ -1,0 +1,5 @@
+check process ntpd with pidfile /var/run/ntpd.pid
+  start program = "/usr/sbin/service ntp start"
+  stop  program = "/usr/sbin/service ntp stop"
+  if failed host 127.0.0.1 port 123 type udp then alert
+  if 5 restarts within 5 cycles then timeout

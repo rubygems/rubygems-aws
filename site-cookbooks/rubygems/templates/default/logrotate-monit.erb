@@ -1,0 +1,9 @@
+/var/log/monit.log {
+  missingok
+  notifempty
+  size 100k
+  create 0644 root root
+  postrotate
+    /usr/sbin/service monit force-reload
+  endscript
+}

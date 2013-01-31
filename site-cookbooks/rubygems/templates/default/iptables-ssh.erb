@@ -1,0 +1,7 @@
+# Allows SSH connections for script kiddies, prevent brute force
+# -A INPUT -p tcp --dport 22 -m recent --rcheck --seconds 60 --hitcount 10 --name SSH -j LOG --log-prefix "SH "
+# -A INPUT -p tcp --dport 22 -m recent --update --seconds 60 --hitcount 10 --name SSH -j DROP
+# -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH -j ACCEPT
+
+# Allows SSH for anyone
+-A INPUT -p tcp --dport 22 -j ACCEPT
