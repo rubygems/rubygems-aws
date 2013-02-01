@@ -1,0 +1,10 @@
+{
+    "id": "evan",
+    "username": "evan",
+    "comment": "Evan Phoenix",
+    "password": "$1$YYUsczCe$C7xVBPGIvOLHQGKoXUPsN/",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-dss AAAAB3NzaC1kc3MAAACBAPJlTXu+HVIc2SZmloYh+jA6iCpPYKzNKouI2sZ8MgkRAbYny1/UbIfdqRv4EIrvetRG/RKHGUqdKyaGrudsxAGktiDJ4CtM7bMACoZGop5ioqcGoFtTWD2FY+iuTgGaPkPpEJCD/qaDp7Q7m6IrFjAiScxovRko/Vz/C0xLNVFZAAAAFQCki1ShU95cKPutuSlorXRqSSbf8wAAAIArSThO9A4MSVPgHC/AtbPis56ZflVGe245nOmKtX4AoJZps28POKsJor6MN1aFoXKonr8pTFOhLMENGHoBdQiiJFpHSRKD3toLmYUNIJ5eleaKPGYLGBH8OvpFiH4dMJcHXiLIEruzAyBGxlOynnlfOLbBPj07Szwewrn6lphmtAAAAIEAkD10R8sNy6l0vr+7qHd+QcK3rQkZ5qsP3eLfqXLdr88vGkkNx+KVIRPIJoqYsuCa0GC0EW7VQBvephS2PnWjEOsJML+LER6NfQwNztIeQVaV9Tpkypu6DbGhRLV+uA9N7UA2qtf0p817oBBX1FLw0LceFHQMrwk3VBvOigR2ArE="
+    ]
+}
