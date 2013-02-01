@@ -100,7 +100,6 @@ GIT
 GIT
   remote: https://github.com/phlipper/chef-postgresql
   ref: master
-  sha: 0794e0ce26ef449a160a0d58f2a2f72be56edc95
   specs:
     postgresql (0.7.0)
       apt (>= 0.0.0)
