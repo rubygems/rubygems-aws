@@ -19,6 +19,17 @@
     ]
   },
 
+  // postgresql
+  "postgresql": {
+    "version": "9.2",
+    "ssl": false,
+    "data_directory": "/var/lib/pg_data",
+    "listen_address": "10.249.66.172",
+    "pg_hba": [
+      "host all postgres 10.249.31.114/0 md5"
+    ]
+  },
+
   // openssh server
   "openssh": {
     "server": {
