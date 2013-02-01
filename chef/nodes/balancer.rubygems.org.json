@@ -9,8 +9,8 @@
     "server_names": ["balancer01.rubygems.org"],
     "use_ssl": true,
     "force_ssl": true,
-    "ssl_key": "dev.rubygems.org.key",
-    "ssl_cert": "dev.rubygems.org.crt",
+    "ssl_key": "rubygems.org.key",
+    "ssl_cert": "rubygems.org.crt",
     "app_server": {
       "name": "thin",
       "concurrency": 4
