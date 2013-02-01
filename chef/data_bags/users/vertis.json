@@ -1,0 +1,10 @@
+{
+    "id": "vertis",
+    "username": "vertis",
+    "comment": "Luke Chadwick",
+    "password": "$1$gMBwL097$5sWSLZcPQSVRWwTW0hkeM1",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAngMjxyGbVnOxL0pZDPPrqpAS0SZYEgn4KHtNs1ZC4jf52TMrvrZmDAHmLJ67sk698Bpsg5jXNQuuMtBJeOeEbZIEKOjVVDb3OtD9ipoSWFFOM7ZvsSVIYdlCVaDuZwvdy4CzLR/i0qt5ilVoFp0llIxtNr19AbKDVm+Njr7UYsga7PXWp9HDauVfZU9RHIyypYOFGSYcO4WY8ZnsX5iTqAMBXjcBsog0Rkg9ngRnqR/+tH/CzOgUjwCA59SeYIpkt43hFjL1n+/ZRRpQJLnmtUTcJbcVhoUwhxibGGlw9mxG5iafQ9Knf1428Q4Et6gKYvO0FgzWnp5WybHogVLIaw== vertis@atlantis.local"
+    ]
+}
