@@ -79,3 +79,8 @@ If you wish to modify the knife configuration, e.g. AWS options for
 ## Private keys
 
 Any private keys you see in this repo are "trash keys" that are not used in production, they are for *testing only*.
+
+
+## License
+
+`rubygems-aws` uses the MIT license. Please check the [LICENSE.md](LICENSE.md) file for more details.
