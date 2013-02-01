@@ -6,4 +6,4 @@ run_list(
   "recipe[rubygems::balancer]"
 )
 
-override_attributes({"application" => { "application_servers" => [ "33.33.33.10" ]}})
+override_attributes({"application" => { "application_servers" => [ "10.249.31.114" ]}})
