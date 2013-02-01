@@ -41,6 +41,16 @@ server {
 
   server_name <%= @server_names.join(" ") %>;
 
+  <% if node["nginx"]["geoip"] %>
+  if ($geoip_country_code = "CN") {
+    set $gem_mirror http://tokyo-m.rubygems.org;
+  }
+
+  if ($geoip_country_code = "JP") {
+    set $gem_mirror http://tokyo-m.rubygems.org;
+  }
+  <% end %>
+
   # SSL settings
   ssl                         on;
   ssl_certificate             <%= @ssl_cert %>;
@@ -55,6 +65,96 @@ server {
   proxy_set_header Content-Length $content_length;
   proxy_set_header Host $host;
   proxy_redirect off;
+
+  ##### BEGIN legacy rules
+
+  location = /__log {
+    internal;
+    proxy_pass http://72.4.120.124:5000/gems/$gem.gem;
+  }
+
+  location ~ /gems/(.*)\.gem$ {
+    set $gem $1;
+    post_action /__log;
+    rewrite ^ $gem_mirror_ssl$request_uri redirect;
+  }
+
+  location ~ /downloads/(.*)\.gem {
+    set $gem $1;
+    rewrite ^ /gems/$gem.gem redirect;
+  }
+
+  location /quick/Marshal.4.8/ {
+    rewrite ^ $gem_mirror_ssl$request_uri redirect;
+  }
+
+  location = /specs.4.8.gz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /latest_specs.4.8.gz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /prerelease_specs.4.8.gz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  # Crufty old redirects
+
+  location = /specs.4.8 {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /latest_specs.4.8 {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /prerelease_specs.4.8 {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /quick/rubygems-update-1.3.6.gemspec.rz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /yaml.Z {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /yaml.z {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /yaml {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /Marshal.4.8.Z {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /Marshal.4.8 {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /quick/index.rz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /quick/index {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /quick/latest_index.rz {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  location = /quick/latest_index {
+    rewrite ^ https://s3.amazonaws.com/production.s3.rubygems.org$request_uri redirect;
+  }
+
+  ##### END legacy rules
 
   location / {
     proxy_pass http://rails_<%= @app_server["name"] %>;
