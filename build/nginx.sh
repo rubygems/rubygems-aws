@@ -37,11 +37,12 @@ else
 fi
 
 echo "Installing pre-requisites"
-sudo apt-get install libpcre3-dev geoip-database libgeoip-dev ruby1.9.1 ruby1.9.1-dev libxml2-dev libxslt1-dev
+sudo apt-get install -y libpcre3-dev geoip-database libgeoip-dev ruby1.9.1 ruby1.9.1-dev libxml2-dev libxslt1-dev libssl-dev libxslt-dev libxml2-dev
 sudo /usr/bin/gem1.9.1 install bundler --no-rdoc --no-ri
 
 echo "Downloading $NGINX_URL"
 
+mkdir -p $TMP_DIR
 if exists "wget"; then
   wget $NGINX_URL -O $NGINX_TMPFILE
 elif exists "curl"; then
@@ -67,6 +68,7 @@ make
 mkdir -p $TMP_DIR/$NGINX_PREFIX
 env DESTDIR=$TMP_DIR make install
 cd $TMP_DIR
+bundle install
 bundle exec fpm -s dir -t deb \
   -n nginx -v $NGINX_VERSION --iteration 1 \
   -C $TMP_DIR \
