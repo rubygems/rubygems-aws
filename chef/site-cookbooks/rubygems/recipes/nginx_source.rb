@@ -18,7 +18,7 @@ template "/etc/init.d/nginx" do
   group "root"
   mode 00755
   variables({:src_binary => "/opt/nginx/sbin/nginx",
-             :pid => node['nginx']['pid']
+             :pid => node['nginx']['pid_file']
             })
 end
 
