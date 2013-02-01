@@ -8,7 +8,7 @@
 
 # Tweak the version and the md5sum for new releases of nginx
 NGINX_VERSION="1.2.6"
-NGINX_MD5SUM="1350d26eb9b66364d9143fb3c4366ab6"
+NGINX_SHA512SUM="659f01b0349292f7176f9bf6981bb0b270d724c5bd621556a0f1521d220995393789f6aea42ad3d1044207b9b2fb0aa40f81a069dbcb8eec4b3503b1e0826d64"
 
 ##
 # This stuff should all be automatic...
@@ -29,10 +29,10 @@ exists() {
   fi
 }
 
-if exists "md5sum"; then
+if exists "sha512sum"; then
   true
 else
-  echo "Cannot verify integrity with md5sum - exiting!"
+  echo "Cannot verify integrity with sha512sum - exiting!"
   exit 5
 fi
 
@@ -48,12 +48,12 @@ elif exists "curl"; then
   curl $NGINX_URL -O $NGINX_TMPFILE
 fi
 
-nginx_md5=`md5sum $NGINX_TMPFILE | awk '{print $1}'`
+nginx_sha512sum=`sha512sum $NGINX_TMPFILE | awk '{print $1}'`
 
-if [ $NGINX_MD5SUM = $nginx_md5 ]; then
+if [ $NGINX_SHA512SUM = $nginx_sha512sum ]; then
   echo "nginx checksum verified"
 else
-  echo "nginx checksum failed - expected $NGINX_MD5SUM received $(nginx_md5)"
+  echo "nginx checksum failed - expected $NGINX_SHA512SUM received $(nginx_sha512sum)"
 fi
 
 cd $TMP_DIR
