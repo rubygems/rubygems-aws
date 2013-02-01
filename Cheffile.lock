@@ -54,6 +54,7 @@ SITE
     unicorn (1.1.0)
     windows (1.8.2)
       chef_handler (>= 0.0.0)
+    xfs (1.1.0)
     xml (1.1.2)
       build-essential (>= 0.0.0)
     xslt (0.0.1)
@@ -153,6 +154,7 @@ DEPENDENCIES
   sudo (>= 0)
   sysstat (>= 0)
   user (>= 0)
+  xfs (>= 0)
   xml (>= 0)
   xslt (>= 0)
 
