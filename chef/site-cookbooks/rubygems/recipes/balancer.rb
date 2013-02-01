@@ -53,6 +53,17 @@ template "#{node["nginx"]["dir"]}/sites-available/#{app_env}-balancer.conf" do
   notifies :reload, "service[nginx]", :immediately
 end
 
+# geoip config
+if node["nginx"]["geoip"]
+  template "#{node["nginx"]["dir"]}/conf.d/geoip.conf" do
+    source "nginx-geoip.conf.erb"
+    owner "root"
+    group "root"
+    mode  "0644"
+    notifies :restart, "service[nginx]", :immediately
+  end
+end
+
 # symlink to sites-enabled
 link "#{node["nginx"]["dir"]}/sites-enabled/#{app_env}-balancer.conf" do
   to "#{node["nginx"]["dir"]}/sites-available/#{app_env}-balancer.conf"
