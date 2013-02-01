@@ -10,6 +10,7 @@ override_attributes(
   "application" => { "application_servers" => [ "10.249.31.114" ]},
   "nginx" => {
     "geoip" => true,
+    "enable_stub_status" => false,
     "dir" => "/opt/nginx/conf"
   }
 )
