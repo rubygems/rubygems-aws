@@ -4,6 +4,7 @@ run_list(
   "recipe[rubygems::users]",
   "recipe[apt]",
   "recipe[build-essential]",
+  "recipe[xfs]",
   "role[system_tools]",
   "role[logging]",
   "role[shell]",
@@ -13,11 +14,6 @@ run_list(
 )
 
 default_attributes(
-  "authorization" => {
-    "sudo" => {
-      "users" => ["phlipper", "samkottler", "dwradcliffe"]
-    }
-  },
   "denyhosts" => {
     "admin_email" => "github@phlippers.net",
     "allowed_hosts" => []

@@ -9,9 +9,11 @@ run_list(
 default_attributes(
   "postgresql" => {
     "version" => "9.2",
+    "data_directory" => "/var/lib/pg_data",
+    "listen_address" => "10.249.66.172",
     "ssl" => false,
     "pg_hba" => [
-      "host rubygems_production rubygems 127.0.0.1/32 password"
+      "host gemcutter_production postgres 10.249.31.114/0 md5"
     ]
   }
 )

@@ -1,0 +1,10 @@
+{
+    "id":"dwradcliffe",
+    "username": "dwradcliffe",
+    "comment":  "David Radcliffe",
+    "password": "$1$zUPbs1zR$Etel98kFpz1tsWUZouRAe1",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTMHSrFTZyMCs67A92dLIYdFcU6EvMRadH0yk9k1lcEPwqf6NMaYS0Fjqqo7gNWga+8gIO5mTS14lgcJwrfVJ07RjvqMa2bRHwD6x6+xqL9gSxaXulbvvVCm0r64KQ+8bl4/WR7CKi3O+C1c9BlZ1u2WGM7zvV42fmRcCmFBHV9VVWcHR/z7ZczSAhqUdJr9CcUBtL3Wbx14p+AifhncrZ3leK9UZYz4a7b+80TPOaXPidN//ICfVqrlF9z3BG+5o2nK+UFIyX0yQ/LNYlVb7VIUewijgeChA2gqXp7P3EiUhwxi1n4wHY9qXHSnVPiL59D2JBlwxP7aJGai8QgOkp radcliffe.david@gmail.com"
+    ]
+}

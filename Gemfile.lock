@@ -10,8 +10,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    capistrano-ext (1.2.1)
-      capistrano (>= 1.0.0)
     chef (10.18.2)
       bunny (>= 0.6.0, < 0.8.0)
       erubis
@@ -43,6 +41,8 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.4)
+    fpm (0.3.11)
+      json
     highline (1.6.15)
     ipaddress (0.8.0)
     json (1.6.1)
@@ -100,6 +100,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
-  capistrano-ext
   fog
+  fpm
   knife-solo (~> 0.0.14)
