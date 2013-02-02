@@ -1,6 +1,6 @@
 {
   // run list
-  "run_list": ["role[fullstack]"],
+  "run_list": ["role[app]"],
   "sudo" : {
      "add_vagrant" : false
    },
