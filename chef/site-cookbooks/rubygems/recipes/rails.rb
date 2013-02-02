@@ -12,7 +12,9 @@ company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
 db_name                   = app_env.tr("-", "_")
 rails_postgresql_user     = node["application"]["name"]
-rails_postgresql_password = Digest::MD5.hexdigest(app_env.reverse).reverse.tr("A-Za-z", "N-ZA-Mn-za-m")
+
+secrets = data_bag_item("secrets", "postgresql")
+rails_postgresql_password = secrets["application"][node["application"]["rails_env"]]["rails_postgresql_password"]
 
 # # application directory
 directory "/applications" do
