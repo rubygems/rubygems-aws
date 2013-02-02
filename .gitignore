@@ -5,3 +5,4 @@ tmp
 .chef/knife.local.rb
 chef.tar.gz
 .rvmrc
+chef/site-cookbooks/rubygems/files/default/rubygems.org*

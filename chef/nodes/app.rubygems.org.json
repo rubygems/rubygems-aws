@@ -1,7 +1,9 @@
 {
   // run list
   "run_list": ["role[fullstack]"],
-
+  "sudo" : {
+     "add_vagrant" : false
+   },
   // rubygems Rails application attributes
   "application": {
     "name": "rubygems",
