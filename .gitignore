@@ -6,3 +6,4 @@ tmp
 chef.tar.gz
 .rvmrc
 chef/site-cookbooks/rubygems/files/default/rubygems.org*
+chef/data_bags/secrets/*
