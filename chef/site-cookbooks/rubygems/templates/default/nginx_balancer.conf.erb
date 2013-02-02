@@ -68,14 +68,8 @@ server {
 
   ##### BEGIN legacy rules
 
-  location = /__log {
-    internal;
-    proxy_pass http://72.4.120.124:5000/gems/$gem.gem;
-  }
-
   location ~ /gems/(.*)\.gem$ {
     set $gem $1;
-    post_action /__log;
     rewrite ^ $gem_mirror_ssl$request_uri redirect;
   }
 
