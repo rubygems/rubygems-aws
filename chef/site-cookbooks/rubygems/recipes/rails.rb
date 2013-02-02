@@ -10,11 +10,13 @@ sudo_name         = app_env.tr("-", "_").upcase
 bundle_cmd        = "bundle"
 company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
-db_name                   = app_env.tr("-", "_")
-rails_postgresql_user     = node["application"]["name"]
 
 secrets = data_bag_item("secrets", "postgresql")
-rails_postgresql_password = secrets["application"][node["application"]["rails_env"]]["rails_postgresql_password"]
+db_settings = secrets["application"][node["application"]["rails_env"]]
+rails_postgresql_user     = db_settings["rails_postgresql_user"]
+rails_postgresql_password = db_settings["rails_postgresql_password"]
+rails_postgresql_host = db_settings["rails_postgresql_host"]
+rails_postgresql_db = db_settings["rails_postgresql_db"]
 
 # # application directory
 directory "/applications" do
@@ -58,10 +60,10 @@ application "rubygems" do
     database_template "database.yml.erb"
     database do
       adapter "postgresql"
-      database db_name
+      database rails_postgresql_db
       username rails_postgresql_user
       password rails_postgresql_password
-      host "localhost"
+      host rails_postgresql_host
     end
   end
   r.cookbook_name = "rubygems"
