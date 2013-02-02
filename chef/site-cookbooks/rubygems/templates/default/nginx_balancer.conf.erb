@@ -84,6 +84,11 @@ server {
     rewrite ^ /gems/$gem.gem redirect;
   }
 
+  location /api/v1/dependencies {
+    proxy_set_header Host bundler-api.herokuapp.com;
+    proxy_pass http://bundler-api.herokuapp.com;
+  }
+
   location /quick/Marshal.4.8/ {
     rewrite ^ $gem_mirror_ssl$request_uri redirect;
   }
