@@ -113,5 +113,7 @@ end
 
 runit_service "rg_delayed_job" do
   options node['application']
-  env node['application']['environment_variables']
+  vars = (node['application']['environment_variables'] || {})
+  vars['RAILS_ENV'] ||= "production"
+  env vars
 end
