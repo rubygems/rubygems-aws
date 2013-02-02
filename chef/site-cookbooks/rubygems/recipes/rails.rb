@@ -24,6 +24,9 @@ secret_token = rubygems_settings["secret_token"]
 bundler_token = rubygems_settings["bundler_token"]
 bundler_api_url = rubygems_settings["bundler_api_url"]
 
+new_relic_license_key = rubygems_settings["new_relic_license_key"]
+new_relic_app_name = rubygems_settings["new_relic_app_name"]
+
 # # application directory
 directory "/applications" do
   owner  "deploy"
@@ -98,5 +101,5 @@ template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
   group  "deploy"
   mode   "0600"
   action :create
-  variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url)
+  variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url, new_relic_license_key: new_relic_license_key, new_relic_app_name: new_relic_app_name)
 end
