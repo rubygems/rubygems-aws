@@ -14,7 +14,7 @@ default_attributes(
     "ssl" => false,
     "work_mem" => "100MB",
     "shared_buffers" => "24MB",
-    "pg_hba" => [
+    "pg_hba_defaults" => [
       "host gemcutter_production postgres 10.249.31.114/0 md5"
     ]
   }
