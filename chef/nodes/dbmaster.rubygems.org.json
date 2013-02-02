@@ -1,3 +1,6 @@
 {
-  "run_list": ["role[rubygems_db_master]"]
+  "run_list": ["role[rubygems_db_master]"],
+  "sudo" : {
+     "add_vagrant" : false
+   }
 }
