@@ -11,12 +11,18 @@ bundle_cmd        = "bundle"
 company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
 
-secrets = data_bag_item("secrets", "postgresql")
-db_settings = secrets["application"][node["application"]["rails_env"]]
-rails_postgresql_user     = db_settings["rails_postgresql_user"]
-rails_postgresql_password = db_settings["rails_postgresql_password"]
-rails_postgresql_host = db_settings["rails_postgresql_host"]
-rails_postgresql_db = db_settings["rails_postgresql_db"]
+secrets = data_bag_item("secrets", "rubygems")
+rubygems_settings = secrets["application"][node["application"]["rails_env"]]
+rails_postgresql_user     = rubygems_settings["rails_postgresql_user"]
+rails_postgresql_password = rubygems_settings["rails_postgresql_password"]
+rails_postgresql_host = rubygems_settings["rails_postgresql_host"]
+rails_postgresql_db = rubygems_settings["rails_postgresql_db"]
+
+s3_key = rubygems_settings["s3_key"]
+s3_secret = rubygems_settings["s3_secret"]
+secret_token = rubygems_settings["secret_token"]
+bundler_token = rubygems_settings["bundler_token"]
+bundler_api_url = rubygems_settings["bundler_api_url"]
 
 # # application directory
 directory "/applications" do
@@ -33,18 +39,18 @@ directory "/applications/#{node["application"]["name"]}" do
 end
 
 # create a DB user
-pg_user rails_postgresql_user do
-  privileges superuser: false, createdb: false, login: true
-  password rails_postgresql_password
-end
-
-# create a database
-pg_database db_name do
-  owner rails_postgresql_user
-  encoding "utf8"
-  template "template0"
-  locale "en_US.UTF8"
-end
+# pg_user rails_postgresql_user do
+#   privileges superuser: false, createdb: false, login: true
+#   password rails_postgresql_password
+# end
+# 
+# # create a database
+# pg_database rails_postgresql_db do
+#   owner rails_postgresql_user
+#   encoding "utf8"
+#   template "template0"
+#   locale "en_US.UTF8"
+# end
 
 application "rubygems" do
   path node["application"]["rails_root"]
@@ -83,4 +89,14 @@ template "/etc/logrotate.d/#{app_env}" do
   mode   "0644"
   action :create
   variables(service_name: app_env, rails_root: rails_root)
+end
+
+# logrotate for application
+template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
+  source "secret.rb.erb"
+  owner  "deploy"
+  group  "deploy"
+  mode   "0600"
+  action :create
+  variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url)
 end
