@@ -1,0 +1,4 @@
+#!/bin/bash
+cd <%= @options['rails_root'] %>/current
+exec 2>&1
+exec chpst -udeploy bundle exec rake jobs:work

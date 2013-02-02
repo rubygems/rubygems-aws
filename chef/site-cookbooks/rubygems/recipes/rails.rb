@@ -82,6 +82,7 @@ application "rubygems" do
     bundler true
     bundle_command "/usr/local/bin/bundle"
   end
+  notifies :restart, "service[rg_delayed_job]"
 end
 
 # logrotate for application
@@ -102,4 +103,15 @@ template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
   mode   "0600"
   action :create
   variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url, new_relic_license_key: new_relic_license_key, new_relic_app_name: new_relic_app_name)
+end
+
+# Simplest thing that works: setup the worker; logs will be in the
+# rails_root/shared/log/rg_delayed_job
+directory "#{node['application']['rails_root']}/shared/log/rg_delayed_job" do
+  recursive true
+end
+
+runit_service "rg_delayed_job" do
+  options node['application']
+  env node['application']['environment_variables']
 end
