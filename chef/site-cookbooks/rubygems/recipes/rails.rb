@@ -104,6 +104,11 @@ end
 
 # Simplest thing that works: setup the worker; logs will be in the
 # rails_root/shared/log/rg_delayed_job
+directory "#{node['application']['rails_root']}/shared/log/rg_delayed_job" do
+  recursive true
+end
+
 runit_service "rg_delayed_job" do
   options node['application']
+  env node['application']['environment_variables']
 end
