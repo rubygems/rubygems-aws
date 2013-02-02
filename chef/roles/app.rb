@@ -6,3 +6,7 @@ run_list(
   "recipe[redis::server]",
   "role[rubygems]"
 )
+
+default_attributes({"redis" => {
+                       "maxmemory" => "8g",
+                       "dir" => "/var/lib/redis_data"}})
