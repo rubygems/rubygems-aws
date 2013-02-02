@@ -11,6 +11,7 @@ override_attributes(
   "nginx" => {
     "geoip" => true,
     "enable_stub_status" => false,
-    "dir" => "/opt/nginx/conf"
+    "dir" => "/opt/nginx/conf",
+    "worker_processes" => 8
   }
 )
