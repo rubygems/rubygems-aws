@@ -79,6 +79,7 @@ application "rubygems" do
     bundler true
     bundle_command "/usr/local/bin/bundle"
   end
+  notifies :restart, "service[rg_delayed_job]"
 end
 
 # logrotate for application
@@ -99,4 +100,10 @@ template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
   mode   "0600"
   action :create
   variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url)
+end
+
+# Simplest thing that works: setup the worker; logs will be in the
+# rails_root/shared/log/rg_delayed_job
+runit_service "rg_delayed_job" do
+  options node['application']
 end
