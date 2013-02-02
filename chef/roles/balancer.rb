@@ -12,6 +12,8 @@ override_attributes(
     "geoip" => true,
     "enable_stub_status" => false,
     "dir" => "/opt/nginx/conf",
-    "worker_processes" => 8
+    "worker_processes" => 8,
+    "buffers_enable" => true,
+    "client_max_body_size" => 0,
   }
 )
