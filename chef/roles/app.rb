@@ -8,5 +8,5 @@ run_list(
 )
 
 default_attributes({"redis" => {
-                       "maxmemory" => "8g",
+                       "maxmemory" => "8gb",
                        "dir" => "/var/lib/redis_data"}})
