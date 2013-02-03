@@ -4,6 +4,7 @@ run_list(
   "role[base]",
   "recipe[memcached]",
   "recipe[redis::server]",
+  "recipe[rubygems::stat-update]",
   "role[rubygems]"
 )
 
