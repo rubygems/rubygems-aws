@@ -22,43 +22,6 @@ namespace :librarian_chef do
   end
 end
 
-namespace :aws do
-
-  task :connect do
-    require 'fog'
-    @compute = Fog::Compute.new({:provider => 'AWS', :region => 'us-west-2', :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'], :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']})
-  end
-  before("aws:boot", "aws:connect")
-  before("aws:list", "aws:connect")
-  before("aws:destroy", "aws:connect")
-
-  desc "Boot ec2 instances"
-  task :boot do
-    puts "Launching an instance..."
-    server = @compute.servers.create(:image_id => 'ami-ca2ca4fa', :flavor_id => 'm1.small')
-    server.wait_for { ready? }
-    system "echo '#{server.id} #{server.dns_name}' >> ./instances.list"
-    puts "#{server.id} #{server.dns_name}"
-    puts "Done!"
-  end
-
-  desc "List ec2 instances that were created via cap"
-  task :list do
-    # puts @compute.servers.inspect
-    puts File.read('instances.list')
-  end
-
-  desc "Destroy all instances created via cap"
-  task :destroy do
-    File.read('instances.list').split("\n").each do |instance|
-      puts "Destroying instance: #{instance}"
-      @compute.servers.get(instance.split(" ")[0]).destroy
-      system "grep -v '#{instance}' instances.list > instances.list"
-    end
-  end
-
-end
-
 namespace :chef do
   desc "Run chef"
   task :default do
