@@ -68,8 +68,18 @@ server {
 
   ##### BEGIN legacy rules
 
+  <% if stat_server = node["application"]["stat_server"] %>
+  location = /__log {
+    internal;
+    proxy_pass http://<%= stat_server %>/gems/$gem.gem;
+  }
+  <% end %>
+
   location ~ /gems/(.*)\.gem$ {
+  <% if node["application"]["stat_server"] %>
     set $gem $1;
+    post_action /__log;
+  <% end %>
     rewrite ^ $gem_mirror_ssl$request_uri redirect;
   }
 
