@@ -4,39 +4,30 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 
 **Note: This repository requires Ruby 1.9.x.**
 
-## Hacking in Vagrant
+## Hacking
 
     $ bundle install
     $ librarian-chef install
+
+### Hacking in Vagrant
+
     $ vagrant up
     $ cap chef
 
-## Hacking on EC2
+### Hacking on EC2
 
-    Edit nodes/app.rubygems.org.json
-    * Add your username to ["authorization"]["sudo"]["users"]
-    * Add your user to the "users" hash
-      {
-        "username": "ruby",
-        "comment":  "Rubygems AWS",
-        "password": "generated_password",
-        "ssh_keys": [
-          "your ssh key"
-        ]
-      }
-      You can generate an encrypted password using 'mkpasswd -m sha-512'
-    * Add a newrelic license to ["new\_relic"]["license\_key"]
-      Alternately remove "recipe[newrelic-sysmond]" from roles/monitoring.rb
+Add your user to the "users" databag (`chef/data_bags/users`).
+  You can look at the other users for the schema.
+  You can generate an encrypted password using `mkpasswd -m sha-512`.
 
-    $ bundle install
-    $ librarian-chef install
-    $ cap aws:boot
-    # Get hostname(s) from instances.list
+Boot EC2 instances and get hostnames
+
     $ export RUBYGEMS_EC2_APP=ec2-*.amazonaws.com
     $ export RUBYGEMS_EC2_LB1=ec2-*.amazonaws.com
     $ export RUBYGEMS_EC2_DB1=ec2-*.amazonaws.com
     $ cap ec2 bootstrap
     $ cap ec2 chef
+
 
 ## AMI's
 
