@@ -10,7 +10,7 @@
     "rails_root": "/applications/rubygems/staging",
     "server_names": ["balancer01.rubygems.org"],
     "use_ssl": true,
-    "force_ssl": true,
+    "force_ssl": false,
     "ssl_key": "rubygems.org.key",
     "ssl_cert": "rubygems.org.crt",
     "app_server": {
