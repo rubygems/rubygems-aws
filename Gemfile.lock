@@ -100,6 +100,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  chef (~> 10.18.2)
   fog
   fpm
   knife-solo (~> 0.0.14)
