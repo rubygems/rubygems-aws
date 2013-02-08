@@ -23,7 +23,7 @@ SITE
       yum (>= 0.0.0)
     grc (1.0.0)
     hostname (0.0.3)
-    htop (0.1.0)
+    htop (1.0.0)
     iftop (0.0.1)
     imagemagick (0.2.2)
     logrotate (1.1.0)
