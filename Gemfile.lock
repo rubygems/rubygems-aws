@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     archive-tar-minitar (0.5.2)
-    builder (3.1.4)
     bunny (0.7.9)
     capistrano (2.14.1)
       highline
@@ -29,18 +28,6 @@ GEM
       uuidtools
       yajl-ruby (~> 1.1)
     erubis (2.7.0)
-    excon (0.16.10)
-    fog (1.9.0)
-      builder
-      excon (~> 0.14)
-      formatador (~> 0.2.0)
-      mime-types
-      multi_json (~> 1.0)
-      net-scp (~> 1.0.4)
-      net-ssh (>= 2.1.3)
-      nokogiri (~> 1.5.0)
-      ruby-hmac
-    formatador (0.2.4)
     fpm (0.3.11)
       json
     highline (1.6.15)
@@ -63,7 +50,6 @@ GEM
     mixlib-log (1.4.1)
     mixlib-shellout (1.1.0)
     moneta (0.6.0)
-    multi_json (1.5.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -74,7 +60,6 @@ GEM
     net-ssh-multi (1.1)
       net-ssh (>= 2.1.4)
       net-ssh-gateway (>= 0.99.0)
-    nokogiri (1.5.6)
     ohai (6.16.0)
       ipaddress
       mixlib-cli
@@ -86,7 +71,6 @@ GEM
     polyglot (0.3.3)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    ruby-hmac (0.4.0)
     systemu (2.5.2)
     thor (0.17.0)
     treetop (1.4.12)
@@ -100,6 +84,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
-  fog
+  chef (~> 10.18)
   fpm
   knife-solo (~> 0.0.14)
