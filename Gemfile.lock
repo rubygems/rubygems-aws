@@ -3,7 +3,7 @@ GEM
   specs:
     archive-tar-minitar (0.5.2)
     bunny (0.7.9)
-    capistrano (2.14.1)
+    capistrano (2.14.2)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
