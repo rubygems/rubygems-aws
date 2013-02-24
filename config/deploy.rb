@@ -25,9 +25,9 @@ end
 namespace :chef do
   desc "Run chef"
   task :default do
-    find_and_execute_task("chef:db")
+    find_and_execute_task("chef:dbmaster")
     find_and_execute_task("chef:app")
-    find_and_execute_task("chef:lb")
+    find_and_execute_task("chef:balancer")
   end
 
   %w(dbmaster app balancer).each do |role|

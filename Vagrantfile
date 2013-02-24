@@ -18,26 +18,26 @@ Vagrant::Config.run do |config|
     app.vm.network :hostonly, "33.33.33.10"
   end
 
-  config.vm.define :lb do |app|
-    app.vm.host_name = "rubygems-org-lb"
-    app.vm.box = "opscode-ubuntu-12.04"
-    app.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
+  config.vm.define :balancer do |balancer|
+    balancer.vm.host_name = "rubygems-org-balancer"
+    balancer.vm.box = "opscode-ubuntu-12.04"
+    balancer.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
 
     # Use more RAM to assist with setting up lots of infra
-    app.vm.customize ["modifyvm", :id, "--memory", "768"]
+    balancer.vm.customize ["modifyvm", :id, "--memory", "768"]
 
-    app.vm.network :hostonly, "33.33.33.11"
+    balancer.vm.network :hostonly, "33.33.33.11"
   end
 
-  config.vm.define :db do |app|
-    app.vm.host_name = "rubygems-org-db"
-    app.vm.box = "opscode-ubuntu-12.04"
-    app.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
+  config.vm.define :dbmaster do |dbmaster|
+    dbmaster.vm.host_name = "rubygems-org-dbmaster"
+    dbmaster.vm.box = "opscode-ubuntu-12.04"
+    dbmaster.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
 
     # Use more RAM to assist with setting up lots of infra
-    app.vm.customize ["modifyvm", :id, "--memory", "768"]
+    dbmaster.vm.customize ["modifyvm", :id, "--memory", "768"]
 
-    app.vm.network :hostonly, "33.33.33.12"
+    dbmaster.vm.network :hostonly, "33.33.33.12"
   end
 
 end
