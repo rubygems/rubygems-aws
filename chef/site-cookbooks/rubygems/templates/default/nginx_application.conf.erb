@@ -2,17 +2,12 @@ server {
   listen <%= node["application"]["internal_port"] %>;
   server_name <%= node["fqdn"] %>;
 
-  # Set the max size for file uploads to 50Mb
-  client_max_body_size 50M;
+  # Set the max size for file uploads to 500Mb
+  client_max_body_size 500M;
 
   # vhost specific logs
   access_log <%= "#{@log_dir}/#{@name}-#{@rails_env}" %>-access.log main buffer=32k;
   error_log <%= "#{@log_dir}/#{@name}-#{@rails_env}" %>-error.log info;
-
-  # allow only valid crud methods
-  if ($request_method !~ GET|POST|PUT|DELETE) {
-    return 405;
-  }
 
   # ignore obviously false requests
   if ($request_filename ~ \.(php.?|[ajk]sp[ax]?|[a-z]?html?|x|idc|log|cf[mc]?|mdb|do|(ms|f)?cgi|p(er)?lx?|nsf|dll|fts|exe|bat|dot|ini|com|pif|sh|sql|git|svn|yml)$) {
