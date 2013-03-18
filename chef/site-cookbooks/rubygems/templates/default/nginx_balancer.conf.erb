@@ -160,11 +160,11 @@ server {
 
   <% if node["nginx"]["geoip"] %>
   if ($geoip_country_code = "CN") {
-    set $gem_mirror http://tokyo-m.rubygems.org;
+    set $gem_mirror https://tokyo-m.rubygems.org;
   }
 
   if ($geoip_country_code = "JP") {
-    set $gem_mirror http://tokyo-m.rubygems.org;
+    set $gem_mirror https://tokyo-m.rubygems.org;
   }
   <% end %>
 
@@ -210,7 +210,7 @@ server {
   }
 
   location /api/v1/dependencies {
-    rewrite ^(.*) http://bundler.rubygems.org$1 redirect;
+    rewrite ^(.*) https://bundler.rubygems.org$1 redirect;
   }
 
   location /quick/Marshal.4.8/ {
