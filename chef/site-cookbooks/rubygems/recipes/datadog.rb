@@ -27,6 +27,20 @@ if data_bag("secrets").include?("datadog")
     node.set['redis']['server']['port'] = node['redis']['port']
   end
 
+  # Postgres integration
+  # if node['postgres']
+  #   package "python-psycopg2"
+  #   node.set['datadog']['postgres']['server'] = "localhost"
+  #   node.set['datadog']['postgres']['port'] = node['postgresql']['port']
+  #   node.set['datadog']['postgres']['user'] = "datadog"
+  #   node.set['postgres'['datadog']]['password'] = datadog_secrets['postgres_password']
+  # end
+
+  # Nginx integration
+  if node['nginx'] and node["nginx"]["enable_stub_status"]
+    node.set['datadog']['nginx']['status_url'] = "http://127.0.0.1:80/nginx_status/"
+  end
+
   # Agent config
   include_recipe "datadog::dd-agent"
 
