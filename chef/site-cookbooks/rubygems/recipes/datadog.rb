@@ -10,7 +10,24 @@ if data_bag("secrets").include?("datadog")
   node.set['datadog']['api_key'] = datadog_secrets['api_key']
   node.set['datadog']['application_key'] = datadog_secrets['application_key']
 
-  include_recipe "datadog::dd-agent"
+  # Chef handler
   include_recipe "datadog::dd-handler"
+
+  # Memcached integration
+  if node['memcached']
+    package "python-memcache"
+    node.set['datadog']['memcached']['listen'] = node['memcached']['listen']
+    node.set['datadog']['memcached']['port'] = node['memcached']['port']
+  end
+
+  # Redis integration
+  if node['redis']
+    package "python-redis"
+    node.set['datadog']['redis']['server']['addr'] = node['redis']['bind']
+    node.set['redis']['server']['port'] = node['redis']['port']
+  end
+
+  # Agent config
+  include_recipe "datadog::dd-agent"
 
 end
