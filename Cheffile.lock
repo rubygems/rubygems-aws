@@ -61,6 +61,16 @@ SITE
     yum (2.1.0)
 
 GIT
+  remote: https://github.com/DataDog/chef-datadog
+  ref: namespaced-attributes
+  sha: c543f5aff27cd8459be6444a298f6080ecbd0d19
+  specs:
+    datadog (0.1.3)
+      apt (>= 0.0.0)
+      chef_handler (~> 1.0.6)
+      yum (>= 0.0.0)
+
+GIT
   remote: https://github.com/fnichol/chef-user
   ref: master
   sha: 1b52f8d41c0a320d29fa5e695393bef583e87ca8
@@ -127,6 +137,7 @@ DEPENDENCIES
   bash-completion (>= 0)
   build-essential (>= 0)
   curl (>= 0)
+  datadog (>= 0)
   denyhosts (>= 0)
   git (>= 0)
   grc (>= 0)
