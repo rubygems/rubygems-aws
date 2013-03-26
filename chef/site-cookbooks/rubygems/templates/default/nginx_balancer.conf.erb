@@ -33,6 +33,10 @@ server {
     if ($geoip_country_code = "JP") {
       set $gem_mirror http://tokyo-m.rubygems.org;
     }
+
+    if ($geoip_country_code = "AU") {
+      set $gem_mirror http://au-m.rubygems.org;
+    }
     <% end %>
 
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
