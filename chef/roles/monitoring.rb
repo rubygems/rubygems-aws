@@ -5,7 +5,8 @@ run_list(
   "recipe[iftop]",
   "recipe[monit]",
   "recipe[newrelic-sysmond]",
-  "recipe[munin]"
+  "recipe[munin]",
+  "recipe[rubygems::datadog]"
 )
 
 default_attributes(

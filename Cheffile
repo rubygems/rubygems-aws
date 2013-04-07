@@ -79,3 +79,7 @@ cookbook "xml"
 cookbook "xslt"
 
 cookbook "xfs"
+
+cookbook "datadog",
+  git: "https://github.com/DataDog/chef-datadog",
+  ref: "namespaced-attributes"
