@@ -52,7 +52,7 @@ namespace :vg do
     system("vagrant up")
   end
 
-  desc "varant destroy"
+  desc "vagrant destroy"
   task :destroy do
     system("vagrant destroy")
   end
