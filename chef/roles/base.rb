@@ -29,6 +29,9 @@ default_attributes(
       "cron", "filesystem", "ntp", "postfix", "postgresql", "redis", "nginx", "memcached"
     ]
   },
+  "nginx" => {
+    "status_port" => 81
+  },
   "ntp" => {
     "is_server" => false,
     "servers" => [
