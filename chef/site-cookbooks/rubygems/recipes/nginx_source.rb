@@ -3,7 +3,7 @@
 # Recipe:: nginx_source.rb
 #
 
-package_name = "nginx_#{node['nginx']['version']}-1_amd64.deb"
+package_name = "nginx_#{node['nginx']['version']}-#{node['nginx']['iteration']}_amd64.deb"
 
 cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
 

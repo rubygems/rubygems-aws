@@ -5,3 +5,4 @@ default["application"]["application_servers"] = []
 
 # nginx
 default["nginx"]["version"] = "1.2.6"
+default["nginx"]["iteration"] = "2"
