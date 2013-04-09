@@ -93,10 +93,10 @@ GIT
 
 GIT
   remote: https://github.com/phlipper/chef-nginx
-  ref: master
-  sha: ee74c7e56086f90618aedf15fac24569a920ad5a
+  ref: 0.4.3
+  sha: 161a4eeabae2e2d18b6789a9723cf6ffb29ce79c
   specs:
-    nginx (0.4.1)
+    nginx (0.4.3)
       apt (>= 0.0.0)
 
 GIT
