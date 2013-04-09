@@ -74,7 +74,7 @@ env DESTDIR=$TMP_DIR make install
 cd $TMP_DIR
 bundle install
 bundle exec fpm -s dir -t deb \
-  -n nginx -v $NGINX_VERSION --iteration 1 \
+  -n nginx -v $NGINX_VERSION --iteration 2 \
   -C $TMP_DIR \
   opt/nginx
 
