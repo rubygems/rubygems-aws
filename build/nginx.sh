@@ -66,14 +66,15 @@ cd $TMP_DIR/nginx-$NGINX_VERSION
   --with-http_geoip_module \
   --with-http_stub_status_module \
   --with-http_gzip_static_module \
-  --with-http_realip_module
+  --with-http_realip_module \
+  --with-http_stub_status_module
 make
 mkdir -p $TMP_DIR/$NGINX_PREFIX
 env DESTDIR=$TMP_DIR make install
 cd $TMP_DIR
 bundle install
 bundle exec fpm -s dir -t deb \
-  -n nginx -v $NGINX_VERSION --iteration 1 \
+  -n nginx -v $NGINX_VERSION --iteration 2 \
   -C $TMP_DIR \
   opt/nginx
 
