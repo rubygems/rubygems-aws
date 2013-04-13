@@ -1,0 +1,10 @@
+{
+    "id": "jcaudle",
+    "username": "jcaudle",
+    "comment": "Joseph Caudle",
+    "password": "$1$gVcP9qQ1$J6Lu.AsWtIgOAplIYKz/l0",
+    "admin" : true,
+    "ssh_keys": [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4rdKVEpk+UX+2iAZyVbFJ04+95DiF02jssvqbl3vwOLtn8HbrvY7qIWv6QeUqdt7HlwuGIKZIdlw/E7BUMuYxmytHmueNnkk6OvUq0NpQJ968SWz8CBNBF73/1ESix/OD6OWMc8BUgSY6zq/LQK6scGIJIUhTWP7EA3xcNU4HxIvLZAtyKhAbIfOH4LvVZEx44oM4uPsynLd0A0ZwnBgjm/gcrADbnD05nditbs3c5CmL7I8YOxUwOiQY915TvE27NdHuKkeDAADr3UJVoawAZ15FmA+TQgIwc6iVuYfnTzVRjEUKeW+7iv3G0nbT6550K6StWR9yiJzApDuQ5yjJ"
+    ]
+}
