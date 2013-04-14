@@ -30,7 +30,7 @@ GEM
     erubis (2.7.0)
     fpm (0.3.11)
       json
-    highline (1.6.16)
+    highline (1.6.17)
     ipaddress (0.8.0)
     json (1.6.1)
     knife-solo (0.0.15)
