@@ -1,0 +1,38 @@
+Backup::Model.new(:redis, 'Redis Backup') do
+
+  database Redis do |db|
+    db.name               = '<%= node["redis"]["dbfilename"].gsub(".rdp","") %>'
+    db.path               = '<%= node["redis"]["dir"] %>'
+    db.host               = 'localhost'
+    db.port               = <%= node["redis"]["port"] %>
+    db.socket             = '<%= node["redis"]["unixsocket"] %>'
+    db.invoke_save        = true
+  end
+
+  compress_with Gzip
+
+  encrypt_with GPG do |encryption|
+    encryption.keys = {}
+    encryption.keys['<%= node["rubygems"]["backups"]["gpg_email"] %>'] = <<-KEY
+      <%= node["rubygems"]["backups"]["gpg_key"] %>
+    KEY
+    encryption.recipients = '<%= node["rubygems"]["backups"]["gpg_email"] %>'
+  end
+
+  store_with S3 do |s3|
+    s3.access_key_id      = '<%= node["rubygems"]["backups"]["aws_access_key"] %>'
+    s3.secret_access_key  = '<%= node["rubygems"]["backups"]["aws_secret_key"] %>'
+    s3.bucket             = '<%= node["rubygems"]["backups"]["redis"]["bucket_name"] %>'
+    s3.keep               = <%= node["rubygems"]["backups"]["redis"]["keep"] %>
+  end
+
+  notify_by Mail do |mail|
+    mail.on_success           = false
+    mail.on_warning           = true
+    mail.on_failure           = true
+    mail.delivery_method      = :sendmail
+    mail.from                 = '<%= node["rubygems"]["backups"]["notification_from"] %>'
+    mail.to                   = '<%= node["rubygems"]["backups"]["notification_to"] %>'
+  end
+
+end

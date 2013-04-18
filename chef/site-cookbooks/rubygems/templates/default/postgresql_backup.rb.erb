@@ -1,0 +1,37 @@
+Backup::Model.new(:postgresql, 'PostgreSQL Backup') do
+
+  database PostgreSQL do |db|
+    db.name               = "<%= @settings["rails_postgresql_db"] %>"
+    db.username           = "<%= @settings["rails_postgresql_user"] %>"
+    db.password           = "<%= @settings["rails_postgresql_password"] %>"
+    db.host               = "localhost"
+    db.port               = 5432
+  end
+
+  compress_with Gzip
+
+  encrypt_with GPG do |encryption|
+    encryption.keys = {}
+    encryption.keys['<%= node["rubygems"]["backups"]["gpg_email"] %>'] = <<-KEY
+      <%= node["rubygems"]["backups"]["gpg_key"] %>
+    KEY
+    encryption.recipients = '<%= node["rubygems"]["backups"]["gpg_email"] %>'
+  end
+
+  store_with S3 do |s3|
+    s3.access_key_id      = '<%= node["rubygems"]["backups"]["aws_access_key"] %>'
+    s3.secret_access_key  = '<%= node["rubygems"]["backups"]["aws_secret_key"] %>'
+    s3.bucket             = '<%= node["rubygems"]["backups"]["postgresql"]["bucket_name"] %>'
+    s3.keep               = <%= node["rubygems"]["backups"]["postgresql"]["keep"] %>
+  end
+
+  notify_by Mail do |mail|
+    mail.on_success           = false
+    mail.on_warning           = true
+    mail.on_failure           = true
+    mail.delivery_method      = :sendmail
+    mail.from                 = '<%= node["rubygems"]["backups"]["notification_from"] %>'
+    mail.to                   = '<%= node["rubygems"]["backups"]["notification_to"] %>'
+  end
+
+end
