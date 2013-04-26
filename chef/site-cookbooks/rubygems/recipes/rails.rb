@@ -11,21 +11,24 @@ bundle_cmd        = "bundle"
 company_name      = node["application"]["company_name"]
 first_server_name = node["application"]["server_names"][0]
 
-secrets = data_bag_item("secrets", "rubygems")
-rubygems_settings = secrets["application"][node["application"]["rails_env"]]
-rails_postgresql_user     = rubygems_settings["rails_postgresql_user"]
-rails_postgresql_password = rubygems_settings["rails_postgresql_password"]
-rails_postgresql_host = rubygems_settings["rails_postgresql_host"]
-rails_postgresql_db = rubygems_settings["rails_postgresql_db"]
+secrets = data_bag_item("secrets", "rubygems") || {} rescue {}
 
-s3_key = rubygems_settings["s3_key"]
-s3_secret = rubygems_settings["s3_secret"]
-secret_token = rubygems_settings["secret_token"]
-bundler_token = rubygems_settings["bundler_token"]
-bundler_api_url = rubygems_settings["bundler_api_url"]
+unless secrets.empty?
+  rubygems_settings = secrets["application"][node["application"]["rails_env"]]
+  rails_postgresql_user     = rubygems_settings["rails_postgresql_user"]
+  rails_postgresql_password = rubygems_settings["rails_postgresql_password"]
+  rails_postgresql_host = rubygems_settings["rails_postgresql_host"]
+  rails_postgresql_db = rubygems_settings["rails_postgresql_db"]
 
-new_relic_license_key = rubygems_settings["new_relic_license_key"]
-new_relic_app_name = rubygems_settings["new_relic_app_name"]
+  s3_key = rubygems_settings["s3_key"]
+  s3_secret = rubygems_settings["s3_secret"]
+  secret_token = rubygems_settings["secret_token"]
+  bundler_token = rubygems_settings["bundler_token"]
+  bundler_api_url = rubygems_settings["bundler_api_url"]
+
+  new_relic_license_key = rubygems_settings["new_relic_license_key"]
+  new_relic_app_name = rubygems_settings["new_relic_app_name"]
+end
 
 # # application directory
 directory "/applications" do
@@ -46,7 +49,7 @@ end
 #   privileges superuser: false, createdb: false, login: true
 #   password rails_postgresql_password
 # end
-# 
+#
 # # create a database
 # pg_database rails_postgresql_db do
 #   owner rails_postgresql_user
