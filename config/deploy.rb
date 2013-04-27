@@ -8,7 +8,7 @@ ssh_options[:forward_agent] = true
 
 namespace :bootstrap do
   desc "bootstrap the server for chef"
-  task :default, :roles => [:app, :db, :lb] do
+  task :default, :roles => [:app, :db, :search, :lb] do
     find_servers_for_task(current_task).each do |current_server|
       system("knife bootstrap -d chef-solo -x #{user} --sudo #{current_server}")
     end
@@ -30,7 +30,7 @@ namespace :chef do
     find_and_execute_task("chef:balancer")
   end
 
-  %w(dbmaster app balancer).each do |role|
+  %w(dbmaster search app balancer).each do |role|
     task role, :roles => [role] do
       find_and_execute_task("librarian_chef:install")
       system("tar czf 'chef.tar.gz' -C chef/ .")

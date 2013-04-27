@@ -61,6 +61,11 @@ cookbook "postgresql",
 cookbook "redis",
   git: "https://github.com/phlipper/chef-redis"
 
+cookbook "java"
+
+cookbook "elasticsearch",
+  git: "https://github.com/elasticsearch/cookbook-elasticsearch"
+
 cookbook "resolver"
 
 cookbook "rsync"
