@@ -56,7 +56,7 @@ cookbook "openssh"
 cookbook "postfix"
 
 cookbook "postgresql",
-  git: "https://github.com/phlipper/chef-postgresql", ref: "0.8.0"
+  git: "https://github.com/phlipper/chef-postgresql"
 
 cookbook "redis",
   git: "https://github.com/phlipper/chef-redis"
