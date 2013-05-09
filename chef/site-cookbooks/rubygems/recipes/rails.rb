@@ -58,6 +58,7 @@ end
 application "rubygems" do
   path node["application"]["rails_root"]
   repository node["application"]["repository"]
+  revision node["application"]["revision"]
   owner "deploy"
   group "deploy"
   packages %w{libpq-dev}
