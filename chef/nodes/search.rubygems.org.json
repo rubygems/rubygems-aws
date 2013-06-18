@@ -9,7 +9,7 @@
       "name" : "rubygems_production"
     },
     "path" : {
-      "data" : "/usr/local/var/data/elasticsearch/disk1"
+      "data" : "/var/lib/elasticsearch/data"
     },
     "bootstrap" : {
       "mlockall" : false
@@ -32,15 +32,15 @@
         "/dev/xvda2" : {
           "file_system"      : "ext3",
           "mount_options"    : "rw,user",
-          "mount_path"       : "/usr/local/var/data/elasticsearch/disk1",
-          "format_command"   : "mkfs.ext3",
+          "mount_path"       : "/var/lib/elasticsearch/data",
+          "format_command"   : "mkfs.xfs",
           "fs_check_command" : "dumpe2fs",
           "ebs"            : {
-            "device"                : "/dev/sda2",
-            "size"                  : 25,
+            "device"                : "/dev/sdh",
+            "size"                  : 250,
             "delete_on_termination" : true,
             "type"                  : "io1",
-            "iops"                  : 100
+            "iops"                  : 2000
           }
         }
       }
