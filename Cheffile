@@ -12,6 +12,9 @@ cookbook "build-essential"
 
 cookbook "curl"
 
+cookbook "datadog",
+  git: "https://github.com/DataDog/chef-datadog"
+
 cookbook "denyhosts",
   git: "https://github.com/phlipper/chef-denyhosts"
 
@@ -84,6 +87,3 @@ cookbook "xml"
 cookbook "xslt"
 
 cookbook "xfs"
-
-cookbook "datadog",
-  git: "https://github.com/DataDog/chef-datadog"
