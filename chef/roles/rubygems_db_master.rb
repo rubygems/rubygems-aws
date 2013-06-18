@@ -25,11 +25,11 @@ default_attributes(
     "pg_hba" => [
       {
         "type" => "host",
-        "db" => "rubygems_staging",
+        "db" => "gemcutter_production",
         "user" => "postgres",
         "password" => "postgres",
-        "addr" => "33.33.33.10/0",
-        "method" => "password"
+        "addr" => "10.249.31.114/0",
+        "method" => "md5"
       }
     ]
   }
