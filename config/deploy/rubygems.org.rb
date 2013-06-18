@@ -1,6 +1,7 @@
 server ENV["RUBYGEMS_EC2_APP"], :app, :web if ENV["RUBYGEMS_EC2_APP"]
 server ENV["RUBYGEMS_EC2_DB1"], :dbmaster if ENV["RUBYGEMS_EC2_DB1"]
 # server ENV["RUBYGEMS_EC2_DB2"], :db if ENV["RUBYGEMS_EC2_DB2"]
+server ENV["RUBYGEMS_EC2_SEARCH"], :search if ENV["RUBYGEMS_EC2_SEARCH"]
 server ENV["RUBYGEMS_EC2_LB1"], :balancer if ENV["RUBYGEMS_EC2_LB1"]
 # server ENV["RUBYGEMS_EC2_LB2"], :lb if ENV["RUBYGEMS_EC2_LB2"]
 

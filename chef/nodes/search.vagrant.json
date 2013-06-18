@@ -1,0 +1,12 @@
+{
+  "run_list": ["role[search]", "role[vagrant]"],
+
+  "elasticsearch" : {
+    "cluster" : {
+      "name" : "rubygems_vagrant"
+    },
+    "bootstrap" : {
+      "mlockall" : false
+    }
+  }
+}

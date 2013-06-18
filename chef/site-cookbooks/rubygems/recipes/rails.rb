@@ -58,6 +58,7 @@ end
 application "rubygems" do
   path node["application"]["rails_root"]
   repository node["application"]["repository"]
+  revision node["application"]["revision"]
   owner "deploy"
   group "deploy"
   packages %w{libpq-dev}
@@ -85,7 +86,7 @@ application "rubygems" do
   notifies :restart, "service[rg_delayed_job]"
 end
 
-# logrotate for application
+# Logrotate for application
 template "/etc/logrotate.d/#{app_env}" do
   source "logrotate-application.erb"
   owner  "root"
@@ -95,7 +96,7 @@ template "/etc/logrotate.d/#{app_env}" do
   variables(service_name: app_env, rails_root: rails_root)
 end
 
-# logrotate for application
+# Rails initializer for secret
 template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
   source "secret.rb.erb"
   owner  "deploy"
@@ -103,6 +104,16 @@ template "#{node["application"]["rails_root"]}/current/config/secret.rb" do
   mode   "0600"
   action :create
   variables(s3_key: s3_key, s3_secret: s3_secret, secret_token: secret_token, bundler_token: bundler_token, bundler_api_url: bundler_api_url, new_relic_license_key: new_relic_license_key, new_relic_app_name: new_relic_app_name)
+end
+
+# Rails initializer for Elasticsearch
+template "#{node["application"]["rails_root"]}/current/config/initializers/tire.rb" do
+  source "tire.rb.erb"
+  owner  "deploy"
+  group  "deploy"
+  mode   "0600"
+  action :create
+  variables(elasticsearch_url: rubygems_settings["elasticsearch_url"])
 end
 
 # Simplest thing that works: setup the worker; logs will be in the
