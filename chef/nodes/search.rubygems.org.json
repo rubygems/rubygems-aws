@@ -1,0 +1,49 @@
+{
+  "run_list": ["role[search]"],
+  "sudo" : {
+     "add_vagrant" : false
+   },
+
+   "elasticsearch" : {
+    "cluster" : {
+      "name" : "rubygems_production"
+    },
+    "path" : {
+      "data" : "/usr/local/var/data/elasticsearch/disk1"
+    },
+    "bootstrap" : {
+      "mlockall" : false
+    },
+    "discovery" : {
+      "type" : "ec2",
+      "ec2" : {
+        "groups" : ["elasticsearch"]
+      }
+    },
+    "cloud" : {
+      "aws" : {
+        "access_key" : "<REPLACE OR USE IAM ROLE IN AWS>",
+        "secret_key" : "<REPLACE OR USE IAM ROLE IN AWS>",
+        "region"     : "us-east-1"
+      }
+    },
+    "data" : {
+      "devices" : {
+        "/dev/xvda2" : {
+          "file_system"      : "ext3",
+          "mount_options"    : "rw,user",
+          "mount_path"       : "/usr/local/var/data/elasticsearch/disk1",
+          "format_command"   : "mkfs.ext3",
+          "fs_check_command" : "dumpe2fs",
+          "ebs"            : {
+            "device"                : "/dev/sda2",
+            "size"                  : 25,
+            "delete_on_termination" : true,
+            "type"                  : "io1",
+            "iops"                  : 100
+          }
+        }
+      }
+    }
+  }
+}
