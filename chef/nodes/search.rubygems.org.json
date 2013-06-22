@@ -29,8 +29,8 @@
     },
     "data" : {
       "devices" : {
-        "/dev/xvda2" : {
-          "file_system"      : "ext3",
+        "/dev/xvdh" : {
+          "file_system"      : "xfs",
           "mount_options"    : "rw,user",
           "mount_path"       : "/var/lib/elasticsearch/data",
           "format_command"   : "mkfs.xfs",
