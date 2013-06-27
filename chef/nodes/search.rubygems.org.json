@@ -13,37 +13,6 @@
     },
     "bootstrap" : {
       "mlockall" : false
-    },
-    "discovery" : {
-      "type" : "ec2",
-      "ec2" : {
-        "groups" : ["elasticsearch"]
-      }
-    },
-    "cloud" : {
-      "aws" : {
-        "access_key" : "<REPLACE OR USE IAM ROLE IN AWS>",
-        "secret_key" : "<REPLACE OR USE IAM ROLE IN AWS>",
-        "region"     : "us-east-1"
-      }
-    },
-    "data" : {
-      "devices" : {
-        "/dev/xvdh" : {
-          "file_system"      : "xfs",
-          "mount_options"    : "rw,user",
-          "mount_path"       : "/var/lib/elasticsearch/data",
-          "format_command"   : "mkfs.xfs",
-          "fs_check_command" : "dumpe2fs",
-          "ebs"            : {
-            "device"                : "/dev/sdh",
-            "size"                  : 250,
-            "delete_on_termination" : true,
-            "type"                  : "io1",
-            "iops"                  : 2000
-          }
-        }
-      }
     }
   }
 }

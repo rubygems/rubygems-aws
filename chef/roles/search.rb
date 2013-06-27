@@ -18,13 +18,7 @@ default_attributes(
     },
     "nginx" => {
       "user"  =>  'www-data',
-      "users" => [{ username: '<REPLACE>', password: '<REPLACE>' }],
       "allow_cluster_api" => true
     }
   },
-  "authorization" => {
-    "sudo" => {
-      "passwordless" => true
-    }
-  }
 )

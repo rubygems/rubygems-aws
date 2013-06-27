@@ -27,18 +27,10 @@
 
     // OpenSSH server timeout
     "TMOUT": "600"
-
-    // Ruby GC tuning
-    // "RUBY_HEAP_MIN_SLOTS": 1000000,
-    // "RUBY_HEAP_SLOTS_INCREMENT": 1000000,
-    // "RUBY_HEAP_SLOTS_GROWTH_FACTOR": 1,
-    // "RUBY_GC_MALLOC_LIMIT": 1000000000,
-    // "RUBY_HEAP_FREE_MIN": 500000,
-    // "RUBY_FREE_MIN": 500000
   },
 
   // Hostname
-  "set_fqdn": "rubygems.phlippers.net",
+  "set_fqdn": "rubygems.vagrant.local",
 
   // memcached
   "memcached": {
