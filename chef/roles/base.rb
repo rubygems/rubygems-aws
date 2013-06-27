@@ -54,7 +54,7 @@ default_attributes(
     }
   },
   "resolver" => {
-    "search" => "rubygem.org",
+    "search" => "rubygems.org",
     "nameservers" => ["8.8.8.8", "8.8.4.4"]
   }
 )
