@@ -4,5 +4,5 @@ default["application"]["internal_port"] = 2000
 default["application"]["application_servers"] = []
 
 # nginx
-default["nginx"]["version"] = "1.2.6"
-default["nginx"]["iteration"] = "2"
+default["nginx"]["version"] = "1.5.1"
+default["nginx"]["iteration"] = "1"
