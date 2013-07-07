@@ -1,0 +1,10 @@
+{
+    "id": "marpaia",
+    "username": "marpaia",
+    "comment": "Mike Arpaia",
+    "password": "$1$UBN5FRA6$LurZdnqoSDMjRZmrZ6PIE.",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmfxxhgRNngIfrhKQqTnOOdI+DpJlVDmpzpjZuNFvczIwtlzSxr0yKzV9nYTC86W7Q47TVH7x8USlnYQ3g7C2pM7+6W61T5kMCDJNq+vztn9BZIRLCArUENULeVXMXyBQV6RRXt2rmdmOIN81zd8Q0zdZHvG0ayaD0AyS0dviJJB/YcwAnvNxU0lxi8yTpS/Ew25G/ubEoLvtF1GveyzbkGxZcQm6YgMxxwqOrm7jSEd2lObQXZnqxj/dtP5uWNBi8/Z6Lz7kr0SYa462muWPRk1gNAu9ewg/X+3k4zKNP1sXk0yQMEVGngPv5qaUCyBJ3mf00wpaW/vijqwqUXcpH marpaia@etsy"
+    ]
+}
