@@ -60,7 +60,7 @@ GEM
     net-ssh-multi (1.1)
       net-ssh (>= 2.1.4)
       net-ssh-gateway (>= 0.99.0)
-    ohai (6.16.0)
+    ohai (6.18.0)
       ipaddress
       mixlib-cli
       mixlib-config
