@@ -74,8 +74,8 @@ end
 logrotate_app "nginx" do
   cookbook "logrotate"
   path "#{node["nginx"]["log_dir"]}/*.log"
-  frequency "daily"
-  rotate 2
+  size "1G"
+  rotate 1
   options ["missingok", "compress", "delaycompress", "notifempty", "sharedscripts"]
   postrotate "[ -f #{node["nginx"]["pid_file"]} ] && kill -USR1 `cat #{node["nginx"]["pid_file"]}`"
   create "640 nginx adm"
