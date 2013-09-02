@@ -74,6 +74,7 @@ end
 logrotate_app "nginx" do
   cookbook "logrotate"
   path "#{node["nginx"]["log_dir"]}/*.log"
+  frequency "daily"
   size "1G"
   rotate 1
   options ["missingok", "compress", "delaycompress", "notifempty", "sharedscripts"]
