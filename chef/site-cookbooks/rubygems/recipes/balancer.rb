@@ -79,5 +79,5 @@ logrotate_app "nginx" do
   rotate 1
   options ["missingok", "compress", "delaycompress", "notifempty", "sharedscripts"]
   postrotate "[ -f #{node["nginx"]["pid_file"]} ] && kill -USR1 `cat #{node["nginx"]["pid_file"]}`"
-  create "640 nginx adm"
+  create "640 www-data"
 end
