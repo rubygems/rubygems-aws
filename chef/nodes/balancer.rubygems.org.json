@@ -16,7 +16,9 @@
     "app_server": {
       "name": "thin",
       "concurrency": 4
+    },
+    "nginx": {
+      "log_dir": "/mnt"
     }
   }
-
 }
