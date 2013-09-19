@@ -50,4 +50,7 @@ end
 
 rbenv_ruby "1.9.3-p448" do
   action :install
+  root_path "/usr/local/rbenv"
 end
+
+rbenv_global "1.9.3-p448"
