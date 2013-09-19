@@ -1,0 +1,11 @@
+{
+  "sudo": {
+    "add_vagrant": false
+  },
+
+  // run list
+  "run_list": ["role[jenkins]"],
+
+  // Hostname
+  "set_fqdn": "jenkins.rubygems.org"
+}

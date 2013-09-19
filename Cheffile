@@ -33,6 +33,8 @@ cookbook "iftop"
 cookbook "iptables",
   git: "https://github.com/phlipper/iptables"
 
+cookbook "jenkins"
+
 cookbook "logrotate"
 
 cookbook "logwatch"
