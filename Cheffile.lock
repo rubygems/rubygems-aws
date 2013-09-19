@@ -51,6 +51,7 @@ SITE
     postfix (2.1.4)
     resolver (1.1.0)
     rsync (0.8.0)
+    ruby_build (0.8.0)
     runit (0.16.2)
     screen (0.8.0)
       build-essential (>= 0.0.0)
@@ -65,6 +66,7 @@ SITE
       build-essential (>= 0.0.0)
     xslt (0.0.1)
     yum (2.1.0)
+    zlib (2.0.0)
 
 GIT
   remote: https://github.com/DataDog/chef-datadog
@@ -83,6 +85,13 @@ GIT
   specs:
     elasticsearch (0.3.1)
       ark (>= 0.0.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-rbenv
+  ref: master
+  sha: 9afb4e5da2e6212504a12de3bbbd410cd96100f6
+  specs:
+    rbenv (0.7.3)
 
 GIT
   remote: https://github.com/fnichol/chef-user
@@ -175,9 +184,11 @@ DEPENDENCIES
   openssh (>= 0)
   postfix (>= 0)
   postgresql (>= 0)
+  rbenv (>= 0)
   redis (>= 0)
   resolver (>= 0)
   rsync (>= 0)
+  ruby_build (>= 0)
   screen (>= 0)
   sudo (>= 0)
   sysstat (>= 0)
@@ -185,4 +196,5 @@ DEPENDENCIES
   xfs (>= 0)
   xml (>= 0)
   xslt (>= 0)
+  zlib (>= 0)
 

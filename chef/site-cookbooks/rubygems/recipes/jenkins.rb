@@ -47,3 +47,7 @@ link "#{node["nginx"]["dir"]}/sites-enabled/jenkins.conf" do
   to "#{node["nginx"]["dir"]}/sites-available/jenkins.conf"
   notifies :reload, "service[nginx]", :immediately
 end
+
+rbenv_ruby "1.9.3-p448" do
+  action :install
+end

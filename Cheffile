@@ -71,7 +71,12 @@ cookbook "java"
 cookbook "elasticsearch",
   git: "https://github.com/elasticsearch/cookbook-elasticsearch"
 
+cookbook "rbenv",
+  git: "https://github.com/fnichol/chef-rbenv"
+
 cookbook "resolver"
+
+cookbook "ruby_build"
 
 cookbook "rsync"
 
@@ -89,3 +94,5 @@ cookbook "xml"
 cookbook "xslt"
 
 cookbook "xfs"
+
+cookbook "zlib"
