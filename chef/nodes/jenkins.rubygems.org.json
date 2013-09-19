@@ -6,6 +6,11 @@
   // run list
   "run_list": ["role[jenkins]"],
 
+  "application": {
+    "ssl_key": "rubygems.org.key",
+    "ssl_cert": "rubygems.org.crt"
+  },
+
   // Hostname
   "set_fqdn": "jenkins.rubygems.org"
 }
