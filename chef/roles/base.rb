@@ -4,6 +4,7 @@ run_list(
   "recipe[rubygems::users]",
   "recipe[apt]",
   "recipe[build-essential]",
+  "recipe[rubygems::cloudinit]",
   "recipe[xfs]",
   "role[system_tools]",
   "role[logging]",
