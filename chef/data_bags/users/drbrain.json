@@ -1,0 +1,10 @@
+{
+    "id": "drbrain",
+    "username": "drbrain",
+    "comment": "Eric Hodel",
+    "password": "$1$ILgtzWsf$kn9vXmwAW8G2vnhhtQPMN/",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-dss AAAAB3NzaC1kc3MAAACBAJGfPvAqEfHBR8/vhPKkVnJ8tOXKAENh5fzuZPnpMO4N3JIaWyBikILVF35d1O4AoTbtggEKjf0jPsS+ntuu5gEztzahq2rl7haFTN+qHTwDIkp6kiayfKg/pvzuW+uUrDmUqKTrt7XCyhmvp68jlWEhzMCZwHr3yVJv12nD6/MfAAAAFQDkXyP6TRp7CKCzWZa25jgzq74G+wAAAIAM/LMx8BSSuQbaZntBwxPZQ8pQvmrLBUiVFN+S+iRp59UhP2C4DeyAN4jFraJMNUsrTmeLrV+pEjzg0MfXtca/uExlrZUc/LlyULrSP/zNEonjZA23wT25x2GVfOtgoE3tHelNWqFlu/zUP3Ig7JuIb8ZwV6nr01Bejlje4Dd7HAAAAIADxy+U2FvdkxW0VsFWavl9e4llMwwVSi4cbc9Wt4NN5d3LvdAeNFzECkJDsqqrn4dHENbzhYu2T8g51XVAiFTD53M8agqk12lELIwDVhTk8pO6VCjPVqgvTLotBgnQqD1iOT/yZJx3NNcoJlj84fRag4D22zasYHAVyNOOU+Vqlg=="
+    ]
+}
