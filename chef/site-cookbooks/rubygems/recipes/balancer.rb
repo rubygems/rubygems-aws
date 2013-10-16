@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: rubygems
-# Recipe:: rails_nginx
+# Recipe:: balancer
 #
 
 app_env = "#{node["application"]["name"]}-#{node["application"]["rails_env"]}"
@@ -29,6 +29,14 @@ cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_cert"]}"
   group  "root"
   mode   "0644"
   notifies :reload, "service[nginx]", :immediately
+end
+
+# maintenance page
+cookbook_file "#{node["nginx"]["dir"]}/maintenance.html" do
+  source "maintenance.html"
+  owner "root"
+  group "root"
+  mode "0644"
 end
 
 # vhost configuration
