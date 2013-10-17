@@ -9,6 +9,7 @@ run_list(
 default_attributes(
   "postgresql" => {
     "version" => "9.2",
+    "data_directory" => "/var/lib/pg_data",
     "listen_addresses" => "*",
     "ssl" => false,
     "work_mem" => "100MB",
