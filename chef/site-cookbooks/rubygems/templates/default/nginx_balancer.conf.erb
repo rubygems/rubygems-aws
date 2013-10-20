@@ -185,6 +185,14 @@ server {
   if ($geoip_country_code = "JP") {
     set $gem_mirror https://tokyo-m.rubygems.org;
   }
+
+  if ($geoip_country_code = "AU") {
+    set $gem_mirror https://au-m.rubygems.org;
+  }
+
+  if ($geoip_country_code = "NZ") {
+    set $gem_mirror https://au-m.rubygems.org;
+  }
   <% end %>
 
   # SSL settings
