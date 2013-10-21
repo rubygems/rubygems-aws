@@ -37,7 +37,7 @@ if data_bag("secrets").include?("datadog")
   # end
 
   # Nginx integration
-  if node['nginx'] and node["nginx"]["enable_stub_status"]
+  if node['nginx'] && node["nginx"]["enable_stub_status"]
     node.set['datadog']['nginx']['status_url'] = "http://127.0.0.1:#{node['nginx']['status_port']}/nginx_status/"
   end
 

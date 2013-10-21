@@ -8,6 +8,9 @@ run_list(
   "role[rubygems]"
 )
 
-default_attributes({"redis" => {
-                       "maxmemory" => "8gb",
-                       "dir" => "/var/lib/redis_data"}})
+default_attributes(
+  "redis" => {
+    "maxmemory" => "8gb",
+    "dir" => "/var/lib/redis_data"
+  }
+)

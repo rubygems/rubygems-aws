@@ -17,9 +17,7 @@ template "/etc/init.d/nginx" do
   owner "root"
   group "root"
   mode 00755
-  variables({:src_binary => "/opt/nginx/sbin/nginx",
-             :pid => node['nginx']['pid_file']
-            })
+  variables(:src_binary => "/opt/nginx/sbin/nginx", :pid => node['nginx']['pid_file'])
 end
 
 directory "/opt/nginx/conf/conf.d"

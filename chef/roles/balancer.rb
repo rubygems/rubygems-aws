@@ -8,7 +8,7 @@ run_list(
 
 override_attributes(
   "application" => {
-    "application_servers" => [ "10.249.31.114" ],
+    "application_servers" => ["10.249.31.114"],
     "stat_server" => "10.249.31.114:5000"
   },
   "nginx" => {

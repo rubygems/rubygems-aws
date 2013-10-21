@@ -4,12 +4,7 @@
 #
 
 rails_root        = node["application"]["rails_root"]
-rails_env         = node["application"]["rails_env"]
 app_env           = "#{node["application"]["name"]}-#{node["application"]["rails_env"]}"
-sudo_name         = app_env.tr("-", "_").upcase
-bundle_cmd        = "bundle"
-company_name      = node["application"]["company_name"]
-first_server_name = node["application"]["server_names"][0]
 
 secrets = data_bag_item("secrets", "rubygems")
 rubygems_settings = secrets["application"][node["application"]["rails_env"]]
@@ -46,7 +41,7 @@ end
 #   privileges superuser: false, createdb: false, login: true
 #   password rails_postgresql_password
 # end
-# 
+#
 # # create a database
 # pg_database rails_postgresql_db do
 #   owner rails_postgresql_user

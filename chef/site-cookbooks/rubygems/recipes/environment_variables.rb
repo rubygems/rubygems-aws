@@ -19,7 +19,7 @@ ruby_block "setup system ENVIRONMENT variables" do
       kv    = "#{k}=#{v}"
 
       file.search_file_replace_line(match, kv) # update existing
-      file.insert_line_if_no_match(match, kv ) # add new
+      file.insert_line_if_no_match(match, kv) # add new
       file.write_file
     end
   end

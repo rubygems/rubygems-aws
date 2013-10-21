@@ -10,9 +10,7 @@ users = data_bag("users")
 sysadmins = []
 users.each do |user_name|
   user = data_bag_item("users", user_name)
-  if user['admin']
-    sysadmins << user['username']
-  end
+  sysadmins << user['username'] if user['admin']
   user_account user["username"] do
     comment   user["comment"]
     password  user["password"]
@@ -20,9 +18,7 @@ users.each do |user_name|
   end
 end
 
-if node["sudo"]["add_vagrant"]
-  sysadmins << "vagrant"
-end
+sysadmins << "vagrant" if node["sudo"]["add_vagrant"]
 
 group "sysadmin" do
   gid 2300
