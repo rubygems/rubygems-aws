@@ -58,6 +58,8 @@ cookbook "ntp"
 
 cookbook "openssh"
 
+cookbook "papertrail-rsyslog"
+
 cookbook "postfix"
 
 cookbook "postgresql",
@@ -96,5 +98,3 @@ cookbook "xslt"
 cookbook "xfs"
 
 cookbook "zlib"
-
-cookbook "papertrail-rsyslog"
