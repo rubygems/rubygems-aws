@@ -7,7 +7,6 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 ## Hacking
 
     $ bundle install
-    $ librarian-chef install
 
 ### Hacking in Vagrant
 
@@ -22,11 +21,8 @@ Add your user to the "users" databag (`chef/data_bags/users`).
 
 Boot EC2 instances and get hostnames
 
-    $ export RUBYGEMS_EC2_APP=ec2-*.amazonaws.com
-    $ export RUBYGEMS_EC2_LB1=ec2-*.amazonaws.com
-    $ export RUBYGEMS_EC2_DB1=ec2-*.amazonaws.com
-    $ cap ec2 bootstrap
-    $ cap ec2 chef
+    $ cap production bootstrap
+    $ cap prodcution chef
 
 
 ## AMI's

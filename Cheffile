@@ -22,7 +22,7 @@ cookbook "git"
 
 cookbook "grc"
 
-cookbook "hostname"
+cookbook "hostname", "~> 0.1.0"
 
 cookbook "htop"
 
