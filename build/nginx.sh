@@ -2,13 +2,15 @@
 #
 # Build Nginx from source, and wrap it up with fpm
 #
-# Author: <adam@opscode.com>
+# Authors:
+#   Adam Jacobs <adam@opscode.com>
+#   Sam Kottler <shk@linux.com>
 #
 # This script works on Ubuntu, and maybe on Debian.
 
 # Tweak the version and the md5sum for new releases of nginx
-NGINX_VERSION="1.2.6"
-NGINX_SHA512SUM="659f01b0349292f7176f9bf6981bb0b270d724c5bd621556a0f1521d220995393789f6aea42ad3d1044207b9b2fb0aa40f81a069dbcb8eec4b3503b1e0826d64"
+NGINX_VERSION="1.5.1"
+NGINX_SHA512SUM="0932179b55aff87f173a55e9fa3376a5186bf266b51e47517bef610ce2bc5d52f6bf2c8f5fe6361748442372b5dec9c93a8185bf4f102a177342e2ec2c059220"
 
 ##
 # This stuff should all be automatic...
@@ -29,6 +31,11 @@ exists() {
   fi
 }
 
+if [ ! -e Gemfile ]; then
+  echo "This script must be run from the top level of the rubygems/rubygems-aws repo"
+  exit 5
+fi
+
 if exists "sha512sum"; then
   true
 else
@@ -37,7 +44,7 @@ else
 fi
 
 echo "Installing pre-requisites"
-sudo apt-get install -y libpcre3-dev geoip-database libgeoip-dev ruby1.9.1 ruby1.9.1-dev libxml2-dev libxslt1-dev libssl-dev libxslt-dev libxml2-dev
+sudo apt-get install -y libpcre3-dev geoip-database libgeoip-dev ruby1.9.1 ruby1.9.1-dev libxml2-dev libxslt1-dev libssl-dev libxslt-dev libxml2-dev make
 sudo /usr/bin/gem1.9.1 install bundler --no-rdoc --no-ri
 
 echo "Downloading $NGINX_URL"
@@ -68,13 +75,13 @@ cd $TMP_DIR/nginx-$NGINX_VERSION
   --with-http_gzip_static_module \
   --with-http_realip_module \
   --with-http_stub_status_module
-make
+make -j10
 mkdir -p $TMP_DIR/$NGINX_PREFIX
 env DESTDIR=$TMP_DIR make install
 cd $TMP_DIR
 bundle install
 bundle exec fpm -s dir -t deb \
-  -n nginx -v $NGINX_VERSION --iteration 2 \
+  -n nginx -v $NGINX_VERSION --iteration 1 \
   -C $TMP_DIR \
   opt/nginx
 
