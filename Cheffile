@@ -96,3 +96,5 @@ cookbook "xslt"
 cookbook "xfs"
 
 cookbook "zlib"
+
+cookbook "papertrail-rsyslog"
