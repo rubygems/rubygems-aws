@@ -8,12 +8,6 @@ GEM
     backports (3.3.5)
     bunny (0.7.9)
     cabin (0.6.1)
-    capistrano (2.15.5)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
     chef (10.28.2)
       bunny (>= 0.6.0, < 0.8.0)
       erubis
@@ -83,10 +77,6 @@ GEM
     mixlib-shellout (1.2.0)
     moneta (0.6.0)
     multi_json (1.8.2)
-    net-scp (1.1.2)
-      net-ssh (>= 2.6.5)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
@@ -127,7 +117,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano (~> 2.0)
   chef (~> 10.18)
   foodcritic (~> 3.0)
   fpm (~> 0.3)
