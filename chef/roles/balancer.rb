@@ -17,5 +17,8 @@ override_attributes(
     "worker_processes" => 8,
     "buffers_enable" => true,
     "client_max_body_size" => 0,
+    "client_header_timeout" => 60,
+    "client_body_timeout" => 60,
+    "send_timeout" => 60,
   }
 )
