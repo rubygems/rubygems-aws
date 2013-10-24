@@ -2,12 +2,12 @@ geoip_country /usr/share/GeoIP/GeoIP.dat;
 
 split_clients "${remote_addr}${uri}AAA" $gem_mirror {
     20.0% http://bb-m.rubygems.org;
-    80.0% http://production.cf.rubygems.org;
+    80.0% http://rubygems.global.ssl.fastly.net;
 }
 
 split_clients "${remote_addr}${uri}AAA" $gem_mirror_ssl {
     20.0% https://bb-m.rubygems.org;
-    80.0% https://s3.amazonaws.com/production.s3.rubygems.org;
+    80.0% https://rubygems.global.ssl.fastly.net;
 }
 
 split_clients "${remote_addr}${uri}AAA" $gem_mirror_test {
