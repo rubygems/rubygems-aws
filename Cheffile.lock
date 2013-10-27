@@ -104,6 +104,13 @@ GIT
     user (0.3.1)
 
 GIT
+  remote: https://github.com/mlafeldt/pbuilder-cookbook.git
+  ref: master
+  sha: b64abe25a9722f4161e464fe0ab95457d938a552
+  specs:
+    pbuilder (1.0.8)
+
+GIT
   remote: https://github.com/phlipper/chef-denyhosts
   ref: master
   sha: cead32d2dc8cad24a261b6abf42ffb30a797704c
@@ -186,6 +193,7 @@ DEPENDENCIES
   ntp (>= 0)
   openssh (>= 0)
   papertrail-rsyslog (>= 0)
+  pbuilder (>= 0)
   postfix (>= 0)
   postgresql (>= 0)
   rbenv (>= 0)

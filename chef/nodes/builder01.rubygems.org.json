@@ -1,0 +1,10 @@
+{
+  // run list
+  "run_list": ["role[builder]"],
+  "sudo" : {
+     "add_vagrant" : false
+   },
+
+  // Hostname
+  "set_fqdn": "builder01.rubygems.org"
+}

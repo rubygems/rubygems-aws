@@ -60,6 +60,9 @@ cookbook "openssh"
 
 cookbook "papertrail-rsyslog"
 
+cookbook "pbuilder",
+  git: "https://github.com/mlafeldt/pbuilder-cookbook.git"
+
 cookbook "postfix"
 
 cookbook "postgresql",
