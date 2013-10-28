@@ -20,8 +20,8 @@ Vagrant::Config.run do |config|
 
   config.vm.define :balancer do |balancer|
     balancer.vm.host_name = "rubygems-org-balancer"
-    balancer.vm.box = "opscode-ubuntu-12.04"
-    balancer.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-10.18.2.box"
+    balancer.vm.box = "opscode-ubuntu-12.04-chef-11.4.4"
+    balancer.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.4.box"
 
     # Use more RAM to assist with setting up lots of infra
     balancer.vm.customize ["modifyvm", :id, "--memory", "768"]
