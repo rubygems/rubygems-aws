@@ -7,12 +7,13 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 ## Hacking
 
     $ bundle install
-    $ librarian-chef install
 
 ### Hacking in Vagrant
 
     $ vagrant up
-    $ cap chef
+    $ knife solo cook vagrant@33.33.33.12 chef/nodes/dbmaster.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-dbmaster
+    $ knife solo cook vagrant@33.33.33.10 chef/nodes/app.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-app
+    $ knife solo cook vagrant@33.33.33.11 chef/nodes/balancer.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-balancer
 
 ### Hacking on EC2
 
@@ -20,14 +21,15 @@ Add your user to the "users" databag (`chef/data_bags/users`).
   You can look at the other users for the schema.
   You can generate an encrypted password using `mkpasswd -m sha-512`.
 
-Boot EC2 instances and get hostnames
+Boot EC2 instances and boostrap them:
 
-    $ export RUBYGEMS_EC2_APP=ec2-*.amazonaws.com
-    $ export RUBYGEMS_EC2_LB1=ec2-*.amazonaws.com
-    $ export RUBYGEMS_EC2_DB1=ec2-*.amazonaws.com
-    $ cap ec2 bootstrap
-    $ cap ec2 chef
+    $ knife bootstrap -d chef-solo -x $DEPLOY_USER --sudo $SERVER
 
+Run chef (modify these commands as you need to):
+
+    $ knife solo cook $DEPLOY_USER@ec2-54-245-133-190.us-west-2.compute.amazonaws.com chef/nodes/dbmaster.production.json -i $DEPLOY_SSH_KEY -N dbmaster01
+    $ knife solo cook $DEPLOY_USER@ec2-54-245-134-70.us-west-2.compute.amazonaws.com chef/nodes/app.production.json -i $DEPLOY_SSH_KEY -N app01
+    $ knife solo cook $DEPLOY_USER@rubygems.org chef/nodes/balancer.production.json -i $DEPLOY_SSH_KEY -N balancer02
 
 ## AMI's
 
