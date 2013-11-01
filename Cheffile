@@ -76,7 +76,7 @@ cookbook "elasticsearch",
 cookbook "rbenv",
   git: "https://github.com/fnichol/chef-rbenv"
 
-cookbook "resolver"
+cookbook "resolver", '~> 1.1.4'
 
 cookbook "ruby_build"
 
