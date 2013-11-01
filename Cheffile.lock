@@ -9,7 +9,7 @@ SITE
       passenger_apache2 (>= 0.0.0)
       runit (<= 0.16.2)
       unicorn (>= 0.0.0)
-    apt (1.7.0)
+    apt (1.9.0)
     ark (0.3.0)
     bash-completion (0.1.0)
     build-essential (1.3.2)
@@ -138,9 +138,9 @@ GIT
 GIT
   remote: https://github.com/phlipper/chef-postgresql
   ref: master
-  sha: ff499fcff50c1113f74cc32352ebfbede93a06cc
+  sha: 2ea4b18178569549332028de27c3583717926888
   specs:
-    postgresql (0.10.1)
+    postgresql (0.13.0)
       apt (>= 0.0.0)
 
 GIT
@@ -161,7 +161,7 @@ GIT
 DEPENDENCIES
   application (>= 0)
   application_ruby (>= 0)
-  apt (= 1.7.0)
+  apt (= 1.9.0)
   bash-completion (>= 0)
   build-essential (>= 0)
   curl (>= 0)
