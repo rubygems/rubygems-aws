@@ -1,5 +1,7 @@
 # Rubygems AWS Infrastructure Configuration
 
+[![Build Status](https://travis-ci.org/rubygems/rubygems-aws.png?branch=master)](https://travis-ci.org/rubygems/rubygems-aws)
+
 Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS infrastructure
 
 **Note: This repository requires Ruby 1.9.x.**
