@@ -1,10 +1,9 @@
 {
   "run_list": ["role[search]"],
-  "sudo" : {
-     "add_vagrant" : false
-   },
 
-   "elasticsearch" : {
+  "set_fqdn": "elasticsearch01-aws.rubygems.org",
+
+  "elasticsearch" : {
     "cluster" : {
       "name" : "rubygems_production"
     },

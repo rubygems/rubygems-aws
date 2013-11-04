@@ -1,14 +1,15 @@
 {
   // run list
-  "run_list": ["role[balancer]", "role[vagrant]"],
-
+  "run_list": ["role[app]"],
+  
   // rubygems Rails application attributes
   "application": {
     "name": "rubygems",
     "repository": "https://github.com/rubygems/rubygems.org.git",
-    "rails_env": "staging",
-    "rails_root": "/applications/rubygems/staging",
-    "server_names": ["rubygems.phlippers.net"],
+    "rails_env": "production",
+    "rails_root": "/applications/rubygems/production",
+    "rails_postgresql_host": "10.224.39.18",
+    "server_names": ["app01.rubygems.org"],
     "use_ssl": true,
     "force_ssl": true,
     "ssl_key": "dev.rubygems.org.key",
@@ -21,8 +22,8 @@
 
   "environment_variables": {
     // Rails application settings
-    "RAILS_ENV":  "staging",
-    "RACK_ENV":   "staging",
+    "RAILS_ENV":  "production",
+    "RACK_ENV":   "production",
     "REDIS_URL":  "redis://localhost:6379/0",
 
     // OpenSSH server timeout
@@ -38,14 +39,19 @@
   },
 
   // Hostname
-  "set_fqdn": "rubygems.phlippers.net",
+  "set_fqdn": "app01-aws.rubygems.org",
+
+  // new relic rpm
+  "new_relic": {
+    "license_key": "" // your key for server monitoring here
+  },
 
   // postgresql
   "postgresql": {
     "version": "9.2",
     "ssl": false,
     "pg_hba": [
-      "host rubygems_staging rubygems 127.0.0.1/32 password"
+      "host rubygems_production rubygems 127.0.0.1/32 password"
     ]
   }
 }

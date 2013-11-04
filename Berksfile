@@ -39,6 +39,7 @@ cookbook "resolver", '~> 1.1.4'
 cookbook "rsync"
 cookbook "rsyslog", "1.5.0"
 cookbook "ruby_build"
+cookbook "rubygems", path: File.expand_path('../chef/site-cookbooks/rubygems', __FILE__)
 cookbook "screen"
 cookbook "sudo", "2.0.4"
 cookbook "sysstat"

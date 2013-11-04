@@ -1,16 +1,10 @@
 {
-  "sudo": {
-    "add_vagrant": false
-  },
-
-  // run list
   "run_list": ["role[jenkins]"],
+
+  "set_fqdn": "jenkins.rubygems.org",
 
   "application": {
     "ssl_key": "rubygems.org.key",
     "ssl_cert": "rubygems.org.crt"
-  },
-
-  // Hostname
-  "set_fqdn": "jenkins.rubygems.org"
+  }  
 }
