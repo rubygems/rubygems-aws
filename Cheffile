@@ -6,6 +6,8 @@ cookbook "application_ruby"
 
 cookbook "apt", "1.9.0"
 
+cookbook "aws"
+
 cookbook "bash-completion"
 
 cookbook "build-essential"
