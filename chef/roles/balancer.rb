@@ -11,6 +11,9 @@ override_attributes(
     "application_servers" => ["10.249.31.114"],
     "stat_server" => "10.249.31.114:5000"
   },
+  "monit" => {
+    "monitors" => ["nginx"]
+  },
   "nginx" => {
     "geoip" => true,
     "dir" => "/opt/nginx/conf",

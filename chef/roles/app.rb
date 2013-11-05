@@ -9,6 +9,9 @@ run_list(
 )
 
 default_attributes(
+  "monit" => {
+    "monitors" => ["redis", "nginx"]
+  },
   "redis" => {
     "maxmemory" => "8gb",
     "dir" => "/var/lib/redis_data"

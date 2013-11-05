@@ -12,5 +12,8 @@ default_attributes(
     "user" => "memcache",
     "port" => 11211,
     "listen" => "127.0.0.1"
+  },
+  "monit" => {
+    "monitors" => ["memcached"]
   }
 )
