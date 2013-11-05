@@ -10,6 +10,7 @@
     "repository": "https://github.com/rubygems/rubygems.org.git",
     "rails_env": "production",
     "rails_root": "/applications/rubygems/production",
+    "rails_postgresql_host": "10.224.39.18",
     "server_names": ["app01.rubygems.org"],
     "use_ssl": true,
     "force_ssl": true,

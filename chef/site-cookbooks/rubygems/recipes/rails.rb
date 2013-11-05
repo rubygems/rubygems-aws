@@ -10,7 +10,7 @@ secrets = data_bag_item("secrets", "rubygems")
 rubygems_settings = secrets["application"][node["application"]["rails_env"]]
 rails_postgresql_user     = rubygems_settings["rails_postgresql_user"]
 rails_postgresql_password = rubygems_settings["rails_postgresql_password"]
-rails_postgresql_host = rubygems_settings["rails_postgresql_host"]
+rails_postgresql_host = node['application']['rails_postgresql_host']
 rails_postgresql_db = rubygems_settings["rails_postgresql_db"]
 
 s3_key = rubygems_settings["s3_key"]
