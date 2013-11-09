@@ -21,7 +21,7 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 
 Add your user to the "users" databag (`chef/data_bags/users`).
   You can look at the other users for the schema.
-  You can generate an encrypted password using `mkpasswd -m sha-512`.
+  You can generate an encrypted password using `mkpasswd -m sha-512` or `openssl passwd -1`.
 
 Boot EC2 instances and boostrap them:
 
