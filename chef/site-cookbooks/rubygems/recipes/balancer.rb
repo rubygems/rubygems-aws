@@ -84,7 +84,7 @@ logrotate_app "nginx" do
   path "#{node["nginx"]["log_dir"]}/*.log"
   frequency "daily"
   size "1G"
-  rotate 1
+  rotate 0
   options ["missingok", "compress", "delaycompress", "notifempty", "sharedscripts"]
   postrotate "[ -f #{node["nginx"]["pid_file"]} ] && kill -USR1 `cat #{node["nginx"]["pid_file"]}`"
   create "640 www-data"
