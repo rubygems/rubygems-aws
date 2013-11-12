@@ -89,3 +89,7 @@ logrotate_app "nginx" do
   postrotate "[ -f #{node["nginx"]["pid_file"]} ] && kill -USR1 `cat #{node["nginx"]["pid_file"]}`"
   create "640 www-data"
 end
+
+link "/etc/cron.hourly/logrotate" do
+  to "/etc/cron.daily/logrotate"
+end
