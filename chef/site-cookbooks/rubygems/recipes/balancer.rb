@@ -31,6 +31,11 @@ cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_cert"]}"
   notifies :reload, "service[nginx]", :immediately
 end
 
+# log dir
+directory node["nginx"]["log_dir"] do
+  recursive true
+end
+
 # maintenance page
 cookbook_file "#{node["nginx"]["dir"]}/maintenance.html" do
   source "maintenance.html"
