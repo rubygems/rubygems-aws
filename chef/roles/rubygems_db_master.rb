@@ -8,6 +8,9 @@ run_list(
 )
 
 default_attributes(
+  "monit" => {
+    "monitors" => ["postgresql"]
+  },
   "postgresql" => {
     "version" => "9.2",
     "data_directory" => "/var/lib/pg_data",

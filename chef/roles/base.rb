@@ -27,7 +27,7 @@ default_attributes(
   },
   "monit" => {
     "monitors" => [
-      "cron", "filesystem", "ntp", "postfix", "postgresql", "redis", "nginx", "memcached"
+      "cron", "filesystem", "ntp", "postfix"
     ]
   },
   "nginx" => {
