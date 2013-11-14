@@ -14,7 +14,7 @@ override_attributes(
   "nginx" => {
     "geoip" => true,
     "dir" => "/opt/nginx/conf",
-    "log_dir" => "/mnt/log/nginx/",
+    "log_dir" => "/mnt/log/nginx",
     "worker_processes" => 8,
     "buffers_enable" => true,
     "client_max_body_size" => 0,
