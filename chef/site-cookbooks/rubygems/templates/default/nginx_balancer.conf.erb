@@ -41,6 +41,11 @@ server {
     if ($geoip_country_code = "NZ") {
       set $gem_mirror http://au-m.rubygems.org;
     }
+
+    if ($continent = "EU") {
+      set $gem_mirror http://aws-eu-cache01.rubygems.org;
+    }
+
     <% end %>
 
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -178,20 +183,25 @@ server {
 
   <% if node["nginx"]["geoip"] %>
   if ($geoip_country_code = "CN") {
-    set $gem_mirror https://tokyo-m.rubygems.org;
+    set $gem_mirror_ssl https://tokyo-m.rubygems.org;
   }
 
   if ($geoip_country_code = "JP") {
-    set $gem_mirror https://tokyo-m.rubygems.org;
+    set $gem_mirror_ssl https://tokyo-m.rubygems.org;
   }
 
   if ($geoip_country_code = "AU") {
-    set $gem_mirror https://au-m.rubygems.org;
+    set $gem_mirror_ssl https://au-m.rubygems.org;
   }
 
   if ($geoip_country_code = "NZ") {
-    set $gem_mirror https://au-m.rubygems.org;
+    set $gem_mirror_ssl https://au-m.rubygems.org;
   }
+
+  if ($continent = "EU") {
+    set $gem_mirror_ssl https://aws-eu-cache01.rubygems.org;
+  }
+
   <% end %>
 
   # SSL settings

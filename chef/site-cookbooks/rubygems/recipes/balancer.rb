@@ -75,6 +75,15 @@ if node["nginx"]["geoip"]
     mode  "0644"
     notifies :restart, "service[nginx]", :immediately
   end
+
+  # geoip_continent.conf
+  cookbook_file "#{node["nginx"]["dir"]}/conf.d/geoip_continent.conf" do
+    source "geoip_continent.conf"
+    owner "root"
+    group "root"
+    mode "0644"
+    notifies :restart, "service[nginx]", :immediately
+  end
 end
 
 # symlink to sites-enabled
