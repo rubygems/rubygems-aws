@@ -6,12 +6,34 @@ run_list(
   "recipe[build-essential]",
   "recipe[rubygems::cloudinit]",
   "recipe[xfs]",
-  "role[system_tools]",
-  "role[logging]",
-  "role[shell]",
-  "role[security]",
-  "role[monitoring]",
-  "role[mailer]"
+  "recipe[curl]",
+  "recipe[ntp]",
+  "recipe[hostname]",
+  "recipe[resolver]",
+  "recipe[rsync]",
+  "recipe[rubygems::system_ruby]",
+  "recipe[xml]",
+  "recipe[xslt]",
+  "recipe[logrotate]",
+  "recipe[logwatch]",
+  "recipe[rubygems::papertrail]",
+  "recipe[bash-completion]",
+  "recipe[grc]",
+  "recipe[screen]",
+  "recipe[openssh]",
+  "recipe[sudo]",
+  "recipe[denyhosts]",
+  "recipe[iptables]",
+  "recipe[rubygems::ip_security]",
+  "recipe[rubygems::iptables]",
+  "recipe[htop]",
+  "recipe[iftop]",
+  "recipe[monit]",
+  "recipe[newrelic-sysmond]",
+  "recipe[munin]",
+  "recipe[rubygems::datadog]",
+  "recipe[postfix]",
+  "recipe[postfix::aliases]"
 )
 
 default_attributes(
@@ -29,6 +51,9 @@ default_attributes(
     "monitors" => [
       "cron", "filesystem", "ntp", "postfix"
     ]
+  },
+  "new_relic" => {
+    "license_key" => ""
   },
   "nginx" => {
     "status_port" => 81
