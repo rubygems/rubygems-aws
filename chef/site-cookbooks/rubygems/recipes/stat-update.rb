@@ -3,7 +3,7 @@
 # Recipe:: stat-update.rb
 #
 
-package_name = "stat-update_1.1.0-1_amd64.deb"
+package_name = "stat-update_1.1.0_amd64.deb"
 
 cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
 
