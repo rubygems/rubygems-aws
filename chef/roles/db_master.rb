@@ -1,4 +1,4 @@
-name "rubygems_db_master"
+name "db_master"
 description "The role for the primary database server for the RubyGems.org app"
 
 run_list(
