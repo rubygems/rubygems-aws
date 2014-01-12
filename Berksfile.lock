@@ -1,0 +1,198 @@
+{
+  "sources": {
+    "application": {
+      "locked_version": "4.1.4"
+    },
+    "application_ruby": {
+      "locked_version": "3.0.2"
+    },
+    "apt": {
+      "locked_version": "1.9.0"
+    },
+    "aws": {
+      "locked_version": "1.0.0"
+    },
+    "bash-completion": {
+      "locked_version": "0.1.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "curl": {
+      "locked_version": "1.1.0"
+    },
+    "datadog": {
+      "locked_version": "1.1.1"
+    },
+    "denyhosts": {
+      "locked_version": "1.4.0",
+      "git": "https://github.com/phlipper/chef-denyhosts",
+      "ref": "d59b385c677a60b692b69b9b2b5fcc3ee79d7464"
+    },
+    "elasticsearch": {
+      "locked_version": "0.3.7",
+      "git": "https://github.com/elasticsearch/cookbook-elasticsearch",
+      "ref": "e89d3ef6762847f4088dbbfc9b439a7274265399"
+    },
+    "git": {
+      "locked_version": "2.9.0"
+    },
+    "grc": {
+      "locked_version": "1.0.0"
+    },
+    "hostname": {
+      "locked_version": "0.1.0"
+    },
+    "htop": {
+      "locked_version": "1.2.0"
+    },
+    "iftop": {
+      "locked_version": "0.0.1"
+    },
+    "imagemagick": {
+      "locked_version": "0.2.2"
+    },
+    "iptables": {
+      "locked_version": "0.11.0",
+      "git": "https://github.com/phlipper/iptables",
+      "ref": "72d5e7f919cce4df43ea90173c381e70e74f3aeb"
+    },
+    "java": {
+      "locked_version": "1.17.6"
+    },
+    "jenkins": {
+      "locked_version": "1.2.2"
+    },
+    "logrotate": {
+      "locked_version": "1.4.0"
+    },
+    "logwatch": {
+      "locked_version": "1.1.0"
+    },
+    "memcached": {
+      "locked_version": "1.7.0"
+    },
+    "monit": {
+      "locked_version": "1.5.1",
+      "git": "https://github.com/phlipper/chef-monit",
+      "ref": "b74f4fde2e2bd4db13afdacc64f39b8a8d43eb00"
+    },
+    "munin": {
+      "locked_version": "1.4.0"
+    },
+    "newrelic-sysmond": {
+      "locked_version": "1.3.3"
+    },
+    "nginx": {
+      "locked_version": "0.5.5",
+      "git": "https://github.com/phlipper/chef-nginx",
+      "ref": "4cdb7fe095f0a855d933e9629992a05332c91ccb"
+    },
+    "nodejs": {
+      "locked_version": "1.7.0",
+      "git": "https://github.com/phlipper/chef-nodejs",
+      "ref": "0f8cfce359c8b900eba2c7926f608d9477cc19aa"
+    },
+    "ntp": {
+      "locked_version": "1.5.4"
+    },
+    "openssh": {
+      "locked_version": "1.3.2"
+    },
+    "papertrail-rsyslog": {
+      "locked_version": "1.1.1"
+    },
+    "postfix": {
+      "locked_version": "3.0.4"
+    },
+    "postgresql": {
+      "locked_version": "0.13.0",
+      "git": "https://github.com/phlipper/chef-postgresql",
+      "ref": "2c412e2f1aebce50d84fe13a3d9c6c544004fad6"
+    },
+    "rbenv": {
+      "locked_version": "0.7.3",
+      "git": "https://github.com/fnichol/chef-rbenv",
+      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
+    },
+    "redis": {
+      "locked_version": "0.5.2",
+      "git": "https://github.com/phlipper/chef-redis",
+      "ref": "926db40eefd00654aaf1b4b0e2522b413042720d"
+    },
+    "resolver": {
+      "locked_version": "1.1.4"
+    },
+    "rsync": {
+      "locked_version": "0.8.4"
+    },
+    "ruby_build": {
+      "locked_version": "0.8.0"
+    },
+    "screen": {
+      "locked_version": "0.8.0"
+    },
+    "sudo": {
+      "locked_version": "2.3.0"
+    },
+    "sysstat": {
+      "locked_version": "1.2.0"
+    },
+    "user": {
+      "locked_version": "0.3.1",
+      "git": "https://github.com/fnichol/chef-user",
+      "ref": "ce45d05e13491a82cbb5a2c36292391f3a1aaa36"
+    },
+    "xfs": {
+      "locked_version": "1.1.0"
+    },
+    "xml": {
+      "locked_version": "1.2.0"
+    },
+    "xslt": {
+      "locked_version": "0.0.1"
+    },
+    "zlib": {
+      "locked_version": "2.0.0"
+    },
+    "unicorn": {
+      "locked_version": "1.3.0"
+    },
+    "apache2": {
+      "locked_version": "1.8.14"
+    },
+    "passenger_apache2": {
+      "locked_version": "2.1.2"
+    },
+    "runit": {
+      "locked_version": "1.5.8"
+    },
+    "yum": {
+      "locked_version": "3.0.4"
+    },
+    "yum-epel": {
+      "locked_version": "0.2.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "ark": {
+      "locked_version": "0.4.2"
+    },
+    "dmg": {
+      "locked_version": "2.1.2"
+    },
+    "windows": {
+      "locked_version": "1.12.6"
+    },
+    "hostsfile": {
+      "locked_version": "2.4.2"
+    },
+    "perl": {
+      "locked_version": "1.2.2"
+    },
+    "rsyslog": {
+      "locked_version": "1.5.0"
+    }
+  }
+}
