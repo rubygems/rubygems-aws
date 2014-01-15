@@ -3,6 +3,8 @@ chef/cookbooks
 cookbooks
 tmp
 .chef/knife.local.rb
+.chef/*.pem
+.bundle
 chef.tar.gz
 .rvmrc
 chef/site-cookbooks/rubygems/files/default/rubygems.org*
