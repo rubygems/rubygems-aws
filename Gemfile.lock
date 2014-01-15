@@ -217,7 +217,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  berkshelf
+  berkshelf (~> 2)
   chef (~> 10.18)
   foodcritic (~> 3.0)
   fpm (~> 0.3)
