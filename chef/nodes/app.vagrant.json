@@ -1,6 +1,6 @@
 {
   // run list
-  "run_list": ["role[almost_fullstack]", "role[vagrant]"],
+  "run_list": ["role[app]", "role[vagrant]"],
 
   // rubygems Rails application attributes
   "application": {
