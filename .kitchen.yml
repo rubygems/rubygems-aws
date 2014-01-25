@@ -25,17 +25,16 @@ suites:
     attributes:
       application:
         name: 'rubygems'
+        repository: 'https://github.com/rubygems/rubygems.org.git'
         rails_env: vagrant
-        rails_root: "/applications/rubygems/staging"
-        server_names:
-          - "vagrant.rubygems.org"
-        use_ssl: true
-        force_ssl: true
+        rails_postgresql_host: localhost
         ssl_key: rubygems.org.key
         ssl_cert: rubygems.org.crt
-        app_server:
-          name: unicorn
-          concurrency: 4
+      environment_variables:
+        RAILS_ENV: staging
+        RACK_ENV: staging
+        REDIS_URL: "redis://localhost:6379/0"
+        TMOUT: "600"
   - name: balancer
     run_list: ["role[balancer]", "role[vagrant]"]
     roles_path: "chef/roles"

@@ -9,7 +9,7 @@ Vagrant.configure('2') do |config|
 
   config.berkshelf.enabled = true
 
-  config.omnibus.chef_version = '11.4.4'
+  config.omnibus.chef_version = '11.8.2'
 
   config.vm.provider 'virtualbox' do |vb|
     vb.customize ['modifyvm', :id, '--memory', '768']
@@ -28,17 +28,9 @@ Vagrant.configure('2') do |config|
           "name" => "rubygems",
           "repository" => "https://github.com/rubygems/rubygems.org.git",
           "rails_env" => "staging",
-          "rails_root" => "/applications/rubygems/staging",
-          "server_names" => ["vagrant.rubygems.org"],
-          "use_ssl" => true,
-          "force_ssl" => true,
           "rails_postgresql_host" => "localhost",
           "ssl_key" => "dev.rubygems.org.key",
-          "ssl_cert" => "dev.rubygems.org.crt",
-          "app_server" => {
-            "name" => "thin",
-            "concurrency" => 4
-          }
+          "ssl_cert" => "dev.rubygems.org.crt"
         },
         "environment_variables" => {
           "RAILS_ENV" => "staging",

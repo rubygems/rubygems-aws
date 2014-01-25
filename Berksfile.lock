@@ -7,7 +7,7 @@
       "locked_version": "1.0.10"
     },
     "apt": {
-      "locked_version": "1.9.0"
+      "locked_version": "2.2.1"
     },
     "aws": {
       "locked_version": "1.0.0"
@@ -81,9 +81,7 @@
       "locked_version": "1.3.3"
     },
     "nginx": {
-      "locked_version": "0.4.3",
-      "git": "https://github.com/phlipper/chef-nginx",
-      "ref": "161a4eeabae2e2d18b6789a9723cf6ffb29ce79c"
+      "locked_version": "2.2.0"
     },
     "nodejs": {
       "locked_version": "1.7.0",
@@ -111,9 +109,9 @@
       "ref": "2c412e2f1aebce50d84fe13a3d9c6c544004fad6"
     },
     "redis": {
-      "locked_version": "0.5.2",
+      "locked_version": "0.5.4",
       "git": "https://github.com/phlipper/chef-redis",
-      "ref": "926db40eefd00654aaf1b4b0e2522b413042720d"
+      "ref": "817f1e6368df92ad632da05f066be8113f53fe89"
     },
     "resolver": {
       "locked_version": "1.1.4"
@@ -182,6 +180,12 @@
     },
     "hostsfile": {
       "locked_version": "2.4.2"
+    },
+    "bluepill": {
+      "locked_version": "2.3.0"
+    },
+    "ohai": {
+      "locked_version": "1.1.12"
     }
   }
 }

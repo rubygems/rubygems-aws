@@ -24,3 +24,7 @@ group "sysadmin" do
   gid 2300
   members sysadmins
 end
+
+group 'deploy' do
+  members sysadmins
+end

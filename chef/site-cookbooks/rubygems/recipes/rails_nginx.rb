@@ -1,23 +1,27 @@
-app_env = "#{node["application"]["name"]}-#{node["application"]["rails_env"]}"
+#
+# Cookbook Name:: rubygems
+# Recipe:: rails_nginx
+#
 
-template "#{node["nginx"]["dir"]}/sites-available/#{app_env}.conf" do
+node.set['nginx']['server_tokens'] = false
+node.set['nginx']['default_site_enabled'] = false
+
+include_recipe 'nginx::default'
+
+template "#{node["nginx"]["dir"]}/sites-available/rubygems.conf" do
   source "nginx_application.conf.erb"
   owner  "root"
   group  "root"
   mode   "0644"
   action :create
   variables(
-    name:       node["application"]["name"],
     rails_env:  node["application"]["rails_env"],
-    rails_root: node["application"]["rails_root"],
-    app_server: node["application"]["app_server"],
+    rails_root: '/applications/rubygems',
+    unicorn_port: 3000,
+    nginx_port: 2000,
     log_dir:    node["nginx"]["log_dir"]
   )
   notifies :reload, "service[nginx]", :immediately
 end
 
-# symlink to sites-enabled
-link "#{node["nginx"]["dir"]}/sites-enabled/#{app_env}.conf" do
-  to "#{node["nginx"]["dir"]}/sites-available/#{app_env}.conf"
-  notifies :reload, "service[nginx]", :immediately
-end
+nginx_site 'rubygems.conf'

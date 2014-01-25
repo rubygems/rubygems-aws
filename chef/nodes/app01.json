@@ -1,7 +1,7 @@
 {
   // run list
-  "run_list": ["role[app]"],
-  
+  "run_list": ["role[redis]"],
+
   // rubygems Rails application attributes
   "application": {
     "name": "rubygems",

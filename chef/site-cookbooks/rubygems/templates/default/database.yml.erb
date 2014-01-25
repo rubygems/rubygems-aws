@@ -1,10 +1,10 @@
 <%= @rails_env %>:
-  adapter: <%= @database['adapter'] %>
-  host: <%= @database['host'] %>
-  database: <%= @database['database'] %>
-  username: <%= @database['username'] %>
-  password: <%= @database['password'] %>
-  encoding: <%= @database.has_key?('encoding') ? @database['encoding'] : 'utf8' %>
+  adapter: <%= @adapter %>
+  host: <%= @host %>
+  database: <%= @database %>
+  username: <%= @username %>
+  password: <%= @password %>
+  encoding: <%= @encoding || 'utf8' %>
   reconnect: true
   pool: 30
   min_messages: error

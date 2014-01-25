@@ -1,13 +1,13 @@
 server {
-  listen <%= node["application"]["internal_port"] %>;
+  listen <%= @nginx_port %>;
   server_name <%= node["fqdn"] %>;
 
   # Set the max size for file uploads to 500Mb
   client_max_body_size 500M;
 
   # vhost specific logs
-  access_log <%= "#{@log_dir}/#{@name}-#{@rails_env}" %>-access.log main buffer=32k;
-  error_log <%= "#{@log_dir}/#{@name}-#{@rails_env}" %>-error.log info;
+  access_log <%= "#{@log_dir}/rubygems" %>-access.log combined buffer=32k;
+  error_log <%= "#{@log_dir}/rubygems" %>-error.log info;
 
   # allow only valid crud methods
   if ($request_method !~ GET|POST|PUT|DELETE|HEAD) {
@@ -49,9 +49,9 @@ server {
   }
 
   # try to load static files and cached files before passing upstream
-  try_files $uri $uri/index.html $uri.html cache/$uri cache/$uri/index.html cache/$uri.html <%= "@#{@app_server["name"]}" if %w[thin unicorn].include?(@app_server["name"]) %>;
+  try_files $uri $uri/index.html $uri.html cache/$uri cache/$uri/index.html cache/$uri.html @unicorn;
 
-  location @<%= @app_server["name"] %> {
+  location @unicorn {
     # pass the Host: header from the client right along so redirects
     # can be set properly within the Rack application
     proxy_set_header Host $host;
@@ -72,13 +72,13 @@ server {
     # per-response basis.
     # proxy_buffering off;
 
-    proxy_pass http://localhost:<%= node["application"]["application_port"] %>;
+    proxy_pass http://localhost:<%= @unicorn_port %>;
   }
 
   # Don't cache html5 offline support files
   location ~* ^.+\.(manifest|appcache)$ {
     expires -1;
-    access_log <%= "#{@log_dir}/#{@name}-#{@rails_env}" %>-static.log;
+    access_log <%= @log_dir %>rubygems-static.log;
     break;
   }
 

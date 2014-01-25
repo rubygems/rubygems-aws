@@ -1,0 +1,42 @@
+{
+  // run list
+  "run_list": ["role[app]"],
+
+  // rubygems Rails application attributes
+  "application": {
+    "name": "rubygems",
+    "rails_env": "production",
+    "rails_postgresql_host": "10.224.39.18"
+  },
+
+  "environment_variables": {
+    // Rails application settings
+    "RAILS_ENV":  "production",
+    "RACK_ENV":   "production",
+    "REDIS_URL":  "redis://10.249.31.114:6379/0",
+    "REDISTOGO_URL":  "redis://10.249.31.114:6379/0",
+
+    // OpenSSH server timeout
+    "TMOUT": "600"
+
+    // Ruby GC tuning
+    // "RUBY_HEAP_MIN_SLOTS": 1000000,
+    // "RUBY_HEAP_SLOTS_INCREMENT": 1000000,
+    // "RUBY_HEAP_SLOTS_GROWTH_FACTOR": 1,
+    // "RUBY_GC_MALLOC_LIMIT": 1000000000,
+    // "RUBY_HEAP_FREE_MIN": 500000,
+    // "RUBY_FREE_MIN": 500000
+  },
+
+  // Hostname
+  "set_fqdn": "app02-aws.rubygems.org",
+
+  // postgresql
+  "postgresql": {
+    "version": "9.2",
+    "ssl": false,
+    "pg_hba": [
+      "host rubygems_production rubygems 127.0.0.1/32 password"
+    ]
+  }
+}

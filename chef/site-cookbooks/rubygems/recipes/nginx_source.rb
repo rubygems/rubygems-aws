@@ -1,7 +1,12 @@
 #
 # Cookbook Name:: nginx
-# Recipe:: nginx_source.rb
+# Recipe:: nginx_source
 #
+
+node.set['nginx']['version'] = '1.5.8'
+node.set['nginx']['iteration'] = '1'
+
+include_recipe 'nginx::ohai_plugin'
 
 package_name = "nginx_#{node['nginx']['version']}-#{node['nginx']['iteration']}_amd64.deb"
 
@@ -9,19 +14,9 @@ cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
 
 dpkg_package "#{Chef::Config[:file_cache_path]}/#{package_name}"
 
-# Continue to use upstream cookbooks
-# for basic configuration and service management
-
-template "/etc/init.d/nginx" do
-  source "nginx.init.erb"
-  owner "root"
-  group "root"
-  mode 00755
-  variables(:src_binary => "/opt/nginx/sbin/nginx", :pid => node['nginx']['pid_file'])
+service 'nginx' do
+  supports :status => true, :restart => true, :reload => true
+  action   :enable
 end
 
-directory "/opt/nginx/conf/conf.d"
-directory "/var/log/nginx"
-
-include_recipe "nginx::service"
-include_recipe "nginx::configuration"
+include_recipe 'nginx::commons'
