@@ -18,7 +18,7 @@ users.each do |user_name|
   end
 end
 
-sysadmins << "vagrant" if node["sudo"]["add_vagrant"]
+sysadmins << "vagrant" if node["sudo"] && node["sudo"]["add_vagrant"]
 
 group "sysadmin" do
   gid 2300

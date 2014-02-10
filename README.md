@@ -12,10 +12,14 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 
 ### Hacking in Vagrant
 
-    $ vagrant up
-    $ knife solo cook vagrant@33.33.33.12 chef/nodes/dbmaster.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-dbmaster
-    $ knife solo cook vagrant@33.33.33.10 chef/nodes/app.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-app
-    $ knife solo cook vagrant@33.33.33.11 chef/nodes/balancer.vagrant.json -i ~/.vagrant.d/insecure_private_key -N vagrant-balancer
+We use vagrant for local development and testing of the infrastructure. You will need [Vagrant installed](http://docs.vagrantup.com/v2/installation/) and the following vagrant plugins installed:
+
+* [vagrant-berkshelf](https://github.com/berkshelf/vagrant-berkshelf)
+* [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus)
+
+To see a list of the VMs and their status, run `vagrant status`.
+
+To start and provision a VM, run: `vagrant up <name>`.
 
 ### Hacking on EC2
 
@@ -29,9 +33,9 @@ Boot EC2 instances and boostrap them:
 
 Run chef (modify these commands as you need to):
 
-    $ knife solo cook $DEPLOY_USER@ec2-54-245-133-190.us-west-2.compute.amazonaws.com chef/nodes/dbmaster.production.json -i $DEPLOY_SSH_KEY -N dbmaster01
-    $ knife solo cook $DEPLOY_USER@ec2-54-245-134-70.us-west-2.compute.amazonaws.com chef/nodes/app.production.json -i $DEPLOY_SSH_KEY -N app01
-    $ knife solo cook $DEPLOY_USER@rubygems.org chef/nodes/balancer.production.json -i $DEPLOY_SSH_KEY -N balancer02
+    $ knife solo cook dbmaster02-aws.rubygems.org chef/nodes/dbmaster02.json -N dbmaster02
+    $ knife solo cook app01-aws.rubygems.org chef/nodes/app01.json -N app01
+    $ knife solo cook balancer02-aws.rubygems.org chef/nodes/balancer02.json -N balancer02
 
 ## AMI's
 

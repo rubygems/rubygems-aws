@@ -1,6 +1,0 @@
-{
-  "run_list": ["role[db_master]"],
-  "sudo" : {
-     "add_vagrant" : false
-   }
-}

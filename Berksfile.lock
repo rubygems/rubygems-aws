@@ -135,6 +135,9 @@
     "ruby_build": {
       "locked_version": "0.8.0"
     },
+    "rubygems": {
+      "path": "./chef/site-cookbooks/rubygems"
+    },
     "screen": {
       "locked_version": "0.8.0"
     },
