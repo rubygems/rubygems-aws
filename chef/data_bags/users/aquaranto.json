@@ -1,0 +1,10 @@
+{
+    "id": "aquaranto",
+    "username": "aquaranto",
+    "comment": "Amanda Quaranto",
+    "password": "$1$mnU56u5R$097zbjOnLdXyTO4YixoXV/",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqDRNTpL/apTnpEediKkOIAdcxdL2WBLkc7HrHHnLDcjvxCJDu2ZVQd9a3fgySMJCaLrj9jdQO4E3J3hy1n9c6eFS/fulQMYoWRh2ebjkEYgEvBIEypp3GaXq0z2eiwzMPhLfP+BlN94wjx27qJlnXLuqfkc0e7kDQIEhSGlbtnKsZ1kE9XSccHYXXCbFUjPrfjtV2l3lKZ+QIO8hFnfvqeKnthOqsJvGaQKm2C8uYNMC8XKqpml5mV3JoqIdadjbsuiylLy0YU5Eef5ROKGSoKYgDtY8lTienLL+dPJI9VQdfUDcIqAl0UJ09+ultflhc1QBkXTnGmpSaQb37+E5n"
+    ]
+}
