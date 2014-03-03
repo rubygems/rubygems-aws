@@ -6,6 +6,27 @@ Chef cookbooks and bootstrap scripts to configure and manage Rubygems.org AWS in
 
 **Note: This repository requires Ruby 1.9.x.**
 
+## User Accounts
+
+Chef will create all the users from the data bag "users" (`chef/data_bags/users`). To add a new user, simply add a json file to that directory with the following schema:
+
+```json
+{
+    "id":"johnsmith",
+    "username": "johnsmith",
+    "comment":  "John Smith",
+    "password": "$1$YqNay.kf$Hpl4FGvK8JkLddHOjNvPj.",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa xxxxxxxxxxxxxxxxxxx johnsmith@example.com"
+    ]
+}
+```
+
+You can generate an encrypted password using `mkpasswd -m sha-512` or `openssl passwd -1`.
+
+If you want your user added to the RubyGems.org production servers, complete these steps and send a pull request.
+
 ## Hacking
 
     $ bundle install
@@ -22,10 +43,6 @@ To see a list of the VMs and their status, run `vagrant status`.
 To start and provision a VM, run: `vagrant up <name>`.
 
 ### Hacking on EC2
-
-Add your user to the "users" databag (`chef/data_bags/users`).
-  You can look at the other users for the schema.
-  You can generate an encrypted password using `mkpasswd -m sha-512` or `openssl passwd -1`.
 
 Boot EC2 instances and boostrap them:
 
