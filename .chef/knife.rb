@@ -5,7 +5,7 @@ raise "You need to set the environment variable #{chef_username} to your hosted 
 current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
-node_name                chef_username
+node_name                env_username
 client_key               "#{current_dir}/#{env_username}.pem"
 validation_client_name   "rubygems-validator"
 validation_key           "#{current_dir}/rubygems-validator.pem"
