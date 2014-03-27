@@ -30,9 +30,9 @@
       "ref": "cead32d2dc8cad24a261b6abf42ffb30a797704c"
     },
     "elasticsearch": {
-      "locked_version": "0.3.7",
+      "locked_version": "0.3.8",
       "git": "https://github.com/elasticsearch/cookbook-elasticsearch",
-      "ref": "e89d3ef6762847f4088dbbfc9b439a7274265399"
+      "ref": "15c51a61abd659943d4879822f773bd8e5e672cf"
     },
     "git": {
       "locked_version": "2.9.0"
@@ -58,7 +58,7 @@
       "ref": "72d5e7f919cce4df43ea90173c381e70e74f3aeb"
     },
     "java": {
-      "locked_version": "1.17.6"
+      "locked_version": "1.19.2"
     },
     "jenkins": {
       "locked_version": "1.2.2"
@@ -81,7 +81,9 @@
       "locked_version": "0.4.1"
     },
     "motd-tail": {
-      "locked_version": "2.0.0"
+      "locked_version": "2.0.2",
+      "git": "https://github.com/skottler/motd-tail",
+      "ref": "1494b628356049645e0e80faa7fcb8ddb283c3d4"
     },
     "munin": {
       "locked_version": "1.4.0"
@@ -115,19 +117,19 @@
       "locked_version": "2.1.4"
     },
     "postgresql": {
-      "locked_version": "0.13.0",
+      "locked_version": "0.13.1",
       "git": "https://github.com/phlipper/chef-postgresql",
-      "ref": "2c412e2f1aebce50d84fe13a3d9c6c544004fad6"
+      "ref": "89670ad805393f6b4bb495c32a03115a66f6fe61"
     },
     "rbenv": {
       "locked_version": "0.7.3",
       "git": "https://github.com/fnichol/chef-rbenv",
-      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
+      "ref": "0a3018634bafe58ad21c6ee271af015220e444b9"
     },
     "redis": {
-      "locked_version": "0.5.2",
+      "locked_version": "0.5.4",
       "git": "https://github.com/phlipper/chef-redis",
-      "ref": "926db40eefd00654aaf1b4b0e2522b413042720d"
+      "ref": "817f1e6368df92ad632da05f066be8113f53fe89"
     },
     "resolver": {
       "locked_version": "1.1.4"
@@ -156,7 +158,7 @@
     "user": {
       "locked_version": "0.3.1",
       "git": "https://github.com/fnichol/chef-user",
-      "ref": "ce45d05e13491a82cbb5a2c36292391f3a1aaa36"
+      "ref": "d703d0ab4463afabea92e2f1a4d697fbe04931eb"
     },
     "xfs": {
       "locked_version": "1.1.0"
