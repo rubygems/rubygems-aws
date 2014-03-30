@@ -73,7 +73,8 @@ server {
     }
 
     location /api/v1/dependencies {
-      rewrite ^(.*) http://bundler.rubygems.org$1 redirect;
+      proxy_set_header Host bundler.rubygems.org;
+      proxy_pass http://bundler.rubygems.org;
     }
 
     location /quick/Marshal.4.8/ {
@@ -246,7 +247,8 @@ server {
   }
 
   location /api/v1/dependencies {
-    rewrite ^(.*) https://bundler.rubygems.org$1 redirect;
+    proxy_set_header Host bundler.rubygems.org;
+    proxy_pass http://bundler.rubygems.org;
   }
 
   location /quick/Marshal.4.8/ {
