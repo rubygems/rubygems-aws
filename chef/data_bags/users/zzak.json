@@ -1,0 +1,10 @@
+{
+    "id": "zzak",
+    "username": "zzak",
+    "comment": "Zachary Scott",
+    "password": "$1$agkfZ0Qp$gYuhMDoHCMa/pERj/UXTq/",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbb2RBKTR9VTT6D++FRwNC4OQhW6h5D6BBufsGM6HwCUI5ZoR6L/R8+/muObTsa+nMDqOU7MdkbaRTwnFADU9NYwNcfeNzve2tX/bpz6OrqTI7d+kjHxPJ47VUOK+RHGwcP0uKH82yFB/etqUGOEF5OCNUIBvHVETXtnn4G7ppsw3aQ+RJTkaqs0g6YdodFVpcAoqi/2evBMMrBa7XUnc+obs7l0yrOUgOl/jEo8abCvkky/W0F34oNEGYLUC5M36bUQRc5O3ms+55GuzwLa8jpb4wl7Yk6fxZKY/7Vb4ylYAQZ3FSXFxiNS8IxPuI3KuEtb2IaTQhrrUwYNSAmOt/ zachary@zacharyscott.net"
+    ]
+}
