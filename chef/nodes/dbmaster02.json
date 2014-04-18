@@ -1,4 +1,0 @@
-{
-  "run_list": ["role[db_master]"],
-  "set_fqdn": "dbmaster02-aws.rubygems.org"
-}
