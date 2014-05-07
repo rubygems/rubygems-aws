@@ -184,11 +184,11 @@ server {
 
   <% if node["nginx"]["geoip"] %>
   if ($geoip_country_code = "CN") {
-    set $gem_mirror_ssl https://tokyo-m.rubygems.org;
+    set $gem_mirror_ssl https://au-m.rubygems.org;
   }
 
   if ($geoip_country_code = "JP") {
-    set $gem_mirror_ssl https://tokyo-m.rubygems.org;
+    set $gem_mirror_ssl https://au-m.rubygems.org;
   }
 
   if ($geoip_country_code = "AU") {
