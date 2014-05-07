@@ -27,11 +27,11 @@ server {
 
     <% if node["nginx"]["geoip"] %>
     if ($geoip_country_code = "CN") {
-      set $gem_mirror http://tokyo-m.rubygems.org;
+      set $gem_mirror http://au-m.rubygems.org;
     }
 
     if ($geoip_country_code = "JP") {
-      set $gem_mirror http://tokyo-m.rubygems.org;
+      set $gem_mirror http://au-m.rubygems.org;
     }
 
     if ($geoip_country_code = "AU") {
