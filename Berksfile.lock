@@ -1,201 +1,181 @@
-{
-  "sources": {
-    "application": {
-      "locked_version": "2.0.0"
-    },
-    "application_ruby": {
-      "locked_version": "1.0.10"
-    },
-    "apt": {
-      "locked_version": "1.9.0"
-    },
-    "aws": {
-      "locked_version": "1.0.0"
-    },
-    "bash-completion": {
-      "locked_version": "0.1.0"
-    },
-    "build-essential": {
-      "locked_version": "1.4.2"
-    },
-    "curl": {
-      "locked_version": "1.1.0"
-    },
-    "datadog": {
-      "locked_version": "1.1.1"
-    },
-    "denyhosts": {
-      "locked_version": "0.1.0",
-      "git": "https://github.com/phlipper/chef-denyhosts",
-      "ref": "cead32d2dc8cad24a261b6abf42ffb30a797704c"
-    },
-    "elasticsearch": {
-      "locked_version": "0.3.7",
-      "git": "https://github.com/elasticsearch/cookbook-elasticsearch",
-      "ref": "e89d3ef6762847f4088dbbfc9b439a7274265399"
-    },
-    "git": {
-      "locked_version": "2.9.0"
-    },
-    "grc": {
-      "locked_version": "1.0.0"
-    },
-    "hostname": {
-      "locked_version": "0.1.0"
-    },
-    "htop": {
-      "locked_version": "1.2.0"
-    },
-    "iftop": {
-      "locked_version": "0.0.1"
-    },
-    "imagemagick": {
-      "locked_version": "0.2.2"
-    },
-    "iptables": {
-      "locked_version": "0.11.0",
-      "git": "https://github.com/phlipper/iptables",
-      "ref": "72d5e7f919cce4df43ea90173c381e70e74f3aeb"
-    },
-    "java": {
-      "locked_version": "1.17.6"
-    },
-    "jenkins": {
-      "locked_version": "1.2.2"
-    },
-    "logrotate": {
-      "locked_version": "1.1.0"
-    },
-    "logwatch": {
-      "locked_version": "1.0.2"
-    },
-    "memcached": {
-      "locked_version": "1.2.0"
-    },
-    "monit": {
-      "locked_version": "1.1.0",
-      "git": "https://github.com/phlipper/chef-monit",
-      "ref": "e7fbb501346c0b6ea6af8a743648c21610c32796"
-    },
-    "munin": {
-      "locked_version": "1.4.0"
-    },
-    "newrelic-sysmond": {
-      "locked_version": "1.3.3"
-    },
-    "nginx": {
-      "locked_version": "0.4.3",
-      "git": "https://github.com/phlipper/chef-nginx",
-      "ref": "161a4eeabae2e2d18b6789a9723cf6ffb29ce79c"
-    },
-    "nodejs": {
-      "locked_version": "1.7.0",
-      "git": "https://github.com/phlipper/chef-nodejs",
-      "ref": "0f8cfce359c8b900eba2c7926f608d9477cc19aa"
-    },
-    "ntp": {
-      "locked_version": "1.3.2"
-    },
-    "openssh": {
-      "locked_version": "1.1.4"
-    },
-    "papertrail-rsyslog": {
-      "locked_version": "1.1.1"
-    },
-    "perl": {
-      "locked_version": "1.1.0"
-    },
-    "postfix": {
-      "locked_version": "2.1.4"
-    },
-    "postgresql": {
-      "locked_version": "0.13.0",
-      "git": "https://github.com/phlipper/chef-postgresql",
-      "ref": "2c412e2f1aebce50d84fe13a3d9c6c544004fad6"
-    },
-    "rbenv": {
-      "locked_version": "0.7.3",
-      "git": "https://github.com/fnichol/chef-rbenv",
-      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
-    },
-    "redis": {
-      "locked_version": "0.5.2",
-      "git": "https://github.com/phlipper/chef-redis",
-      "ref": "926db40eefd00654aaf1b4b0e2522b413042720d"
-    },
-    "resolver": {
-      "locked_version": "1.1.4"
-    },
-    "rsync": {
-      "locked_version": "0.8.4"
-    },
-    "rsyslog": {
-      "locked_version": "1.5.0"
-    },
-    "ruby_build": {
-      "locked_version": "0.8.0"
-    },
-    "rubygems": {
-      "path": "./chef/site-cookbooks/rubygems"
-    },
-    "screen": {
-      "locked_version": "0.8.0"
-    },
-    "sudo": {
-      "locked_version": "2.0.4"
-    },
-    "sysstat": {
-      "locked_version": "1.2.0"
-    },
-    "user": {
-      "locked_version": "0.3.1",
-      "git": "https://github.com/fnichol/chef-user",
-      "ref": "ce45d05e13491a82cbb5a2c36292391f3a1aaa36"
-    },
-    "xfs": {
-      "locked_version": "1.1.0"
-    },
-    "xml": {
-      "locked_version": "1.2.0"
-    },
-    "xslt": {
-      "locked_version": "0.0.1"
-    },
-    "zlib": {
-      "locked_version": "2.0.0"
-    },
-    "unicorn": {
-      "locked_version": "1.3.0"
-    },
-    "apache2": {
-      "locked_version": "1.8.4"
-    },
-    "passenger_apache2": {
-      "locked_version": "2.1.2"
-    },
-    "runit": {
-      "locked_version": "0.16.2"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    },
-    "yum": {
-      "locked_version": "2.4.0"
-    },
-    "ark": {
-      "locked_version": "0.4.2"
-    },
-    "dmg": {
-      "locked_version": "2.0.8"
-    },
-    "windows": {
-      "locked_version": "1.11.0"
-    },
-    "yum-epel": {
-      "locked_version": "0.2.0"
-    },
-    "hostsfile": {
-      "locked_version": "2.4.2"
-    }
-  }
-}
+DEPENDENCIES
+  application (= 2.0.0)
+  application_ruby (= 1.0.10)
+  apt (= 1.9.0)
+  aws
+  bash-completion
+  build-essential
+  curl
+  datadog
+  denyhosts
+    git: https://github.com/phlipper/chef-denyhosts
+    revision: d59b385c677a60b692b69b9b2b5fcc3ee79d7464
+  elasticsearch
+    git: https://github.com/elasticsearch/cookbook-elasticsearch
+    revision: 76d918dd320a34a7fb1f7e122e6ef643887d01e5
+  git
+  grc
+  hostname (~> 0.1.0)
+  htop
+  iftop
+  imagemagick
+  iptables
+  java
+  logrotate (= 1.1.0)
+  logwatch (= 1.0.2)
+  memcached (= 1.2.0)
+  monit
+    git: https://github.com/phlipper/chef-monit
+    revision: e7fbb501346c0b6ea6af8a743648c21610c32796
+    ref: e7fbb50
+  munin
+  newrelic-sysmond (~> 1.3.0)
+  nginx
+    git: https://github.com/phlipper/chef-nginx
+    revision: 161a4eeabae2e2d18b6789a9723cf6ffb29ce79c
+    ref: 161a4ee
+  nodejs
+    git: https://github.com/phlipper/chef-nodejs
+    revision: 0f8cfce359c8b900eba2c7926f608d9477cc19aa
+  ntp (= 1.3.2)
+  openssh (= 1.1.4)
+  papertrail-rsyslog
+  perl (= 1.1.0)
+  postfix (= 2.1.4)
+  postgresql
+    git: https://github.com/phlipper/chef-postgresql
+    revision: 00db6c2d022e7e72cf2827b0d5f40cb4f3e25943
+  rbenv
+    git: https://github.com/fnichol/chef-rbenv
+    revision: 0a3018634bafe58ad21c6ee271af015220e444b9
+  redis
+    git: https://github.com/phlipper/chef-redis
+    revision: 817f1e6368df92ad632da05f066be8113f53fe89
+  resolver (~> 1.1.4)
+  rsync
+  rsyslog (= 1.5.0)
+  ruby_build
+  rubygems
+    path: chef/site-cookbooks/rubygems
+  screen
+  sudo (= 2.0.4)
+  sysstat
+  user
+    git: https://github.com/fnichol/chef-user
+    revision: 62e3e2b6848445f80ba1ff22bd82c57c63fa72e5
+  xfs
+  xml
+  xslt
+  zlib
+
+GRAPH
+  apache2 (1.10.4)
+    iptables (>= 0.0.0)
+    logrotate (>= 0.0.0)
+    pacman (>= 0.0.0)
+  application (2.0.0)
+  application_ruby (1.0.10)
+    apache2 (>= 0.0.0)
+    application (>= 0.0.0)
+    passenger_apache2 (>= 0.0.0)
+    runit (<= 0.16.2)
+    unicorn (>= 0.0.0)
+  apt (1.9.0)
+  ark (0.8.2)
+  aws (2.2.0)
+  bash-completion (0.1.0)
+  build-essential (2.0.2)
+  chef_handler (1.1.6)
+  curl (2.0.0)
+  datadog (1.2.0)
+    apt (>= 0.0.0)
+    chef_handler (~> 1.1.0)
+    yum (>= 0.0.0)
+  denyhosts (1.4.0)
+  dmg (2.2.0)
+  elasticsearch (0.3.8)
+    ark (>= 0.2.4)
+    build-essential (>= 0.0.0)
+    java (>= 0.0.0)
+    monit (>= 0.0.0)
+    xml (>= 0.0.0)
+  git (2.2.0)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    runit (<= 0.16.2)
+    windows (>= 0.0.0)
+    yum (>= 0.0.0)
+  grc (1.0.0)
+  hostname (0.1.0)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.4)
+  htop (1.2.0)
+    yum (>= 0.0.0)
+  iftop (0.0.1)
+  imagemagick (0.2.3)
+  iptables (0.13.2)
+  java (1.22.0)
+  logrotate (1.1.0)
+  logwatch (1.0.2)
+    perl (>= 0.0.0)
+  memcached (1.2.0)
+    runit (<= 0.16.2)
+    yum (>= 0.0.0)
+  monit (1.1.0)
+  munin (1.3.2)
+    apache2 (>= 1.0.6)
+    nginx (>= 0.0.0)
+  newrelic-sysmond (1.3.2)
+  nginx (0.4.3)
+    apt (>= 0.0.0)
+  nodejs (1.7.0)
+    apt (>= 1.4.4)
+  ntp (1.3.2)
+  openssh (1.1.4)
+  pacman (1.1.1)
+  papertrail-rsyslog (1.1.1)
+    rsyslog (~> 1.5.0)
+  passenger_apache2 (2.2.0)
+    apache2 (>= 1.0.4)
+    build-essential (>= 0.0.0)
+  perl (1.1.0)
+  postfix (2.1.4)
+  postgresql (0.13.3)
+    apt (>= 1.9.0)
+  rbenv (0.7.3)
+    java (> 1.4.0)
+    ruby_build (>= 0.0.0)
+  redis (0.5.4)
+    apt (>= 0.0.0)
+  resolver (1.1.4)
+  rsync (0.8.4)
+  rsyslog (1.5.0)
+  ruby_build (0.8.0)
+  rubygems (0.1.0)
+    application (>= 0.0.0)
+    application_ruby (>= 0.0.0)
+    aws (>= 0.0.0)
+    datadog (>= 0.0.0)
+    logrotate (>= 0.0.0)
+    monit (>= 0.0.0)
+    nginx (>= 0.0.0)
+    papertrail-rsyslog (>= 0.0.0)
+    rbenv (>= 0.0.0)
+    runit (>= 0.0.0)
+    user (>= 0.0.0)
+  runit (0.16.2)
+  screen (0.8.0)
+    build-essential (>= 0.0.0)
+    git (>= 0.0.0)
+  sudo (2.0.4)
+  sysstat (1.2.0)
+  unicorn (1.3.0)
+  user (0.3.1)
+  windows (1.31.0)
+    chef_handler (>= 0.0.0)
+  xfs (1.1.0)
+  xml (1.2.4)
+    build-essential (>= 0.0.0)
+  xslt (0.0.1)
+  yum (3.2.0)
+  zlib (2.0.0)
