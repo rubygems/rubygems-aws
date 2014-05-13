@@ -30,7 +30,7 @@ cp runit/run ../tmp/etc/service/stat-update/
 
 cd ../
 bundle exec fpm -s dir -t deb \
-  -n stat-update -v 1.0.0 --iteration 1 \
+  -n stat-update -v 1.1.0 --iteration 1 \
   -C tmp \
   .
 
