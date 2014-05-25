@@ -14,8 +14,7 @@ directory "#{node["nginx"]["dir"]}/certs" do
 end
 
 # ssl certificate key
-cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_key"]}" do
-  source node["application"]["ssl_key"]
+file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_key"]}" do
   owner  "root"
   group  "root"
   mode   "0644"
@@ -23,8 +22,7 @@ cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_key"]}" 
 end
 
 # ssl certificate
-cookbook_file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_cert"]}" do
-  source node["application"]["ssl_cert"]
+file "#{node["nginx"]["dir"]}/certs/#{node["application"]["ssl_cert"]}" do
   owner  "root"
   group  "root"
   mode   "0644"

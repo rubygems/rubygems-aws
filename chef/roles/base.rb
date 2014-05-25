@@ -2,7 +2,6 @@ name "base"
 description "The base role with required system-level recipes for all nodes"
 run_list(
   "recipe[rubygems::users]",
-  "recipe[motd-tail]",
   "recipe[apt]",
   "recipe[build-essential]",
   "recipe[rubygems::cloudinit]",
@@ -20,18 +19,14 @@ run_list(
   "recipe[rubygems::papertrail]",
   "recipe[bash-completion]",
   "recipe[grc]",
-  "recipe[screen]",
   "recipe[openssh]",
   "recipe[sudo]",
-  "recipe[denyhosts]",
   "recipe[iptables]",
   "recipe[rubygems::ip_security]",
   "recipe[rubygems::iptables]",
   "recipe[htop]",
   "recipe[iftop]",
   "recipe[monit]",
-  "recipe[newrelic-sysmond]",
-  "recipe[munin]",
   "recipe[rubygems::datadog]",
   "recipe[postfix]",
   "recipe[postfix::aliases]"
