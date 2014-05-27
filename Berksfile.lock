@@ -16,10 +16,10 @@
       "locked_version": "0.1.0"
     },
     "build-essential": {
-      "locked_version": "1.4.2"
+      "locked_version": "2.0.0"
     },
     "curl": {
-      "locked_version": "1.1.0"
+      "locked_version": "2.0.0"
     },
     "datadog": {
       "locked_version": "1.1.1"
@@ -30,18 +30,18 @@
       "ref": "cead32d2dc8cad24a261b6abf42ffb30a797704c"
     },
     "elasticsearch": {
-      "locked_version": "0.3.7",
+      "locked_version": "0.3.9",
       "git": "https://github.com/elasticsearch/cookbook-elasticsearch",
-      "ref": "e89d3ef6762847f4088dbbfc9b439a7274265399"
+      "ref": "ca2bcf65fa0deec01935210f74dc32c00dce5b75"
     },
     "git": {
-      "locked_version": "2.9.0"
+      "locked_version": "4.0.2"
     },
     "grc": {
       "locked_version": "1.0.0"
     },
     "hostname": {
-      "locked_version": "0.1.0"
+      "locked_version": "0.2.0"
     },
     "htop": {
       "locked_version": "1.2.0"
@@ -58,7 +58,7 @@
       "ref": "72d5e7f919cce4df43ea90173c381e70e74f3aeb"
     },
     "java": {
-      "locked_version": "1.17.6"
+      "locked_version": "1.22.0"
     },
     "jenkins": {
       "locked_version": "1.2.2"
@@ -77,6 +77,14 @@
       "git": "https://github.com/phlipper/chef-monit",
       "ref": "e7fbb501346c0b6ea6af8a743648c21610c32796"
     },
+    "motd": {
+      "locked_version": "0.4.1"
+    },
+    "motd-tail": {
+      "locked_version": "2.0.2",
+      "git": "https://github.com/skottler/motd-tail",
+      "ref": "1494b628356049645e0e80faa7fcb8ddb283c3d4"
+    },
     "munin": {
       "locked_version": "1.4.0"
     },
@@ -94,10 +102,10 @@
       "ref": "0f8cfce359c8b900eba2c7926f608d9477cc19aa"
     },
     "ntp": {
-      "locked_version": "1.3.2"
+      "locked_version": "1.6.2"
     },
     "openssh": {
-      "locked_version": "1.1.4"
+      "locked_version": "1.3.4"
     },
     "papertrail-rsyslog": {
       "locked_version": "1.1.1"
@@ -109,19 +117,19 @@
       "locked_version": "2.1.4"
     },
     "postgresql": {
-      "locked_version": "0.13.0",
+      "locked_version": "0.14.0",
       "git": "https://github.com/phlipper/chef-postgresql",
-      "ref": "2c412e2f1aebce50d84fe13a3d9c6c544004fad6"
+      "ref": "d4d5394f4f6ab3e512742cde07d875e6042d3ab6"
     },
     "rbenv": {
       "locked_version": "0.7.3",
       "git": "https://github.com/fnichol/chef-rbenv",
-      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
+      "ref": "0a3018634bafe58ad21c6ee271af015220e444b9"
     },
     "redis": {
-      "locked_version": "0.5.2",
+      "locked_version": "0.5.4",
       "git": "https://github.com/phlipper/chef-redis",
-      "ref": "926db40eefd00654aaf1b4b0e2522b413042720d"
+      "ref": "817f1e6368df92ad632da05f066be8113f53fe89"
     },
     "resolver": {
       "locked_version": "1.1.4"
@@ -150,13 +158,13 @@
     "user": {
       "locked_version": "0.3.1",
       "git": "https://github.com/fnichol/chef-user",
-      "ref": "ce45d05e13491a82cbb5a2c36292391f3a1aaa36"
+      "ref": "62e3e2b6848445f80ba1ff22bd82c57c63fa72e5"
     },
     "xfs": {
       "locked_version": "1.1.0"
     },
     "xml": {
-      "locked_version": "1.2.0"
+      "locked_version": "1.2.4"
     },
     "xslt": {
       "locked_version": "0.0.1"
@@ -168,34 +176,37 @@
       "locked_version": "1.3.0"
     },
     "apache2": {
-      "locked_version": "1.8.4"
+      "locked_version": "1.10.4"
+    },
+    "pacman": {
+      "locked_version": "1.1.1"
     },
     "passenger_apache2": {
-      "locked_version": "2.1.2"
+      "locked_version": "2.2.0"
     },
     "runit": {
       "locked_version": "0.16.2"
     },
     "chef_handler": {
-      "locked_version": "1.1.4"
+      "locked_version": "1.1.6"
     },
     "yum": {
-      "locked_version": "2.4.0"
+      "locked_version": "3.2.0"
     },
     "ark": {
-      "locked_version": "0.4.2"
+      "locked_version": "0.8.2"
     },
     "dmg": {
-      "locked_version": "2.0.8"
+      "locked_version": "2.2.0"
     },
     "windows": {
-      "locked_version": "1.11.0"
+      "locked_version": "1.30.2"
     },
     "yum-epel": {
-      "locked_version": "0.2.0"
+      "locked_version": "0.3.6"
     },
     "hostsfile": {
-      "locked_version": "2.4.2"
+      "locked_version": "2.4.4"
     }
   }
 }

@@ -3,11 +3,11 @@
 # Recipe:: nginx_source.rb
 #
 
-package_name = "nginx_#{node['nginx']['version']}-#{node['nginx']['iteration']}_amd64.deb"
+include_recipe "rubygems::packagecloud"
 
-cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
-
-dpkg_package "#{Chef::Config[:file_cache_path]}/#{package_name}"
+package "nginx" do
+  version "1.5.1-1"
+end
 
 # Continue to use upstream cookbooks
 # for basic configuration and service management
