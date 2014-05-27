@@ -6,7 +6,7 @@
 include_recipe "rubygems::packagecloud"
 
 package "nginx" do
-  version "1.5.1"
+  version "1.5.1-1"
 end
 
 # Continue to use upstream cookbooks

@@ -3,7 +3,7 @@ maintainer       'RubyGems.org Ops Team'
 license          'MIT'
 description      'RubyGems.org specific recipes'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.4'
+version          '0.1.5'
 
 recipe 'rubygems',                        'Default recipes for all nodes'
 recipe 'rubygems::balancer',              'Nginx load balancer config'
