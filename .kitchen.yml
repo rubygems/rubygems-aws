@@ -1,0 +1,56 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+  - name: base
+    run_list: ["role[base]", "role[vagrant]"]
+    roles_path: "chef/roles"
+    data_bags_path: "chef/data_bags"
+  - name: dbmaster
+    run_list: ["role[db_master]", "role[vagrant]"]
+    roles_path: "chef/roles"
+    data_bags_path: "chef/data_bags"
+    attributes:
+  - name: app
+    run_list: ["role[app]", "role[vagrant]"]
+    roles_path: "chef/roles"
+    data_bags_path: "chef/data_bags"
+    attributes:
+      application:
+        name: 'rubygems'
+        rails_env: vagrant
+        rails_root: "/applications/rubygems/staging"
+        server_names:
+          - "vagrant.rubygems.org"
+        use_ssl: true
+        force_ssl: true
+        ssl_key: rubygems.org.key
+        ssl_cert: rubygems.org.crt
+        app_server:
+          name: unicorn
+          concurrency: 4
+  - name: balancer
+    run_list: ["role[balancer]", "role[vagrant]"]
+    roles_path: "chef/roles"
+    data_bags_path: "chef/data_bags"
+    attributes:
+      application:
+        name: 'rubygems'
+        rails_env: vagrant
+        rails_root: "/applications/rubygems/staging"
+        server_names:
+          - "vagrant.rubygems.org"
+        use_ssl: true
+        force_ssl: true
+        ssl_key: rubygems.org.key
+        ssl_cert: rubygems.org.crt
+        app_server:
+          name: unicorn
+          concurrency: 4

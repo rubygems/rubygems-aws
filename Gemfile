@@ -6,3 +6,8 @@ gem 'fpm',            '~> 0.3'
 gem 'knife-solo',     '~> 0.3'
 gem 'rubocop',        '~> 0.14'
 gem 'berkshelf',      '~> 2'
+
+group :integration do
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+end
