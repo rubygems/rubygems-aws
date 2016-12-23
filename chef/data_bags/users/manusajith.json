@@ -1,0 +1,10 @@
+{
+    "id": "manusajith",
+    "username": "manusajith",
+    "comment": "Manu S Ajith",
+    "password": "$6$gTFehYJPfFnvoOU$Uy.wSUPqe2XhrBUlR7kWXpXeZezJIH0/7mPKq8zqHG5ZUPDc7SL/aKNmombw0Fi6f5yFlV54OKd4.xKt8JUkd0",
+    "admin" : true,
+    "ssh_keys": [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFMYFYvrAJCNhaVDNQpDQ+2kvyz9MfA8cxS8PkUyL01glNf8mpnVMoHhYw8/lxToORekBLmPvVOhCnc+kG19T822LLYqsz/TUbHs1k091wimfyBTd1/oQuOHqU//RyBHzjezgTvIF62A7P4xI0k/KMpLPDh73qLfxa51iqS0KtVkaosa5Dkulqv0uQHUWiY5yoN0mi1rHS0MIgL8YwlAekxbThpoihiula2snLTaAufPwdpl5GD3o/l2VK535d9sCUWTWGVyDGE5/cxvkf9vyek9bFl+ZBuNbErXo0vlI9VAKLekxYVdUVi6phLZGlJNlw1cG1+LCcCbq+O3OkEreV neo@matrix"
+    ]
+}
