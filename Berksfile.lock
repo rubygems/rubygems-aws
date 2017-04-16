@@ -74,6 +74,12 @@
       "git": "https://github.com/phlipper/chef-monit",
       "ref": "e7fbb501346c0b6ea6af8a743648c21610c32796"
     },
+    "motd": {
+      "locked_version": "0.4.1"
+    },
+    "motd-tail": {
+      "locked_version": "2.0.0"
+    },
     "munin": {
       "locked_version": "1.4.0"
     },
